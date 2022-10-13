@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "R6zyGczfkcnHOB0bvzlAksktihuDERWRZwUSnyIDqts=",
+  "Source": "KalorieOnline.Api",
+  "BasePath": "_content/KalorieOnline.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
