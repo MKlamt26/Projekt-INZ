@@ -94,9 +94,9 @@ namespace KalorieOnline.Api.Migrations
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
-                    { 1, "Beauty" },
-                    { 2, "Furniture" },
-                    { 3, "Electronics" },
+                    { 1, "Wysoko_Tłuszczowe" },
+                    { 2, "Wysoko_Węglowodanowe" },
+                    { 3, "Wysoko_Białkowe" },
                     { 4, "Shoes" }
                 });
 
@@ -105,16 +105,10 @@ namespace KalorieOnline.Api.Migrations
                 columns: new[] { "Id", "Calories", "CategoryId", "Description", "ImageURL", "Name", "Qty" },
                 values: new object[,]
                 {
-                    { 1, 100.0, 1, "jest tłuste", "/Images/Beauty/Beauty1.png", "masło", 100 },
-                    { 2, 50.0, 1, "A kit provided by Curology, containing skin care products", "/Images/Beauty/Beauty2.png", "Curology - Skin Care Kit", 45 },
-                    { 3, 20.0, 1, "A kit provided by Curology, containing skin care products", "/Images/Beauty/Beauty3.png", "Cocooil - Organic Coconut Oil", 30 },
-                    { 4, 50.0, 1, "A kit provided by Schwarzkopf, containing skin care and hair care products", "/Images/Beauty/Beauty4.png", "Schwarzkopf - Hair Care and Skin Care Kit", 60 },
-                    { 5, 30.0, 1, "Skin Care Kit, containing skin care and hair care products", "/Images/Beauty/Beauty5.png", "Skin Care Kit", 85 },
-                    { 6, 100.0, 3, "Air Pods - in-ear wireless headphones", "/Images/Electronic/Electronics1.png", "Air Pods", 120 },
-                    { 7, 40.0, 3, "On-ear Golden Headphones - these headphones are not wireless", "/Images/Electronic/Electronics2.png", "On-ear Golden Headphones", 200 },
-                    { 8, 40.0, 3, "On-ear Black Headphones - these headphones are not wireless", "/Images/Electronic/Electronics3.png", "On-ear Black Headphones", 300 },
-                    { 9, 600.0, 3, "Sennheiser Digital Camera - High quality digital camera provided by Sennheiser - includes tripod", "/Images/Electronic/Electronic4.png", "Sennheiser Digital Camera with Tripod", 20 },
-                    { 10, 500.0, 3, "Canon Digital Camera - High quality digital camera provided by Canon", "/Images/Electronic/Electronic5.png", "Canon Digital Camera", 15 }
+                    { 1, 580.0, 1, "jest tłuste", "/Images/WysokoTłuszczowe/masło.jpg", "Masło", 100 },
+                    { 2, 320.0, 2, "Ma dużo węglowodanów", "/Images/WysokoWęglowodanowe/makaronSpaghetti.jpg", "Biały makaron", 45 },
+                    { 3, 310.0, 2, "Ma dużo węglowodanów", "/Images/WysokoWęglowodanowe/kajzerka.jpg", "Kajzerka", 30 },
+                    { 4, 180.0, 3, "Ma  dużo białka", "/Images/WysokoBiałkowe/PierśZkurczaka.jpg", "Pierś z Kurczaka", 60 }
                 });
         }
 

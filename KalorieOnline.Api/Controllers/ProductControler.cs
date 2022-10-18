@@ -43,5 +43,44 @@ namespace KalorieOnline.Api.Controllers
 
 
         }
+        [HttpGet("{id:int}")]
+        public async Task<ActionResult<ProductDto>> GetItem(int id)
+        {
+            try
+            {
+                var product = await this.productRepository.GetItem(id);
+                
+
+                if (product == null )
+
+                {
+                    return BadRequest();
+                }
+                else
+                {
+                    var productDto = product;
+                    return Ok(productDto);
+                }
+            }
+            catch (Exception)
+            {
+
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error retriving data from the database");
+            }
+
+
+        }
+
+
+
+
+
+
+        [HttpGet("Search/{SearchTerm}")]
+        public async Task<ActionResult<IEnumerable<ProductDto>>>SearchProducts(string SearchTerm)
+        {
+            return Ok(await productRepository.SearchProducts(SearchTerm));
+        }
+       
     }
 }

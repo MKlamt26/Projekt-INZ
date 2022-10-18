@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjektINZ", "ProjektINZ\ProjektINZ.csproj", "{533057A6-1BAF-450B-BADD-6426BB858BF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjektINZ", "ProjektINZ\ProjektINZ.csproj", "{533057A6-1BAF-450B-BADD-6426BB858BF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KalorieOnline.Api", "KalorieOnline.Api\KalorieOnline.Api.csproj", "{63E51DAC-D406-4339-B219-18F5BD572AB7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KalorieOnline.Api", "KalorieOnline.Api\KalorieOnline.Api.csproj", "{63E51DAC-D406-4339-B219-18F5BD572AB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KlalorieOnline.Models", "KlalorieOnline.Models\KlalorieOnline.Models.csproj", "{A18396EF-E10A-402E-968A-6407CEFF66DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KlalorieOnline.Models", "KlalorieOnline.Models\KlalorieOnline.Models.csproj", "{A18396EF-E10A-402E-968A-6407CEFF66DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

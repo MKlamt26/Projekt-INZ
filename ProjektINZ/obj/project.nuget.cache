@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "IF+OhKnZpIwqbzsO9uUm00yoJKgfVib1VJxp/IMidk5volgfAmTIRDufsF2FJYi8D4YYyVnHfV+I68iCsNIeuQ==",
+  "dgSpecHash": "fpSzePeBIGQFnudQIlRCNZyOq6gP8VP20tsdW+wHJ7OgXtuthfACsLrcgLxJThoazYGJU6agCG8oukMTPtVY6w==",
   "success": true,
   "projectFilePath": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\ProjektINZ.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Michał\\.nuget\\packages\\blazored.typeahead\\4.7.0\\blazored.typeahead.4.7.0.nupkg.sha512",
     "C:\\Users\\Michał\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.4\\microsoft.aspnetcore.authorization.6.0.4.nupkg.sha512",
     "C:\\Users\\Michał\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.4\\microsoft.aspnetcore.components.6.0.4.nupkg.sha512",
     "C:\\Users\\Michał\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\6.0.4\\microsoft.aspnetcore.components.analyzers.6.0.4.nupkg.sha512",

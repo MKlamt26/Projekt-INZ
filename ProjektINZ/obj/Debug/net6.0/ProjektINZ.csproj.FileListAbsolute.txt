@@ -821,3 +821,8 @@ C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\bin\Debug\net6.0\Kl
 C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\bin\Debug\net6.0\KlalorieOnline.Models.pdb
 C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\obj\Debug\net6.0\build-gz\4bYc0+Sr.gz
 C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\obj\Debug\net6.0\build-gz\EE2GOnkJ.gz
+C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\bin\Debug\net6.0\wwwroot\_framework\Blazored.Typeahead.dll
+C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\bin\Debug\net6.0\wwwroot\_framework\Blazored.Typeahead.dll.gz
+C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\bin\Debug\net6.0\Blazored.Typeahead.dll
+C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\obj\Debug\net6.0\build-gz\fH8cywtC.gz
+C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\obj\Debug\net6.0\scopedcss\Pages\DisplaySpinner.razor.rz.scp.css

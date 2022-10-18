@@ -19,14 +19,16 @@ namespace KalorieOnline.Api.Repositories
             return categories;
         }
 
-        public Task<IEnumerable<ProductCategory>> GetCategory(int id)
+        public async Task<ProductCategory> GetCategory(int id)
         {
-            throw new NotImplementedException();
+            var category = await shopOnlineDbContext.ProductCategories.SingleOrDefaultAsync(c => c.Id == id);
+            return category;
         }
 
-        public Task<IEnumerable<Product>> GetItem(int id)
+        public async Task<Product> GetItem(int id)
         {
-            throw new NotImplementedException();
+            var product =await shopOnlineDbContext.Products.FindAsync(id);
+            return product;
         }
 
         public async Task<IEnumerable<Product>> GetItems()
@@ -34,5 +36,15 @@ namespace KalorieOnline.Api.Repositories
             var products = await this.shopOnlineDbContext.Products.ToListAsync();
             return products;
         }
+
+        public async Task<IEnumerable<Product>> SearchProducts(string SearchTerm)
+        {
+            var products = await this.shopOnlineDbContext.Products.ToListAsync();
+            return products.Where(pr=>pr.Name.Contains(SearchTerm));
+        }
+
+       
+
+       
     }
 }

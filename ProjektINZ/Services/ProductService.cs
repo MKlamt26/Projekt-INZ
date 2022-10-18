@@ -13,6 +13,34 @@ namespace ProjektKalorie.Services
             this.httpClient = httpClient;
         }
 
+        public async Task<ProductDto> GetItem(int id)
+        {
+            try
+            {
+                var response = await httpClient.GetAsync($"api/ProductControler/{id}");
+                if (response.IsSuccessStatusCode)
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.NoContent)
+                    {
+                        return default(ProductDto);
+
+                    }
+                    return await response.Content.ReadFromJsonAsync<ProductDto>();
+
+                }
+                else
+                {
+                    var message=await response.Content.ReadAsStringAsync();
+                    throw new Exception(message);
+                }
+            }
+            catch (Exception)
+            {
+                //log exception
+                throw;
+            }
+        }
+
         public async Task<IEnumerable<ProductDto>> GetItems()
         {
             try
@@ -24,6 +52,21 @@ namespace ProjektKalorie.Services
             {
 
                 throw;
+            }
+        }
+
+        public async Task<IEnumerable<ProductDto>> SearchProducts(string SearchTerm)
+        {
+            var products = await this.httpClient.GetFromJsonAsync<IEnumerable<ProductDto>>($"api/ProductControler/Search/{SearchTerm}");
+
+            if (string.IsNullOrEmpty(SearchTerm))
+            {
+                
+                return products;
+            }
+            else
+            {
+                return products.Where(pr=>pr.Name.Contains(SearchTerm));
             }
         }
     }

@@ -1,0 +1,76 @@
+﻿@page "/"
+@using ProjektKalorie.Pages
+@using ProjektKalorie.Services
+@using ShopOnline.Models.Dtos
+@inject NavigationManager NavigationManager
+@inherits ProductBase
+
+
+
+<BlazoredTypeahead SearchMethod="@SearchProducts"
+                    TValue="ProductDto"
+                    TItem="ProductDto"
+                    Value="selectedProduct"
+                    ValueChanged="HandleSearch"
+                    ValueExpression="@(()=>selectedProduct)"
+                    placeholder="Search"
+                    Debounce="500">
+    <SelectedTemplate>
+        @context.Name
+    </SelectedTemplate>
+    <ResultTemplate>
+        @context.Name (@context.Name)
+    </ResultTemplate>
+    <NotFoundTemplate>
+        Sorry, there weren't any search results.
+    </NotFoundTemplate>
+</BlazoredTypeahead>
+
+@if(selectedProduct==null)
+{
+    <h3>Enter product name</h3>
+}
+else
+{
+    <div class ="col-md-3 mb-2">
+                        <a href="/ProductDetails/@selectedProduct.Id">
+                            <div class="card">
+                                <img class="img-thumbnail" src="@selectedProduct.ImageURL">
+
+                                <div  class="card-body">
+                                    <h5 class="card-title mb-3">
+                                        @selectedProduct.Name
+
+                                    </h5>
+                                    <p class="card-text">
+                                       <b>@selectedProduct.Calories.ToString() Kcl/100g</b> 
+                                       
+                                    </p>
+                                    
+
+                                </div>
+
+                            </div>
+                        </a>
+                        </div>
+
+
+}
+
+
+
+@code{
+    private ProductDto selectedProduct;
+    private void HandleSearch(ProductDto product)
+    {
+        if (product == null) return;
+        selectedProduct = product;
+        //NavigationManager.NavigateTo($"api/ProductControler/Search/{selectedProduct.Id}");
+    }
+
+    private async Task<IEnumerable<ProductDto>> SearchProducts(string searchText)
+    {
+        var responce = await productService.SearchProducts(searchText);
+        return responce;
+    }
+}

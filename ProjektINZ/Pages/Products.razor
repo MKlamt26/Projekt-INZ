@@ -1,4 +1,4 @@
-﻿@page "/"
+﻿@page "/old"
 @using ProjektKalorie.Pages
 @using ShopOnline.Models.Dtos
 
@@ -16,42 +16,30 @@ else
 
     @if(productCout>0)
     {
-        const int itemsPerRow = 4;
-        var productsRowList = new List<ProductDto>();
 
-        @for(int i=0; i<productCout;i++)
-        {
-            productsRowList = Products.Skip(i * itemsPerRow).Take(itemsPerRow).ToList();
+       
 
-            <div class = "row mt-3">
 
-                @foreach(var item in productsRowList)
-                {
-                    <div class ="col-md-3 mb-2">
-                        <a href="#">
-                            <div class="card">
-                                <img class="img-thumbnail" src="@item.ImageURL">
+          
 
-                                <div  class="card-body">
-                                    <h5 class="card-title mb-3">
-                                        @item.Name
+                @foreach(var prodGroup in GetGrupedProductsByCategory())
 
-                                    </h5>
-                                    <p class="card-text">
-                                       <b>@item.Calories.ToString() Kcl/100g</b> 
-                                       
-                                    </p>
-                                    
+            {
+                  
+                <h4>@GetCategoryName(prodGroup)</h4>
 
-                                </div>
+                <div class = "row mt-3">
+                            
+                    <DisplayPruducts Products="@prodGroup"></DisplayPruducts>
 
-                            </div>
-                        </a>
-                        </div>
+                </div>
 
-                }
+                <hr class="mb-3"/> //linia pusta
+            }
 
-            </div>
-        }
+               
+
+            
+        
     }
 }

@@ -108,102 +108,42 @@ namespace KalorieOnline.Api.Migrations
                         new
                         {
                             Id = 1,
-                            Calories = 100.0,
+                            Calories = 580.0,
                             CategoryId = 1,
                             Description = "jest tłuste",
-                            ImageURL = "/Images/Beauty/Beauty1.png",
-                            Name = "masło",
+                            ImageURL = "/Images/WysokoTłuszczowe/masło.jpg",
+                            Name = "Masło",
                             Qty = 100
                         },
                         new
                         {
                             Id = 2,
-                            Calories = 50.0,
-                            CategoryId = 1,
-                            Description = "A kit provided by Curology, containing skin care products",
-                            ImageURL = "/Images/Beauty/Beauty2.png",
-                            Name = "Curology - Skin Care Kit",
+                            Calories = 320.0,
+                            CategoryId = 2,
+                            Description = "Ma dużo węglowodanów",
+                            ImageURL = "/Images/WysokoWęglowodanowe/makaronSpaghetti.jpg",
+                            Name = "Biały makaron",
                             Qty = 45
                         },
                         new
                         {
                             Id = 3,
-                            Calories = 20.0,
-                            CategoryId = 1,
-                            Description = "A kit provided by Curology, containing skin care products",
-                            ImageURL = "/Images/Beauty/Beauty3.png",
-                            Name = "Cocooil - Organic Coconut Oil",
+                            Calories = 310.0,
+                            CategoryId = 2,
+                            Description = "Ma dużo węglowodanów",
+                            ImageURL = "/Images/WysokoWęglowodanowe/kajzerka.jpg",
+                            Name = "Kajzerka",
                             Qty = 30
                         },
                         new
                         {
                             Id = 4,
-                            Calories = 50.0,
-                            CategoryId = 1,
-                            Description = "A kit provided by Schwarzkopf, containing skin care and hair care products",
-                            ImageURL = "/Images/Beauty/Beauty4.png",
-                            Name = "Schwarzkopf - Hair Care and Skin Care Kit",
+                            Calories = 180.0,
+                            CategoryId = 3,
+                            Description = "Ma  dużo białka",
+                            ImageURL = "/Images/WysokoBiałkowe/PierśZkurczaka.jpg",
+                            Name = "Pierś z Kurczaka",
                             Qty = 60
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Calories = 30.0,
-                            CategoryId = 1,
-                            Description = "Skin Care Kit, containing skin care and hair care products",
-                            ImageURL = "/Images/Beauty/Beauty5.png",
-                            Name = "Skin Care Kit",
-                            Qty = 85
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Calories = 100.0,
-                            CategoryId = 3,
-                            Description = "Air Pods - in-ear wireless headphones",
-                            ImageURL = "/Images/Electronic/Electronics1.png",
-                            Name = "Air Pods",
-                            Qty = 120
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Calories = 40.0,
-                            CategoryId = 3,
-                            Description = "On-ear Golden Headphones - these headphones are not wireless",
-                            ImageURL = "/Images/Electronic/Electronics2.png",
-                            Name = "On-ear Golden Headphones",
-                            Qty = 200
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Calories = 40.0,
-                            CategoryId = 3,
-                            Description = "On-ear Black Headphones - these headphones are not wireless",
-                            ImageURL = "/Images/Electronic/Electronics3.png",
-                            Name = "On-ear Black Headphones",
-                            Qty = 300
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Calories = 600.0,
-                            CategoryId = 3,
-                            Description = "Sennheiser Digital Camera - High quality digital camera provided by Sennheiser - includes tripod",
-                            ImageURL = "/Images/Electronic/Electronic4.png",
-                            Name = "Sennheiser Digital Camera with Tripod",
-                            Qty = 20
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Calories = 500.0,
-                            CategoryId = 3,
-                            Description = "Canon Digital Camera - High quality digital camera provided by Canon",
-                            ImageURL = "/Images/Electronic/Electronic5.png",
-                            Name = "Canon Digital Camera",
-                            Qty = 15
                         });
                 });
 
@@ -227,17 +167,17 @@ namespace KalorieOnline.Api.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Beauty"
+                            Name = "Wysoko_Tłuszczowe"
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Furniture"
+                            Name = "Wysoko_Węglowodanowe"
                         },
                         new
                         {
                             Id = 3,
-                            Name = "Electronics"
+                            Name = "Wysoko_Białkowe"
                         },
                         new
                         {
