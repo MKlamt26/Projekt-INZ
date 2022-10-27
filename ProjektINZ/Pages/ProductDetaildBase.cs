@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using ProjektINZ.Services.Contracts;
 using ProjektKalorie.Services.Contracts;
 using ShopOnline.Models.Dtos;
 
@@ -12,6 +13,10 @@ namespace ProjektINZ.Pages
 
         [Inject]
         public IProductService ProductService { get; set; }
+        [Inject]
+        public IDayCartService DayCartService { get; set; }
+        [Inject]
+        public NavigationManager NavigationManager { get; set; }
         public ProductDto Product { get; set; }
         public string ErrorMessage { get; set; }
         protected override async Task OnInitializedAsync() // tu się dzieeje akcja
@@ -24,6 +29,20 @@ namespace ProjektINZ.Pages
             {
 
                 ErrorMessage = ex.Message;
+            }
+        }
+
+        protected async Task AddToCart_Click(CartItemToAddDto cartItemToAddDto)
+        {
+            try
+            {
+                var cartItemDto=await DayCartService.AddItem(cartItemToAddDto);
+                NavigationManager.NavigateTo("/DayCart");
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
 

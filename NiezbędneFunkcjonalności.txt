@@ -1,0 +1,6 @@
+Logowanie urzytkownika
+2. Rozpoczęcie nowego dnia(dodawanie produktów do dnia oraz przechowywanie dnia)
+3.Wypełnienie danych urzytkownika (waga itp), obliczneie zapotrzebowania, wybranie
+celu treningowego
+4.Lista ćwiczeń(do wyboru przez urzytkownika) oraz możliwość dodawania treninu w danym dniu 
+5.Formularz dodania własnego posiłku oraz własnego ćwiczenia

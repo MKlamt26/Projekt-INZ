@@ -16,8 +16,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContextPool<ShopOnlineDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("ShopingOnlineConnection"))
 );
-builder.Services.AddScoped<IProductRepository, ProductRepository>(); // addScoped
-
+builder.Services.AddScoped<IProductRepository, ProductRepository>(); // addScoped po stworzeniu kontrolera
+builder.Services.AddScoped<IDayCartRepository, DayCartRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

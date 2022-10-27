@@ -25,6 +25,46 @@ namespace KalorieOnline.Api.Extetnions
                     }).ToList();
 
         }
+        public static IEnumerable<CartItemDto> ConvertToDto(this IEnumerable<CartItem>cartItems,
+                                                                    IEnumerable<Product>products)
+        {
+            return(from cartItem in cartItems 
+                   join product in products
+                   on cartItem.ProductId equals product.Id
+                   select new CartItemDto
+                   {
+                       Id = cartItem.Id,
+                       ProduntId = cartItem.ProductId,
+                       ProductName = product.Name,
+                       ProductDescription = product.Description,
+                       ProductImageUrl = product.ImageURL,
+                       Calories = product.Calories,
+                       CartId = cartItem.CartId,
+                       Qty = cartItem.Qty,
+                       TotalPrice = product.Calories * cartItem.Qty
+
+                   }).ToList();
+        }
+
+
+        public static CartItemDto ConvertToDto(this CartItem cartItem,
+                                                                   Product product)
+        {
+            return new CartItemDto
+            {
+                Id = cartItem.Id,
+                ProduntId = cartItem.ProductId,
+                ProductName = product.Name,
+                ProductDescription = product.Description,
+                ProductImageUrl = product.ImageURL,
+                Calories = product.Calories,
+                TotalPrice = product.Calories * product.Qty,
+                CartId = cartItem.CartId,
+                Qty = product.Qty,
+
+            };
+        }
+
 
     }
 }
