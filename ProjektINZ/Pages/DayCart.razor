@@ -2,7 +2,7 @@
 @inherits DayCartBase
 
 
-@*@if (DayCartItems == null && ErrorMessage == null)
+@if (DayCartItems == null && ErrorMessage == null)
 {
     <DisplaySpinner></DisplaySpinner>
 }
@@ -11,8 +11,8 @@ else if (ErrorMessage != null)
 {
     <DisplayError ErrorMessage ="@ErrorMessage"></DisplayError>
 }
-*@
-@*else{*@
+
+else{
 
      <h3 class="mb-5">Shopping Cart</h3>
     
@@ -27,7 +27,16 @@ else if (ErrorMessage != null)
                     <div class = "col-md-8">
                         <h5>@item.ProductName</h5>
                         <div class="mb-4">@item.ProductDescription</div>
-                        <span> Price: <b>@item.Calories.ToString("C")</b></span>
+                        <span> Calories: <b>@(item.Calories*100)  Kcl/100g</b>
+                        <input type="number" @bind="@item.Qty"></input>
+                        <button class="btn btn-info btn-sm"
+                                @onclick="(() => UpdateQtyCartItem_Click(item.Id, item.Qty))"
+                            >Update Qty</button>
+                        </span>
+                        <div>
+                        <button  @onclick="(()=>DeleteCartItem_Click(item.Id))"
+                            class="btn btn-danger sm">Remove </button>
+                        </div>
                             
                            
                        
@@ -41,7 +50,7 @@ else if (ErrorMessage != null)
              <div class="col-md-3">
             <h5>Cart Summary</h5>
             <div class="mt-2">
-                <div>Total -</div>
+                <div>Total -(@TotalQuantity items)&nbsp;<b>@TotalCalories</b></div>
                 <a href="#" class="btn btn-success">
                     <span class="oi oi-credit-card"></span>&nbsp; Proceed to Checkout 
                 </a>
@@ -54,4 +63,4 @@ else if (ErrorMessage != null)
 
 
 
-@*}*@
+}

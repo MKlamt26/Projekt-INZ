@@ -105,10 +105,10 @@ namespace KalorieOnline.Api.Migrations
                 columns: new[] { "Id", "Calories", "CategoryId", "Description", "ImageURL", "Name", "Qty" },
                 values: new object[,]
                 {
-                    { 1, 580.0, 1, "jest tłuste", "/Images/WysokoTłuszczowe/masło.jpg", "Masło", 100 },
-                    { 2, 320.0, 2, "Ma dużo węglowodanów", "/Images/WysokoWęglowodanowe/makaronSpaghetti.jpg", "Biały makaron", 45 },
-                    { 3, 310.0, 2, "Ma dużo węglowodanów", "/Images/WysokoWęglowodanowe/kajzerka.jpg", "Kajzerka", 30 },
-                    { 4, 180.0, 3, "Ma  dużo białka", "/Images/WysokoBiałkowe/PierśZkurczaka.jpg", "Pierś z Kurczaka", 60 }
+                    { 1, 5.7999999999999998, 1, "jest tłuste", "/Images/WysokoTłuszczowe/masło.jpg", "Masło", 100 },
+                    { 2, 3.2000000000000002, 2, "Ma dużo węglowodanów", "/Images/WysokoWęglowodanowe/makaronSpaghetti.jpg", "Biały makaron", 45 },
+                    { 3, 3.1000000000000001, 2, "Ma dużo węglowodanów", "/Images/WysokoWęglowodanowe/kajzerka.jpg", "Kajzerka", 30 },
+                    { 4, 1.8, 3, "Ma  dużo białka", "/Images/WysokoBiałkowe/PierśZkurczaka.jpg", "Pierś z Kurczaka", 60 }
                 });
         }
 

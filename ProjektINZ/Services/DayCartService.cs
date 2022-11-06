@@ -1,6 +1,8 @@
-﻿using ProjektINZ.Services.Contracts;
+﻿using Newtonsoft.Json;
+using ProjektINZ.Services.Contracts;
 using ShopOnline.Models.Dtos;
 using System.Net.Http.Json;
+using System.Text;
 
 namespace ProjektINZ.Services
 {
@@ -43,6 +45,25 @@ namespace ProjektINZ.Services
             }
         }
 
+        public async Task<CartItemDto> DeleteItem(int id)
+        {
+            try
+            {
+                var response = await httpClient.DeleteAsync($"api/DayCart/{id}");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return await response.Content.ReadFromJsonAsync<CartItemDto>();
+                }
+                return default(CartItemDto);
+            }
+            catch (Exception)
+            {
+                //Log exception
+                throw;
+            }
+        }
+
         public async Task<IEnumerable<CartItemDto>> GetItems(int userId)
         {
             try
@@ -53,7 +74,7 @@ namespace ProjektINZ.Services
                 {
                     if (response.StatusCode == System.Net.HttpStatusCode.NoContent)
                     {
-                        return Enumerable.Empty<CartItemDto>().ToList();
+                        return Enumerable.Empty<CartItemDto>();/*.ToList()*/;
                     }
                     return await response.Content.ReadFromJsonAsync<List<CartItemDto>>();
                 }
@@ -63,6 +84,28 @@ namespace ProjektINZ.Services
                     throw new Exception($"Http status code: {response.StatusCode} Message: {message}");
                 }
 
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public async Task<CartItemDto> UpdateQty(CartItemQtyUpdateDto cartItemQtyUpdateDto)
+        {
+            try
+            {
+                var jsonReqest=JsonConvert.SerializeObject(cartItemQtyUpdateDto);
+                var content = new StringContent(jsonReqest,Encoding.UTF8, "application/json-patch+json");
+
+                var response = await httpClient.PatchAsync($"api/DayCart/{cartItemQtyUpdateDto.CartItemId}", content);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return await response.Content.ReadFromJsonAsync<CartItemDto>();
+                }
+                return null;
             }
             catch (Exception)
             {

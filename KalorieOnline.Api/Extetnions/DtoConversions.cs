@@ -41,7 +41,7 @@ namespace KalorieOnline.Api.Extetnions
                        Calories = product.Calories,
                        CartId = cartItem.CartId,
                        Qty = cartItem.Qty,
-                       TotalPrice = product.Calories * cartItem.Qty
+                       TotalCalories = product.Calories * cartItem.Qty
 
                    }).ToList();
         }
@@ -58,7 +58,7 @@ namespace KalorieOnline.Api.Extetnions
                 ProductDescription = product.Description,
                 ProductImageUrl = product.ImageURL,
                 Calories = product.Calories,
-                TotalPrice = product.Calories * product.Qty,
+                TotalCalories = product.Calories * product.Qty,
                 CartId = cartItem.CartId,
                 Qty = product.Qty,
 

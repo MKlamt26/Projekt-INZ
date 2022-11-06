@@ -826,3 +826,7 @@ C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\bin\Debug\net6.0\ww
 C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\bin\Debug\net6.0\Blazored.Typeahead.dll
 C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\obj\Debug\net6.0\build-gz\fH8cywtC.gz
 C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\obj\Debug\net6.0\scopedcss\Pages\DisplaySpinner.razor.rz.scp.css
+C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\bin\Debug\net6.0\wwwroot\_framework\Newtonsoft.Json.dll
+C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\bin\Debug\net6.0\wwwroot\_framework\Newtonsoft.Json.dll.gz
+C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\obj\Debug\net6.0\build-gz\77FPMxaS.gz

@@ -23,7 +23,7 @@ else
             <p class="mb-4">@Product.Description</p>
             <p class="mb-4">
                 <b>
-                    @Product.Calories.ToString()  Kcl/100g;
+                    @(Product.Calories*100)  Kcl/100g;
                 </b>
             </p>
             <div>

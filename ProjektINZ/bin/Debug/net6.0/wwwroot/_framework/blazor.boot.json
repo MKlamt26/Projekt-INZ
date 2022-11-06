@@ -30,6 +30,7 @@
       "Microsoft.Extensions.Primitives.dll": "sha256-jOmoWSfsdQexH\/6QCA56gR1RMEqeix2iDDUBWbpAOQI=",
       "Microsoft.JSInterop.dll": "sha256-jk2\/Vyub2GwMGkeIaCH7i0wYYpcirlDPEBjrjmB47Es=",
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-9fmAKBOzIs7ySpwatFoAUhMgaJtTQvGN5+TArCHX9QE=",
+      "Newtonsoft.Json.dll": "sha256-cs8pHUurDt0IqbB8YXPh560au3q3J\/1wRL9jBddRVmE=",
       "System.IO.Pipelines.dll": "sha256-OXr1SqT\/FRQmnxVa6n811yUyJraU4tzQs5skNCiDmiM=",
       "Microsoft.CSharp.dll": "sha256-vQI17SrfTJckI\/jSEDgWkczMgznxgPfZ30+RelRLGQk=",
       "Microsoft.VisualBasic.Core.dll": "sha256-9LLLoUznoJQJkFXhqjm0046DM5H5HOglyvjabkTaxIo=",
@@ -197,15 +198,15 @@
       "mscorlib.dll": "sha256-Q4A\/043fz702a7DDbm+JAtMHV3jKAZ9k8khztTMKp2M=",
       "netstandard.dll": "sha256-W9cwgVmBZsddVw3WVFMC5Gya92UufvbVTNR4+u7pnR0=",
       "System.Private.CoreLib.dll": "sha256-KVnZkFos\/ML\/3S2isVijfmFZXO4zEQeCga6BZvGdTbY=",
-      "KlalorieOnline.Models.dll": "sha256-CHQvbzSYRFuBrhhN+oikJut8VRPTbrLdftvrPJ+lw78=",
-      "ProjektINZ.dll": "sha256-BCLrpyWKlTVehgyEb8jPd3ACuRdi8vxEA9Y5p7od7g8="
+      "KlalorieOnline.Models.dll": "sha256-a\/U1XV13bwHXEeGOO7+L44T84cCWJSBWMEizB9YSp24=",
+      "ProjektINZ.dll": "sha256-bmuNG0W4nrp8knE7Agp3rDVnBD8HDICJgWr\/EOUDTn8="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "KlalorieOnline.Models.pdb": "sha256-vXGeaVL0wC0oI925EKvBF1SIErMsWtXBk5JT8N8Q7TM=",
-      "ProjektINZ.pdb": "sha256-mRM3sKa5yQcsWjuwOspYW4mDqNnvqzRmtx4zQ25ncts="
+      "KlalorieOnline.Models.pdb": "sha256-51BAirvAf+yTkd2gUUfb+gtD8UiqhebO0qIuG0uTdV4=",
+      "ProjektINZ.pdb": "sha256-4JAEJMWHZn720R1tV2nVa+WUYGdjdO4F1cu22KSpbVw="
     },
     "runtime": {
       "dotnet.6.0.4.nm888b1oec.js": "sha256-WYno\/cK5MDsl5yi4T\/\/QgUskbBfhLL77i+c0uKzO9+c=",

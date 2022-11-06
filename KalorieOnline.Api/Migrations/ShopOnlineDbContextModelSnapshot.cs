@@ -108,7 +108,7 @@ namespace KalorieOnline.Api.Migrations
                         new
                         {
                             Id = 1,
-                            Calories = 580.0,
+                            Calories = 5.7999999999999998,
                             CategoryId = 1,
                             Description = "jest tłuste",
                             ImageURL = "/Images/WysokoTłuszczowe/masło.jpg",
@@ -118,7 +118,7 @@ namespace KalorieOnline.Api.Migrations
                         new
                         {
                             Id = 2,
-                            Calories = 320.0,
+                            Calories = 3.2000000000000002,
                             CategoryId = 2,
                             Description = "Ma dużo węglowodanów",
                             ImageURL = "/Images/WysokoWęglowodanowe/makaronSpaghetti.jpg",
@@ -128,7 +128,7 @@ namespace KalorieOnline.Api.Migrations
                         new
                         {
                             Id = 3,
-                            Calories = 310.0,
+                            Calories = 3.1000000000000001,
                             CategoryId = 2,
                             Description = "Ma dużo węglowodanów",
                             ImageURL = "/Images/WysokoWęglowodanowe/kajzerka.jpg",
@@ -138,7 +138,7 @@ namespace KalorieOnline.Api.Migrations
                         new
                         {
                             Id = 4,
-                            Calories = 180.0,
+                            Calories = 1.8,
                             CategoryId = 3,
                             Description = "Ma  dużo białka",
                             ImageURL = "/Images/WysokoBiałkowe/PierśZkurczaka.jpg",

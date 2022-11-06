@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "OcnwK9TzIobx3L/VhC6N5WGs1I/c2JwhG+hC68Iilzo=",
+  "Hash": "1ppPg+PKqmQ81bqCXhN2xucr+XLRzaGSdSFKd2OOY1k=",
   "Source": "ProjektINZ",
   "BasePath": "/",
   "Mode": "Root",
@@ -746,6 +746,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Michał\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.4\\runtimes\\browser-wasm\\lib\\net6.0\\netstandard.dll"
+    },
+    {
+      "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Newtonsoft.Json.dll",
+      "SourceId": "ProjektINZ",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Newtonsoft.Json.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Michał\\.nuget\\packages\\newtonsoft.json\\13.0.1\\lib\\netstandard2.0\\Newtonsoft.Json.dll"
     },
     {
       "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\ProjektINZ.dll",
@@ -4027,6 +4044,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Xml.XmlDocument.dll"
+    },
+    {
+      "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\obj\\Debug\\net6.0\\build-gz\\77FPMxaS.gz",
+      "SourceId": "ProjektINZ",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Newtonsoft.Json.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Newtonsoft.Json.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Newtonsoft.Json.dll"
     },
     {
       "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\obj\\Debug\\net6.0\\build-gz\\7anclLhF.gz",
