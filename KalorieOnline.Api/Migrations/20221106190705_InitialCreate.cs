@@ -68,6 +68,28 @@ namespace KalorieOnline.Api.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "userDatas",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<int>(type: "int", nullable: false),
+                    Sex = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Age = table.Column<int>(type: "int", nullable: false),
+                    Height = table.Column<int>(type: "int", nullable: false),
+                    Weight = table.Column<double>(type: "float", nullable: false),
+                    Activity = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DailyRequirementKcal = table.Column<double>(type: "float", nullable: false),
+                    DailyRequirementFat = table.Column<double>(type: "float", nullable: false),
+                    DailyRequirementProtein = table.Column<double>(type: "float", nullable: false),
+                    DailyRequirementCarbo = table.Column<double>(type: "float", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_userDatas", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Users",
                 columns: table => new
                 {
@@ -125,6 +147,9 @@ namespace KalorieOnline.Api.Migrations
 
             migrationBuilder.DropTable(
                 name: "Products");
+
+            migrationBuilder.DropTable(
+                name: "userDatas");
 
             migrationBuilder.DropTable(
                 name: "Users");

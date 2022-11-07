@@ -71,7 +71,7 @@ namespace KalorieOnline.Api.Data
 			
 
 
-			//Create Shopping Cart for Users
+			//Create Day Cart for Users
 			modelBuilder.Entity<Cart>().HasData(new Cart
 			{
 				Id = 1,
@@ -107,6 +107,11 @@ namespace KalorieOnline.Api.Data
 			});
 
 
+			// Users Data
+			
+			
+
+
 		}
 
         public DbSet<Cart> Carts { get; set; }
@@ -114,6 +119,7 @@ namespace KalorieOnline.Api.Data
         public DbSet<Product> Products { get; set; }
 		public DbSet<ProductCategory> ProductCategories { get; set; }
 		public DbSet<User> Users { get; set; }
+		public DbSet<UserData> userDatas { get; set; }
 
 	}
 }
