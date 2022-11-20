@@ -13,4 +13,5 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:7237/") });
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IDayCartService, DayCartService>();
+builder.Services.AddScoped<IUserDataService, UserDataService>();
 await builder.Build().RunAsync();

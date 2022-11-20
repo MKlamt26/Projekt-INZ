@@ -7,9 +7,9 @@ namespace KalorieOnline.Api.Repositories
 {
     public class ProductRepository : IProductRepository
     {
-        private readonly ShopOnlineDbContext shopOnlineDbContext;
+        private readonly CaloriesOnlineDbContext shopOnlineDbContext;
 
-        public ProductRepository(ShopOnlineDbContext shopOnlineDbContext)
+        public ProductRepository(CaloriesOnlineDbContext shopOnlineDbContext)
         {
             this.shopOnlineDbContext = shopOnlineDbContext;
         }

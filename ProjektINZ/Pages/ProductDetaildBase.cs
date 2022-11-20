@@ -37,7 +37,7 @@ namespace ProjektINZ.Pages
             try
             {
                 var cartItemDto=await DayCartService.AddItem(cartItemToAddDto);
-                NavigationManager.NavigateTo("/DayCart");
+                NavigationManager.NavigateTo("/");
             }
             catch (Exception)
             {

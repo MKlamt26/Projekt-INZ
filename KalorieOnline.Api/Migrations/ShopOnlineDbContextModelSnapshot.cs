@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace KalorieOnline.Api.Migrations
 {
-    [DbContext(typeof(ShopOnlineDbContext))]
+    [DbContext(typeof(CaloriesOnlineDbContext))]
     partial class ShopOnlineDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

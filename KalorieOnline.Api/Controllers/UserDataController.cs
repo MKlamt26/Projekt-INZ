@@ -75,16 +75,16 @@ namespace KalorieOnline.Api.Controllers
 
 
         [HttpPost]
-        public async Task<ActionResult<UserDataDto>> PostUserData(UserDataDto userDataDto)
+        public async Task<ActionResult<UserDataDto>> PostUserData([FromBody] UserDataDto userDataDto)
         {
-            var newCartItem = await this.userDataRepository.AddUserData(userDataDto);
+            var newUserData = await this.userDataRepository.AddUserData(userDataDto);
 
-            if (newCartItem == null)
+            if (newUserData == null)
             {
                 return NoContent();
             }
 
-            return CreatedAtAction(nameof(GetUserData), new { id = newCartItem.Id }, newCartItem);
+            return CreatedAtAction(nameof(GetUserData), new { id = newUserData.Id }, newUserData);
         }
     }
 }

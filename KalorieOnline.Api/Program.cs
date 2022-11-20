@@ -13,7 +13,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContextPool<ShopOnlineDbContext>(options =>
+builder.Services.AddDbContextPool<CaloriesOnlineDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("ShopingOnlineConnection"))
 );
 builder.Services.AddScoped<IProductRepository, ProductRepository>(); // addScoped po stworzeniu kontrolera

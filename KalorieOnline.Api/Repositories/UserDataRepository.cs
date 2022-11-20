@@ -8,9 +8,9 @@ namespace KalorieOnline.Api.Repositories.Contracts
 {
     public class UserDataRepository : IUserDataRepository
     {
-        private readonly ShopOnlineDbContext shopOnlineDbContext;
+        private readonly CaloriesOnlineDbContext shopOnlineDbContext;
 
-        public UserDataRepository(ShopOnlineDbContext shopOnlineDbContext)
+        public UserDataRepository(CaloriesOnlineDbContext shopOnlineDbContext)
         {
             this.shopOnlineDbContext = shopOnlineDbContext;
         }
@@ -34,16 +34,13 @@ namespace KalorieOnline.Api.Repositories.Contracts
                               select new UserData
                               {
                                   
-                                  Id = userDataDto.Id,
+                                  
                                   Age = userDataDto.Age,
                                   Sex = userDataDto.Sex,
                                   Activity = userDataDto.Activity,
-                                  DailyRequirementFat = userDataDto.DailyRequirementFat,
-                                  DailyRequirementCarbo = userDataDto.DailyRequirementCarbo,
-                                  DailyRequirementKcal = userDataDto.DailyRequirementKcal,
-                                  DailyRequirementProtein = userDataDto.DailyRequirementProtein,
+                                  
                                   Height = userDataDto.Height,
-                                  UserId = userDataDto.Id,
+                                  
                                   Weight = userDataDto.Weight,
                                   
 

@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace KalorieOnline.Api.Data
 {
-    public class ShopOnlineDbContext:DbContext
+    public class CaloriesOnlineDbContext:DbContext
     {
-        public ShopOnlineDbContext(DbContextOptions<ShopOnlineDbContext>options):base(options)
+        public CaloriesOnlineDbContext(DbContextOptions<CaloriesOnlineDbContext> options):base(options)
         {
 
         }

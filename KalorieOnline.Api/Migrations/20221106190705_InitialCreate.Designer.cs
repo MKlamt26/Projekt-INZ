@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace KalorieOnline.Api.Migrations
 {
-    [DbContext(typeof(ShopOnlineDbContext))]
+    [DbContext(typeof(CaloriesOnlineDbContext))]
     [Migration("20221106190705_InitialCreate")]
     partial class InitialCreate
     {
