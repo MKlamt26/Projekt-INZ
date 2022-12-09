@@ -10,3 +10,15 @@ C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\KlalorieOnline.Models\obj\Debu
 C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\KlalorieOnline.Models\obj\Debug\net6.0\refint\KlalorieOnline.Models.dll
 C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\KlalorieOnline.Models\obj\Debug\net6.0\KlalorieOnline.Models.pdb
 C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\KlalorieOnline.Models\obj\Debug\net6.0\ref\KlalorieOnline.Models.dll
+C:\Users\Michał\Desktop\Projekt-INZ-7624f65b4c34967b33cc6cef5fcd45f18e0b3568\KlalorieOnline.Models\bin\Debug\net6.0\KlalorieOnline.Models.deps.json
+C:\Users\Michał\Desktop\Projekt-INZ-7624f65b4c34967b33cc6cef5fcd45f18e0b3568\KlalorieOnline.Models\bin\Debug\net6.0\KlalorieOnline.Models.dll
+C:\Users\Michał\Desktop\Projekt-INZ-7624f65b4c34967b33cc6cef5fcd45f18e0b3568\KlalorieOnline.Models\bin\Debug\net6.0\KlalorieOnline.Models.pdb
+C:\Users\Michał\Desktop\Projekt-INZ-7624f65b4c34967b33cc6cef5fcd45f18e0b3568\KlalorieOnline.Models\obj\Debug\net6.0\KlalorieOnline.Models.csproj.AssemblyReference.cache
+C:\Users\Michał\Desktop\Projekt-INZ-7624f65b4c34967b33cc6cef5fcd45f18e0b3568\KlalorieOnline.Models\obj\Debug\net6.0\KlalorieOnline.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Michał\Desktop\Projekt-INZ-7624f65b4c34967b33cc6cef5fcd45f18e0b3568\KlalorieOnline.Models\obj\Debug\net6.0\KlalorieOnline.Models.AssemblyInfoInputs.cache
+C:\Users\Michał\Desktop\Projekt-INZ-7624f65b4c34967b33cc6cef5fcd45f18e0b3568\KlalorieOnline.Models\obj\Debug\net6.0\KlalorieOnline.Models.AssemblyInfo.cs
+C:\Users\Michał\Desktop\Projekt-INZ-7624f65b4c34967b33cc6cef5fcd45f18e0b3568\KlalorieOnline.Models\obj\Debug\net6.0\KlalorieOnline.Models.csproj.CoreCompileInputs.cache
+C:\Users\Michał\Desktop\Projekt-INZ-7624f65b4c34967b33cc6cef5fcd45f18e0b3568\KlalorieOnline.Models\obj\Debug\net6.0\KlalorieOnline.Models.dll
+C:\Users\Michał\Desktop\Projekt-INZ-7624f65b4c34967b33cc6cef5fcd45f18e0b3568\KlalorieOnline.Models\obj\Debug\net6.0\refint\KlalorieOnline.Models.dll
+C:\Users\Michał\Desktop\Projekt-INZ-7624f65b4c34967b33cc6cef5fcd45f18e0b3568\KlalorieOnline.Models\obj\Debug\net6.0\KlalorieOnline.Models.pdb
+C:\Users\Michał\Desktop\Projekt-INZ-7624f65b4c34967b33cc6cef5fcd45f18e0b3568\KlalorieOnline.Models\obj\Debug\net6.0\ref\KlalorieOnline.Models.dll

@@ -1,5 +1,5 @@
 ﻿using KlalorieOnline.Models.Dtos;
-using Newtonsoft.Json;
+
 using ProjektINZ.Services.Contracts;
 using ProjektINZ.ViewModels.Calculator;
 using System.Net.Http.Json;

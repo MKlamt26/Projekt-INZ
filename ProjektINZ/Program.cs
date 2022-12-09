@@ -1,6 +1,9 @@
+using Blazored.LocalStorage;
+using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using ProjektINZ;
+using ProjektINZ.Authorization;
 using ProjektINZ.Services;
 using ProjektINZ.Services.Contracts;
 using ProjektKalorie.Services;
@@ -14,4 +17,8 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https:/
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IDayCartService, DayCartService>();
 builder.Services.AddScoped<IUserDataService, UserDataService>();
+builder.Services.AddBlazoredLocalStorage();
+builder.Services.AddOptions();
+builder.Services.AddAuthorizationCore();
+builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthStateProvider>();
 await builder.Build().RunAsync();

@@ -1,5 +1,6 @@
 ﻿@page "/"
 @inherits DayCartBase
+@inject ISyncLocalStorageService localStorage
 
 
 @if (DayCartItems == null && ErrorMessage == null)
@@ -13,6 +14,16 @@ else if (ErrorMessage != null)
 }
 
 else{
+    <AuthorizeView>
+        <NotAuthorized>
+        <h1> Welcome to DayCart</h1>
+
+        </NotAuthorized>
+    <Authorized>
+        <h1> Welcome back, @localStorage.GetItemAsString("username") to DayCart</h1>
+    </Authorized>
+
+    </AuthorizeView>
 
      <h3 class="mb-5">Day Cart</h3>
     

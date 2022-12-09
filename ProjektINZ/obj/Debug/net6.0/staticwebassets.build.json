@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8ieN096+o49CaTQNLahZzJZ1tcGjG10kQEd0joA7ReE=",
+  "Hash": "eDLl2ZT+grXyQYFcPKXRtzQGJPukxt2NJiolckG7JV4=",
   "Source": "ProjektINZ",
   "BasePath": "/",
   "Mode": "Root",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Michał\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\6.0.4\\build\\net6.0\\blazor.webassembly.js"
+    },
+    {
+      "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Blazored.LocalStorage.dll",
+      "SourceId": "ProjektINZ",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Blazored.LocalStorage.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Michał\\.nuget\\packages\\blazored.localstorage\\4.3.0\\lib\\net6.0\\Blazored.LocalStorage.dll"
     },
     {
       "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Blazored.Typeahead.dll",
@@ -270,6 +287,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Michał\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.4\\lib\\net6.0\\Microsoft.AspNetCore.Authorization.dll"
+    },
+    {
+      "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Authorization.dll",
+      "SourceId": "ProjektINZ",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Components.Authorization.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Michał\\.nuget\\packages\\microsoft.aspnetcore.components.authorization\\5.0.17\\lib\\net5.0\\Microsoft.AspNetCore.Components.Authorization.dll"
     },
     {
       "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.dll",
@@ -762,7 +796,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\Michał\\.nuget\\packages\\newtonsoft.json\\13.0.1\\lib\\netstandard2.0\\Newtonsoft.Json.dll"
+      "OriginalItemSpec": "C:\\Users\\Michał\\.nuget\\packages\\newtonsoft.json\\13.0.2\\lib\\net6.0\\Newtonsoft.Json.dll"
     },
     {
       "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\ProjektINZ.dll",
@@ -3655,6 +3689,23 @@
       "OriginalItemSpec": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Reflection.Emit.Lightweight.dll"
     },
     {
+      "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\obj\\Debug\\net6.0\\build-gz\\104L8wPe.gz",
+      "SourceId": "ProjektINZ",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Newtonsoft.Json.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Newtonsoft.Json.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Newtonsoft.Json.dll"
+    },
+    {
       "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\obj\\Debug\\net6.0\\build-gz\\1dU5rjMF.gz",
       "SourceId": "ProjektINZ",
       "SourceType": "Computed",
@@ -3927,6 +3978,23 @@
       "OriginalItemSpec": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Reflection.Emit.ILGeneration.dll"
     },
     {
+      "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\obj\\Debug\\net6.0\\build-gz\\4zOaDW59.gz",
+      "SourceId": "ProjektINZ",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Components.Authorization.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Authorization.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Authorization.dll"
+    },
+    {
       "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\obj\\Debug\\net6.0\\build-gz\\5C0Zzfoe.gz",
       "SourceId": "ProjektINZ",
       "SourceType": "Computed",
@@ -4044,23 +4112,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Xml.XmlDocument.dll"
-    },
-    {
-      "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\obj\\Debug\\net6.0\\build-gz\\77FPMxaS.gz",
-      "SourceId": "ProjektINZ",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Newtonsoft.Json.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Newtonsoft.Json.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Newtonsoft.Json.dll"
     },
     {
       "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\obj\\Debug\\net6.0\\build-gz\\7anclLhF.gz",
@@ -4367,6 +4418,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Private.Xml.dll"
+    },
+    {
+      "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\obj\\Debug\\net6.0\\build-gz\\CiexHwKx.gz",
+      "SourceId": "ProjektINZ",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Blazored.LocalStorage.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Blazored.LocalStorage.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Blazored.LocalStorage.dll"
     },
     {
       "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\obj\\Debug\\net6.0\\build-gz\\CMB1Amoo.gz",
