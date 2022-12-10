@@ -19,6 +19,7 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("ShopingOnlineCon
 builder.Services.AddScoped<IProductRepository, ProductRepository>(); // addScoped po stworzeniu kontrolera
 builder.Services.AddScoped<IDayCartRepository, DayCartRepository>();
 builder.Services.AddScoped<IUserDataRepository, UserDataRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

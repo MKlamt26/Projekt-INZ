@@ -107,9 +107,24 @@ namespace KalorieOnline.Api.Data
 			});
 
 
-			// Users Data
-			
-			
+			// Users Acounts
+
+
+			modelBuilder.Entity<User>().HasData(new User
+			{
+				Id = 1,
+				UserName = "michal",
+				UserPassword = "123"
+
+			});
+			modelBuilder.Entity<User>().HasData(new User
+			{
+				Id=2,
+				UserName = "natalia",
+				UserPassword = "321"
+
+			});
+
 
 
 		}
@@ -120,6 +135,7 @@ namespace KalorieOnline.Api.Data
 		public DbSet<ProductCategory> ProductCategories { get; set; }
 		public DbSet<User> Users { get; set; }
 		public DbSet<UserData> userDatas { get; set; }
+		
 
 	}
 }

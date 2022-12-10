@@ -95,7 +95,8 @@ namespace KalorieOnline.Api.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UserName = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    UserName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UserPassword = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -131,6 +132,15 @@ namespace KalorieOnline.Api.Migrations
                     { 2, 3.2000000000000002, 2, "Ma dużo węglowodanów", "/Images/WysokoWęglowodanowe/makaronSpaghetti.jpg", "Biały makaron", 45 },
                     { 3, 3.1000000000000001, 2, "Ma dużo węglowodanów", "/Images/WysokoWęglowodanowe/kajzerka.jpg", "Kajzerka", 30 },
                     { 4, 1.8, 3, "Ma  dużo białka", "/Images/WysokoBiałkowe/PierśZkurczaka.jpg", "Pierś z Kurczaka", 60 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "Id", "UserName", "UserPassword" },
+                values: new object[,]
+                {
+                    { 1, "michal", "123" },
+                    { 2, "natalia", "321" }
                 });
         }
 

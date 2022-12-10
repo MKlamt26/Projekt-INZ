@@ -1,8 +1,5 @@
-﻿@page "/Login"
-@inject ILocalStorageService localStorage
-@inject NavigationManager navMenager
-@inject AuthenticationStateProvider AuthStateProvider
-@using Microsoft.AspNetCore.Components.Authorization
+﻿@page "/LoginNie"
+@inherits LoginBase
 @using ProjektINZ.ViewModels
 
 <h3>Loggin</h3>
@@ -36,31 +33,3 @@
 
 </EditForm>
 
-@code {
-
-    private UserModel userModel = new UserModel();
-
-    public string alertMessage { get; set; }
-
-    public NavigationManager NavigationManager { get; set; }
-
-    private async void HandleLogin()
-    {
-        Console.WriteLine("Loged me in");
-        await localStorage.SetItemAsync<string>("username", userModel.Name);
-        await AuthStateProvider.GetAuthenticationStateAsync();
-        navMenager.NavigateTo("/");
-    }
-
-    protected override Task OnInitializedAsync()
-    {
-        userModel = new UserModel();
-        return base.OnInitializedAsync();
-
-    }
-
-   
-    
-
-
-    }

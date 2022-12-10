@@ -128,3 +128,7 @@ C:\Users\Michał\Desktop\Projekt-INZ-7624f65b4c34967b33cc6cef5fcd45f18e0b3568\Ka
 C:\Users\Michał\Desktop\Projekt-INZ-7624f65b4c34967b33cc6cef5fcd45f18e0b3568\KalorieOnline.Api\obj\Debug\net6.0\KalorieOnline.Api.genruntimeconfig.cache
 C:\Users\Michał\Desktop\Projekt-INZ-7624f65b4c34967b33cc6cef5fcd45f18e0b3568\KalorieOnline.Api\obj\Debug\net6.0\ref\KalorieOnline.Api.dll
 C:\Users\Michał\Desktop\Projekt-INZ-7624f65b4c34967b33cc6cef5fcd45f18e0b3568\KalorieOnline.Api\bin\Debug\net6.0\Blazored.LocalStorage.dll
+C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\KalorieOnline.Api\bin\Debug\net6.0\Blazored.LocalStorage.dll
+C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\KalorieOnline.Api\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\KalorieOnline.Api\bin\Debug\net6.0\MediaBrowser.Common.dll
+C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\KalorieOnline.Api\bin\Debug\net6.0\MediaBrowser.Model.dll

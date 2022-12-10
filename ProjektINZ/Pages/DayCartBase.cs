@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using Blazored.LocalStorage;
+using Microsoft.AspNetCore.Components;
 using ProjektINZ.Services.Contracts;
 using ShopOnline.Models.Dtos;
 
@@ -10,6 +11,8 @@ namespace ProjektINZ.Pages
         public IDayCartService DayCartService { get; set; }
         [Inject]
         public IEnumerable<CartItemDto> DayCartItems { get; set; }
+        [Inject]
+        public ISyncLocalStorageService localStorage { get; set; }
         public string ErrorMessage { get; set; }
         protected string TotalCalories { get; set; }
         protected int TotalQuantity { get; set; }
@@ -19,7 +22,7 @@ namespace ProjektINZ.Pages
         {
             try
             {
-                DayCartItems = await DayCartService.GetItems(HardCoded.UserId);
+                DayCartItems = await DayCartService.GetItems(@localStorage.GetItem<int>("userID"));
                 CalculateCartSummaryTotals();
                 
 

@@ -23,6 +23,17 @@
           "lib/netstandard2.0/Humanizer.dll": {}
         }
       },
+      "MediaBrowser.Common/4.7.9": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/MediaBrowser.Common.dll": {},
+          "lib/netstandard2.0/MediaBrowser.Model.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MediaBrowser.Common.dll": {},
+          "lib/netstandard2.0/MediaBrowser.Model.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Authorization/6.0.0": {
         "type": "package",
         "dependencies": {
@@ -863,6 +874,21 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "MediaBrowser.Common/4.7.9": {
+      "sha512": "fmxyGZn/WkrFGpYRcCtaQS+lr9K/Js56SKLRoL8t4tcYqKM8ZdGI9eMhqRhNg2SiSxAVLQEtoRgx1gFYHxkAFw==",
+      "type": "package",
+      "path": "mediabrowser.common/4.7.9",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/MediaBrowser.Common.dll",
+        "lib/netstandard2.0/MediaBrowser.Common.pdb",
+        "lib/netstandard2.0/MediaBrowser.Model.dll",
+        "lib/netstandard2.0/MediaBrowser.Model.pdb",
+        "mediabrowser.common.4.7.9.nupkg.sha512",
+        "mediabrowser.common.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Authorization/6.0.0": {
@@ -2371,6 +2397,7 @@
     "net6.0": [
       "Blazored.LocalStorage >= 4.3.0",
       "KlalorieOnline.Models >= 1.0.0",
+      "MediaBrowser.Common >= 4.7.9",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.10",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.10",
       "Newtonsoft.Json >= 13.0.2",
@@ -2428,6 +2455,10 @@
           "Blazored.LocalStorage": {
             "target": "Package",
             "version": "[4.3.0, )"
+          },
+          "MediaBrowser.Common": {
+            "target": "Package",
+            "version": "[4.7.9, )"
           },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",

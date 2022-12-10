@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KalorieOnline.Api.Migrations
 {
     [DbContext(typeof(CaloriesOnlineDbContext))]
-    [Migration("20221106190705_InitialCreate")]
+    [Migration("20221210125412_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -200,9 +200,27 @@ namespace KalorieOnline.Api.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("UserPassword")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            UserName = "michal",
+                            UserPassword = "123"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            UserName = "natalia",
+                            UserPassword = "321"
+                        });
                 });
 
             modelBuilder.Entity("KalorieOnline.Api.Entities.UserData", b =>

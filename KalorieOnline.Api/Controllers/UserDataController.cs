@@ -30,6 +30,7 @@ namespace KalorieOnline.Api.Controllers
                 }
                 else
                 {
+                    
                     var userDatataDto = userData;
                     return Ok(userDatataDto);
                 }
