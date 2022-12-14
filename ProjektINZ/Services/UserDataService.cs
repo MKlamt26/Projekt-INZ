@@ -53,7 +53,7 @@ namespace ProjektINZ.Services
             
                 try
                 {
-                    var userDataDtos = await this.httpClient.GetFromJsonAsync<IEnumerable<UserDataDto>>("api/UserData");
+                    var userDataDtos = await this.httpClient.GetFromJsonAsync<IEnumerable<UserDataDto>>($"api/UserData/datas/{userId}");
                     return userDataDtos;
                 }
                 catch (Exception)

@@ -1,5 +1,11 @@
-﻿@page "/LoginNie"
-@inherits LoginBase
+﻿@page "/Login"
+
+@inject ILocalStorageService localStorage
+@inject NavigationManager navMenager
+@inject AuthenticationStateProvider AuthStateProvider
+@using Microsoft.AspNetCore.Components.Authorization
+@inject IUserService UserService
+@using ProjektINZ.Services.Contracts
 @using ProjektINZ.ViewModels
 
 <h3>Loggin</h3>
@@ -31,5 +37,65 @@
     </div>
     <button type="submit" class="btn btn-primary">Login</button>
 
+    <label for="ErrorMesage" >
+            @ErrorMesage
+        </label>
+
 </EditForm>
 
+@code {
+
+
+
+    private UserModel userModel = new UserModel();
+    public string ErrorMesage { get; set; }
+
+    public string alertMessage { get; set; }
+
+    public NavigationManager NavigationManager { get; set; }
+
+    private async void HandleLogin()
+    {
+        var userDataDto = await UserService.GetUser(userModel.Name);
+
+        if (userDataDto != null)
+        {
+            if(userModel.Password==userDataDto.UserPassword)
+
+            {
+                await localStorage.SetItemAsync<string>("username",userDataDto.UserName);
+                await localStorage.SetItemAsync<int>("userID", userDataDto.Id);
+                await AuthStateProvider.GetAuthenticationStateAsync();
+                navMenager.NavigateTo("/");
+            }
+            else
+            {
+                ErrorMesage = "wrong password or username";
+                OnInitializedAsync();
+                
+            }
+            OnInitializedAsync();
+
+                }
+                else
+                {
+                    OnInitializedAsync();
+                }
+        //
+        Console.WriteLine("Loged me in");
+        
+       
+    }
+
+    protected override Task OnInitializedAsync()
+    {
+        userModel = new UserModel();
+        return base.OnInitializedAsync();
+
+    }
+
+   
+    
+
+
+    }

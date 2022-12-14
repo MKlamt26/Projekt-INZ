@@ -39,8 +39,8 @@ namespace KalorieOnline.Api.Repositories
 
         public async Task<IEnumerable<Product>> SearchProducts(string SearchTerm)
         {
-            var products = await this.shopOnlineDbContext.Products.ToListAsync();
-            return products.Where(pr=>pr.Name.Contains(SearchTerm));
+            var products = await this.shopOnlineDbContext.Products.Where(pr => pr.Name.ToLower().Contains(SearchTerm.ToLower())).ToListAsync();
+            return products;
         }
 
        

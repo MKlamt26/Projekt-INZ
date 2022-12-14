@@ -34,7 +34,7 @@ namespace KalorieOnline.Api.Repositories.Contracts
                               select new UserData
                               {
                                   
-                                  
+                                  UserId = userDataDto.UserId,
                                   Age = userDataDto.Age,
                                   Sex = userDataDto.Sex,
                                   Activity = userDataDto.Activity,
@@ -47,25 +47,24 @@ namespace KalorieOnline.Api.Repositories.Contracts
                               }).FirstOrDefaultAsync();
 
 
-            if (item != null)
-            {
+            
                 var result = await this.shopOnlineDbContext.userDatas.AddAsync(item);
                 await this.shopOnlineDbContext.SaveChangesAsync();
                 return result.Entity;
-            }
-            return null;
+           
                
         }
 
-        public async Task<IEnumerable<UserData>> GetUserDatas()
+        public async Task<IEnumerable<UserData>> GetUserDatas(int Userid)
         {
-            var usersDatas = await this.shopOnlineDbContext.userDatas.ToListAsync();
+            var usersDatas = await this.shopOnlineDbContext.userDatas.Where(ud => ud.UserId == Userid).ToListAsync();
             return usersDatas;
         }
 
-        public async Task<UserData> GetUserData(int id)
+        public async Task<UserData> GetUserData(int Userid)
         {
-            var usersData = await shopOnlineDbContext.userDatas.FindAsync(id);
+            var usersData = await shopOnlineDbContext.userDatas.FirstOrDefaultAsync(ud => ud.UserId == Userid);
+
             return usersData;
         }
     }

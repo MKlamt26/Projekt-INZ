@@ -9,6 +9,7 @@ namespace KlalorieOnline.Models.Dtos
     public class UserDataDto
     {
         
+        public int UserId { get; set; }
         public string Sex { get; set; }
         public int Age { get; set; }
         public int Height { get; set; }

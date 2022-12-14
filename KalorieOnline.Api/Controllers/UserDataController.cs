@@ -43,12 +43,12 @@ namespace KalorieOnline.Api.Controllers
 
 
         }
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<UserDataDto>>> GetUserDatas()
+        [HttpGet("datas/{id:int}")]
+        public async Task<ActionResult<IEnumerable<UserDataDto>>> GetUserDatas(int id)
         {
             try
             {
-                var userDatas = await this.userDataRepository.GetUserDatas();
+                var userDatas = await this.userDataRepository.GetUserDatas(id);
                 
 
                 if (userDatas == null)

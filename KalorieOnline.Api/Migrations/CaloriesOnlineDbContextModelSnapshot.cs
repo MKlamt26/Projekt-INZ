@@ -236,18 +236,6 @@ namespace KalorieOnline.Api.Migrations
                     b.Property<int>("Age")
                         .HasColumnType("int");
 
-                    b.Property<double>("DailyRequirementCarbo")
-                        .HasColumnType("float");
-
-                    b.Property<double>("DailyRequirementFat")
-                        .HasColumnType("float");
-
-                    b.Property<double>("DailyRequirementKcal")
-                        .HasColumnType("float");
-
-                    b.Property<double>("DailyRequirementProtein")
-                        .HasColumnType("float");
-
                     b.Property<int>("Height")
                         .HasColumnType("int");
 

@@ -1,4 +1,5 @@
-﻿using KlalorieOnline.Models.Dtos;
+﻿using Blazored.LocalStorage;
+using KlalorieOnline.Models.Dtos;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 using ProjektINZ.Services.Contracts;
@@ -17,8 +18,10 @@ namespace ProjektINZ.Pages
 
         [Inject]
         public NavigationManager NavigationManager { get; set; }
+        [Inject]
+        public ISyncLocalStorageService localStorage { get; set; }
 
-        
+
         public CalculateCalories CalculateCalories { get; set; }
         public UserDataDto userDataDto { get; set; }
         public IEnumerable<UserDataDto> userDataDtos { get; set; }
@@ -28,10 +31,11 @@ namespace ProjektINZ.Pages
         {
             try
             {
+                userdataDto.UserId = @localStorage.GetItem<int>("userID");
+
+                await UserDataService.AddUserData(userdataDto);
                 
-                var cartItemDto = await UserDataService.AddUserData(userdataDto);
                 
-                //NavigationManager.NavigateTo("/userData");
             }
             catch (Exception)
             {
@@ -44,14 +48,9 @@ namespace ProjektINZ.Pages
         {
             try
             {
-                //CalculateCalories = await UserDataService.Calculate(HardCoded.UserDataID);
 
-                userDataDtos = await UserDataService.GetUserDatas(HardCoded.UserId);
+                userDataDtos = await UserDataService.GetUserDatas(@localStorage.GetItem<int>("userID"));
                 userDataDto = userDataDtos.Last();
-                
-                //userDataDto = await UserDataService.GetUserData(HardCoded.UserDataID);
-
-                //var cartItemDto = await UserDataService.AddUserData(userDataDto);
 
 
             }
@@ -68,10 +67,6 @@ namespace ProjektINZ.Pages
             {
                 CalculateCalories = await UserDataService.Calculate(HardCoded.UserDataID);
 
-
-
-
-
             }
             catch (Exception ex)
             {
@@ -82,11 +77,20 @@ namespace ProjektINZ.Pages
 
 
 
-        private async void OnSubmitMethod(UserDataDto userdataDto)
+        protected async Task AddData()
         {
 
+            try
+            {
+                NavigationManager.NavigateTo("/AddUserData");
 
-            var cartItemDto = await UserDataService.AddUserData(userdataDto);
+            }
+            catch (Exception ex)
+            {
+
+                ErrorMessage = ex.Message;
+            }
+            
 
 
 

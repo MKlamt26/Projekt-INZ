@@ -7,8 +7,8 @@ namespace KalorieOnline.Api.Repositories.Contracts
     public interface IUserDataRepository
     {
         Task<UserData> AddUserData(UserDataDto userDataDto);
-        Task<IEnumerable<UserData>> GetUserDatas();
-        Task<UserData> GetUserData(int id);
+        Task<IEnumerable<UserData>> GetUserDatas(int UserId);
+        Task<UserData> GetUserData(int UserId);
 
     }
 }

@@ -1,0 +1,48 @@
+﻿@page "/UserDatas"
+@using KlalorieOnline.Models.Dtos
+@using ProjektINZ.Pages
+@inherits UserDataAddBase
+
+
+
+
+<div>
+
+     <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Weight</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+      @foreach (var item in userDataDtos)
+      {
+          <tr>
+              <td>@localStorage.GetItemAsString("username")</td>
+              <td>@item.Weight</td>
+              
+          </tr>
+      }
+   
+    
+   
+  </tbody>
+</table>
+
+ </div>
+
+  <div class="row">
+ <p class="mb-4">
+              <div>
+                <button class="btn btn-success"
+                @onclick ="() => (AddData())"
+
+
+
+                
+                ><b>Dodaj nowe dane</b></button>
+            </div>
+            </p>
+ </div>

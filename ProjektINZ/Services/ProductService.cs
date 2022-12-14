@@ -66,7 +66,8 @@ namespace ProjektKalorie.Services
             }
             else
             {
-                return products.Where(pr=>pr.Name.ToLower().Contains(SearchTerm.ToLower()));
+                string test = SearchTerm.ToLower();
+                return products.Where(pr=>pr.Name.ToLower().Contains(test));
             }
         }
     }

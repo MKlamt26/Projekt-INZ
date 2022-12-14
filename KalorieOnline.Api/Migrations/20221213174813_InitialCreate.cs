@@ -78,11 +78,7 @@ namespace KalorieOnline.Api.Migrations
                     Age = table.Column<int>(type: "int", nullable: false),
                     Height = table.Column<int>(type: "int", nullable: false),
                     Weight = table.Column<double>(type: "float", nullable: false),
-                    Activity = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DailyRequirementKcal = table.Column<double>(type: "float", nullable: false),
-                    DailyRequirementFat = table.Column<double>(type: "float", nullable: false),
-                    DailyRequirementProtein = table.Column<double>(type: "float", nullable: false),
-                    DailyRequirementCarbo = table.Column<double>(type: "float", nullable: false)
+                    Activity = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {

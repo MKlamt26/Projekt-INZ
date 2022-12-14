@@ -9,9 +9,6 @@
         public int Height { get; set; }
         public double Weight { get; set; }
         public string Activity { get; set; }
-        public double DailyRequirementKcal { get; set; }
-        public double DailyRequirementFat { get; set; }
-        public double DailyRequirementProtein { get; set; }
-        public double DailyRequirementCarbo { get; set; }
+        
     }
 }
