@@ -73,9 +73,6 @@ namespace KalorieOnline.Api.Controllers
 
 
 
-
-
-
         [HttpGet("Search/{SearchTerm}")]
         public async Task<ActionResult<IEnumerable<ProductDto>>>SearchProducts(string SearchTerm)
         {

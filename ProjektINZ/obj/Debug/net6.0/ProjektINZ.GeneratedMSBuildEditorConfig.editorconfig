@@ -26,6 +26,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGF5Q2FydC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Michał/Desktop/InżynierkaMK/ProjektINZ/ProjektINZ/Pages/HomePage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZVBhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Michał/Desktop/InżynierkaMK/ProjektINZ/ProjektINZ/Pages/Login.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
@@ -38,12 +42,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdERldGFpbHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Michał/Desktop/InżynierkaMK/ProjektINZ/ProjektINZ/Pages/SignUp.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lnblVwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Michał/Desktop/InżynierkaMK/ProjektINZ/ProjektINZ/Pages/TryLogin.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHJ5TG9naW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Michał/Desktop/InżynierkaMK/ProjektINZ/ProjektINZ/Pages/UserDataAdd.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlckRhdGFBZGQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Michał/Desktop/InżynierkaMK/ProjektINZ/ProjektINZ/Pages/UserDataView.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlckRhdGFWaWV3LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Michał/Desktop/InżynierkaMK/ProjektINZ/ProjektINZ/Shared/LoginLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXExvZ2luTGF5b3V0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Michał/Desktop/InżynierkaMK/ProjektINZ/ProjektINZ/Shared/SurveyPrompt.razor]

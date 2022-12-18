@@ -1,4 +1,5 @@
 ﻿using KalorieOnline.Api.Entities;
+using KlalorieOnline.Models.Dtos;
 
 namespace KalorieOnline.Api.Repositories.Contracts
 {
@@ -7,5 +8,6 @@ namespace KalorieOnline.Api.Repositories.Contracts
 
         Task<IEnumerable<User>> GetUsers();
         Task<User> GetUser(string userName);
+        Task<User> AddUser(UserAddDto userToAddDto);
     }
 }

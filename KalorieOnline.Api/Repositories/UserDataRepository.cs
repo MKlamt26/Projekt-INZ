@@ -28,31 +28,28 @@ namespace KalorieOnline.Api.Repositories.Contracts
 
         public async Task<UserData> AddUserData(UserDataDto userDataDto)
         {
-            var item = await (from userDatas in this.shopOnlineDbContext.userDatas
-                              
-
-                              select new UserData
-                              {
-                                  
-                                  UserId = userDataDto.UserId,
-                                  Age = userDataDto.Age,
-                                  Sex = userDataDto.Sex,
-                                  Activity = userDataDto.Activity,
-                                  
-                                  Height = userDataDto.Height,
-                                  
-                                  Weight = userDataDto.Weight,
-                                  
-
-                              }).FirstOrDefaultAsync();
-
-
             
-                var result = await this.shopOnlineDbContext.userDatas.AddAsync(item);
-                await this.shopOnlineDbContext.SaveChangesAsync();
-                return result.Entity;
-           
-               
+            UserData userData = new UserData
+            {
+                
+                UserId = userDataDto.UserId,
+                Age = userDataDto.Age,
+                Sex = userDataDto.Sex,
+                Activity = userDataDto.Activity,
+                CreatedDate = userDataDto.CreatedDate,
+                Height = userDataDto.Height,
+                Goal= userDataDto.Goal,
+                Weight = userDataDto.Weight,
+
+            };
+
+            // dodaj obiekt UserData do bazy danych
+            shopOnlineDbContext.userDatas.Add(userData);
+            await shopOnlineDbContext.SaveChangesAsync();
+
+            return userData;
+
+
         }
 
         public async Task<IEnumerable<UserData>> GetUserDatas(int Userid)

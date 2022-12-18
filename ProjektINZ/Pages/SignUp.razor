@@ -1,0 +1,143 @@
+﻿@layout LoginLayout
+@inject ILocalStorageService localStorage
+@inject NavigationManager navMenager
+@inject AuthenticationStateProvider AuthStateProvider
+@using KlalorieOnline.Models.Dtos
+@using Microsoft.AspNetCore.Components.Authorization
+@inject IUserService UserService
+@using ProjektINZ.Services.Contracts
+@using ProjektINZ.ViewModels
+@page "/trysignup"
+
+<EditForm Model="userAddDto" OnSubmit="HandleSingUp">
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-dark text-white" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+
+            <div class="mb-md-5 mt-md-4 pb-5">
+
+              <h2 class="fw-bold mb-2 text-uppercase">SignUp</h2>
+              <p class="text-white-50 mb-5">Please enter your login and password!</p>
+
+              <div class="form-outline form-white mb-4">
+                  <label class="form-label" for="typeEmailX">Enter Login</label>
+                <InputText id="UserName" class="form-control" placeholder="UserName"
+                       @bind-Value="userAddDto.UserName" />
+                       <ValidationMessage For="@(() => userAddDto.UserName)" />
+                
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                  <label class="form-label" for="typePasswordX">Password</label>
+                 <InputText id="UserPassword" class="form-control" placeholder="UserPassword"
+                       @bind-Value="userAddDto.UserPassword" />
+                
+              </div>
+
+
+               <div class="form-outline form-white mb-4">
+                  <label class="form-label" for="typePasswordX">ConfirmPassword</label>
+                 <InputText id="UserPassword" class="form-control" placeholder="ConfirmUserPassword"
+                       @bind-Value="userAddDto.ConfirmPassword" />
+                
+              </div>
+              @if(ErrorMesage=="error")  
+                    {  
+<b>Passwords must be eqal</b>  
+}  
+             
+
+              <button class="btn btn-outline-light btn-lg px-5" type="submit">SingUp</button>
+
+              <div class="d-flex justify-content-center text-center mt-4 pt-1">
+                <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
+                <a href="#!" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
+                <a href="#!" class="text-white"><i class="fab fa-google fa-lg"></i></a>
+              </div>
+
+            </div>
+
+           
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</EditForm>
+
+@code {
+
+
+    private UserAddDto userAddDto = new UserAddDto();
+    public string ErrorMessage { get; set; }
+    //private UserModel userModel = new UserModel();
+    public string ErrorMesage { get; set; }
+
+    public string alertMessage { get; set; }
+
+    public NavigationManager NavigationManager { get; set; }
+
+    private async void HandleSingUp()
+    {
+        try
+        {
+            //var userDataDto = await UserService.GetUser(userAddDto.UserName);
+
+            if (true)
+            {
+                if (userAddDto.UserPassword == userAddDto.ConfirmPassword)
+
+                {
+                    await UserService.AddUser(userAddDto);
+                    navMenager.NavigateTo("/trylogin");
+                }
+                else
+                {
+                    ErrorMesage = "error";
+                    OnInitializedAsync();
+
+                }
+                OnInitializedAsync();
+
+            }
+            else
+            {
+                OnInitializedAsync();
+            }
+
+        }
+    
+        catch (Exception ex)
+            {
+
+                ErrorMessage = ex.Message;
+            }
+
+
+         
+       
+
+       
+        //
+        Console.WriteLine("Loged me in");
+        
+       
+    }
+
+    protected override Task OnInitializedAsync()
+    {
+        userAddDto = new UserAddDto();
+        return base.OnInitializedAsync();
+
+    }
+
+   
+    
+
+
+    }

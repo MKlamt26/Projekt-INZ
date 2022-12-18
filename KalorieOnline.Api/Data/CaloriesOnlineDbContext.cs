@@ -24,7 +24,6 @@ namespace KalorieOnline.Api.Data
 				Description = "jest tłuste",
 				ImageURL = "/Images/WysokoTłuszczowe/masło.jpg",
 				Calories = 5.8,
-				Qty = 100,
 				CategoryId = 1
 				
 
@@ -36,7 +35,6 @@ namespace KalorieOnline.Api.Data
 				Description = "Ma dużo węglowodanów",
 				ImageURL = "/Images/WysokoWęglowodanowe/makaronSpaghetti.jpg",
 				Calories = 3.2,
-				Qty = 45,
 				CategoryId = 2
 
 			});
@@ -47,7 +45,6 @@ namespace KalorieOnline.Api.Data
 				Description = "Ma dużo węglowodanów",
 				ImageURL = "/Images/WysokoWęglowodanowe/kajzerka.jpg",
 				Calories = 3.1,
-				Qty = 30,
 				CategoryId = 2
 
 			});
@@ -58,7 +55,6 @@ namespace KalorieOnline.Api.Data
 				Description = "Ma  dużo białka",
 				ImageURL = "/Images/WysokoBiałkowe/PierśZkurczaka.jpg",
 				Calories = 1.8,
-				Qty = 60,
 				CategoryId = 3
 
 			});

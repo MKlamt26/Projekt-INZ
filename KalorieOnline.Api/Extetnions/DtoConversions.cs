@@ -18,7 +18,6 @@ namespace KalorieOnline.Api.Extetnions
                         Description = product.Description,
                         ImageURL = product.ImageURL,
                         Calories = product.Calories,
-                        Qty = product.Qty,
                         CategoryId = product.CategoryId,
                         
                         CategoryName = productCategory.Name
@@ -58,9 +57,9 @@ namespace KalorieOnline.Api.Extetnions
                 ProductDescription = product.Description,
                 ProductImageUrl = product.ImageURL,
                 Calories = product.Calories,
-                TotalCalories = product.Calories * product.Qty,
+                TotalCalories = product.Calories * cartItem.Qty,
                 CartId = cartItem.CartId,
-                Qty = product.Qty,
+                Qty = cartItem.Qty,
 
             };
         }

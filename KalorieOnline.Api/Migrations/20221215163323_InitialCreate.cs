@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -59,7 +60,6 @@ namespace KalorieOnline.Api.Migrations
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ImageURL = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Calories = table.Column<double>(type: "float", nullable: false),
-                    Qty = table.Column<int>(type: "int", nullable: false),
                     CategoryId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -74,11 +74,13 @@ namespace KalorieOnline.Api.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<int>(type: "int", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Sex = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Age = table.Column<int>(type: "int", nullable: false),
                     Height = table.Column<int>(type: "int", nullable: false),
                     Weight = table.Column<double>(type: "float", nullable: false),
-                    Activity = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Activity = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Goal = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -121,13 +123,13 @@ namespace KalorieOnline.Api.Migrations
 
             migrationBuilder.InsertData(
                 table: "Products",
-                columns: new[] { "Id", "Calories", "CategoryId", "Description", "ImageURL", "Name", "Qty" },
+                columns: new[] { "Id", "Calories", "CategoryId", "Description", "ImageURL", "Name" },
                 values: new object[,]
                 {
-                    { 1, 5.7999999999999998, 1, "jest tłuste", "/Images/WysokoTłuszczowe/masło.jpg", "Masło", 100 },
-                    { 2, 3.2000000000000002, 2, "Ma dużo węglowodanów", "/Images/WysokoWęglowodanowe/makaronSpaghetti.jpg", "Biały makaron", 45 },
-                    { 3, 3.1000000000000001, 2, "Ma dużo węglowodanów", "/Images/WysokoWęglowodanowe/kajzerka.jpg", "Kajzerka", 30 },
-                    { 4, 1.8, 3, "Ma  dużo białka", "/Images/WysokoBiałkowe/PierśZkurczaka.jpg", "Pierś z Kurczaka", 60 }
+                    { 1, 5.7999999999999998, 1, "jest tłuste", "/Images/WysokoTłuszczowe/masło.jpg", "Masło" },
+                    { 2, 3.2000000000000002, 2, "Ma dużo węglowodanów", "/Images/WysokoWęglowodanowe/makaronSpaghetti.jpg", "Biały makaron" },
+                    { 3, 3.1000000000000001, 2, "Ma dużo węglowodanów", "/Images/WysokoWęglowodanowe/kajzerka.jpg", "Kajzerka" },
+                    { 4, 1.8, 3, "Ma  dużo białka", "/Images/WysokoBiałkowe/PierśZkurczaka.jpg", "Pierś z Kurczaka" }
                 });
 
             migrationBuilder.InsertData(

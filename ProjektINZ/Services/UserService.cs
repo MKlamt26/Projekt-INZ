@@ -44,5 +44,37 @@ namespace ProjektINZ.Services
         }
 
        
+
+        public async Task<UserAddDto> AddUser(UserAddDto userToAddDto)
+        {
+            try
+            {
+
+
+                var response = await httpClient.PostAsJsonAsync<UserAddDto>("api/User", userToAddDto);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.NoContent)
+                    {
+                        return default(UserAddDto);
+                    }
+
+                    return await response.Content.ReadFromJsonAsync<UserAddDto>();
+
+                }
+                else
+                {
+                    var message = await response.Content.ReadAsStringAsync();
+                    throw new Exception($"Http status:{response.StatusCode} Message -{message}");
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

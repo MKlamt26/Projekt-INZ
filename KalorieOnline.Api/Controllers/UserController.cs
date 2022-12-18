@@ -42,6 +42,18 @@ namespace KalorieOnline.Api.Controllers
             }
         }
 
+        [HttpPost]
+        public async Task<ActionResult<UserAddDto>> PostUser([FromBody] UserAddDto userAddDto)
+        {
+            var newUser = await this.userRepository.AddUser(userAddDto);
+
+            if (newUser == null)
+            {
+                return NoContent();
+            }
+
+            return CreatedAtAction(nameof(GetUserData), new { UserName = newUser.UserName }, newUser);
+        }
 
 
         [HttpGet]

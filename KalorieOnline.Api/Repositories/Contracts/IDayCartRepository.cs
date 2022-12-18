@@ -9,6 +9,8 @@ namespace KalorieOnline.Api.Repositories.Contracts
         Task<CartItem> UpdateQty(int id, CartItemQtyUpdateDto cartItemQtyUpdateDto);
         Task<CartItem> DeleteItem(int id);
         Task<CartItem> GetItem(int id);
+        Task<Cart> AddCart(int userId);
+        Task<Cart> GetCart(int id);
         Task<IEnumerable<CartItem>> GetItems(int userId);
     }
 }

@@ -1,0 +1,26 @@
+﻿@page "/"
+
+@inject ISyncLocalStorageService localStorage
+
+
+
+<AuthorizeView>
+        <NotAuthorized>
+        <h1> Welcome Diet Aplication, please logg in</h1>
+
+        </NotAuthorized>
+    <Authorized>
+        <h1> Welcome back, @localStorage.GetItemAsString("username") to Diet Aplication</h1>
+    </Authorized>
+
+    </AuthorizeView>
+
+    
+
+
+
+
+
+@code {
+
+}

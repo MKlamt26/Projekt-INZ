@@ -48,9 +48,27 @@ namespace ProjektINZ.Pages
         {
             try
             {
-
+                
                 userDataDtos = await UserDataService.GetUserDatas(@localStorage.GetItem<int>("userID"));
-                userDataDto = userDataDtos.Last();
+                if (userDataDtos.FirstOrDefault()!=null)
+                {
+                    userDataDto = userDataDtos.Last();
+                }
+                else
+                {
+                    userDataDto=new UserDataDto() 
+                    { Sex="man",
+                    UserId= @localStorage.GetItem<int>("userID"),
+                    Age =0,
+
+                    Height=0,
+                    Weight=0,
+                    Activity="low",
+                    Goal="GrowUp",
+                    CreatedDate=DateTime.Now,
+                    };
+                }
+                    
 
 
             }

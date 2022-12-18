@@ -1,4 +1,5 @@
-﻿using KalorieOnline.Api.Extetnions;
+﻿using KalorieOnline.Api.Entities;
+using KalorieOnline.Api.Extetnions;
 using KalorieOnline.Api.Repositories.Contracts;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -74,6 +75,50 @@ namespace KalorieOnline.Api.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
+
+        [HttpGet("/getByCartId{id:int}")]
+        public async Task<ActionResult<Cart>> GetCart(int id)
+        {
+            try
+            {
+                var cart= await this.dayCartRepository.GetCart(id);
+
+
+                if (cart == null)
+
+                {
+                    return BadRequest();
+                }
+                else
+                {
+
+                    
+                    return Ok(cart);
+                }
+            }
+            catch (Exception)
+            {
+
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error retriving data from the database");
+            }
+
+
+        }
+
+
+        [HttpPost("/postByUserId")]
+        public async Task<ActionResult<Cart>> PostUserData(int userId)
+        {
+            var newCart = await this.dayCartRepository.AddCart(userId);
+
+            if (newCart == null)
+            {
+                return NoContent();
+            }
+
+            return CreatedAtAction(nameof(GetCart), new { id = newCart.Id }, newCart);
+        }
+
         [HttpPost]
         public async Task<ActionResult<CartItemDto>> PostItem([FromBody] CartItemToAddDto cartItemToAddDto)
         {

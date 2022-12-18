@@ -109,6 +109,32 @@ namespace KalorieOnline.Api.Repositories.Contracts
             return null;
         }
 
-        
+        public async Task<Cart> AddCart(int userId)
+        {
+            var item = await(from carts in this.shopOnlineDbContext.Carts
+
+
+                             select new Cart
+                             {
+
+                                 UserId=userId,
+                                 
+                                 
+
+
+                             }).FirstOrDefaultAsync();
+
+
+
+            var result = await this.shopOnlineDbContext.Carts.AddAsync(item);
+            await this.shopOnlineDbContext.SaveChangesAsync();
+            return result.Entity;
+        }
+
+        public async Task<Cart> GetCart(int id)
+        {
+            var cart = await shopOnlineDbContext.Carts.Where(c => c.Id == id).FirstOrDefaultAsync();
+            return cart;
+        }
     }
 }

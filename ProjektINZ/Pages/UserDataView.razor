@@ -12,7 +12,9 @@
   <thead>
     <tr>
       <th scope="col">Name</th>
+      <th scope="col">Date</th>
       <th scope="col">Weight</th>
+      <th scope="col">Goal</th>
       
     </tr>
   </thead>
@@ -21,7 +23,9 @@
       {
           <tr>
               <td>@localStorage.GetItemAsString("username")</td>
+              <td>@item.CreatedDate.Date.ToString("dd-MM-yyyy")</td>
               <td>@item.Weight</td>
+              <td>@item.Goal</td>
               
           </tr>
       }

@@ -1,6 +1,7 @@
 ﻿using KalorieOnline.Api.Data;
 using KalorieOnline.Api.Entities;
 using KalorieOnline.Api.Repositories.Contracts;
+using KlalorieOnline.Models.Dtos;
 using Microsoft.EntityFrameworkCore;
 
 namespace KalorieOnline.Api.Repositories
@@ -14,6 +15,24 @@ namespace KalorieOnline.Api.Repositories
         {
             this.shopOnlineDbContext = shopOnlineDbContext;
         }
+
+        public async Task<User> AddUser(UserAddDto userToAddDto)
+        {
+            User user = new User
+            {
+              
+               UserName = userToAddDto.UserName,
+               UserPassword = userToAddDto.UserPassword,
+
+            };
+
+            // dodaj obiekt UserData do bazy danych
+            shopOnlineDbContext.Users.Add(user);
+            await shopOnlineDbContext.SaveChangesAsync();
+
+            return user;
+        }
+
         public async Task<User> GetUser(string userName)
         {
             
