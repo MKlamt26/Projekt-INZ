@@ -1,5 +1,6 @@
 ﻿using KalorieOnline.Api.Data;
 using KalorieOnline.Api.Entities;
+using KlalorieOnline.Models.Dtos;
 using Microsoft.EntityFrameworkCore;
 using ShopOnline.Models.Dtos;
 
@@ -109,7 +110,7 @@ namespace KalorieOnline.Api.Repositories.Contracts
             return null;
         }
 
-        public async Task<Cart> AddCart(int userId)
+        public async Task<Cart> AddCart(CartToAddDto cartToAddDto)
         {
             var item = await(from carts in this.shopOnlineDbContext.Carts
 
@@ -117,7 +118,7 @@ namespace KalorieOnline.Api.Repositories.Contracts
                              select new Cart
                              {
 
-                                 UserId=userId,
+                                 UserId= cartToAddDto.UserId,
                                  
                                  
 
@@ -134,6 +135,12 @@ namespace KalorieOnline.Api.Repositories.Contracts
         public async Task<Cart> GetCart(int id)
         {
             var cart = await shopOnlineDbContext.Carts.Where(c => c.Id == id).FirstOrDefaultAsync();
+            return cart;
+        }
+
+        public async Task<Cart> GetCartByUserId(int userId)
+        {
+            var cart = await shopOnlineDbContext.Carts.Where(c => c.UserId == userId).FirstOrDefaultAsync();
             return cart;
         }
     }

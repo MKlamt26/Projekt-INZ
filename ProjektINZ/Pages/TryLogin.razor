@@ -2,6 +2,7 @@
 @inject ILocalStorageService localStorage
 @inject NavigationManager navMenager
 @inject AuthenticationStateProvider AuthStateProvider
+@using KlalorieOnline.Models.Dtos
 @using Microsoft.AspNetCore.Components.Authorization
 @inject IUserService UserService
 @using ProjektINZ.Services.Contracts
@@ -34,6 +35,14 @@
                        @bind-Value="userModel.Password" />
                 
               </div>
+
+              @if(ErrorMesage=="error")  
+                    {  
+                        <div class="alert alert-danger" role="alert">    
+                            Wrong password or username!    
+                            </div>     
+
+                    }  
 
              
 
@@ -68,46 +77,66 @@
     public string ErrorMesage { get; set; }
 
     public string alertMessage { get; set; }
+    private UserDto userDto { get; set; }
 
     public NavigationManager NavigationManager { get; set; }
 
     private async void HandleLogin()
     {
-        var userDataDto = await UserService.GetUser(userModel.Name);
 
-        if (userDataDto != null)
+
+        try
         {
-            if(userModel.Password==userDataDto.UserPassword)
+            userDto = await UserService.GetUser(userModel.Name);
+
+        }
+
+
+        catch (Exception ex)
+        {
+
+            alertMessage = ex.Message;
+            //ErrorMesage = "error";
+        }
+
+
+        if (userDto != null)
+        {
+            //var userDataDto = await UserService.GetUser(userModel.Name);
+            if(userModel.Password==userDto.UserPassword)
 
             {
-                await localStorage.SetItemAsync<string>("username",userDataDto.UserName);
-                await localStorage.SetItemAsync<int>("userID", userDataDto.Id);
+                await localStorage.SetItemAsync<string>("username",userDto.UserName);
+                await localStorage.SetItemAsync<int>("userID", userDto.Id);
                 await AuthStateProvider.GetAuthenticationStateAsync();
                 navMenager.NavigateTo("/");
             }
             else
             {
-                ErrorMesage = "wrong password or username";
-                OnInitializedAsync();
-                
-            }
-            OnInitializedAsync();
+                ErrorMesage = "error";
 
+                await OnInitializedAsync();
+               
+
+            }
+            await OnInitializedAsync();
+
+        }
+        else
+        {
+            
+            ErrorMesage = "error";
+                  await  OnInitializedAsync();
+                 
                 }
-                else
-                {
-                    OnInitializedAsync();
-                }
-        //
-        Console.WriteLine("Loged me in");
-        
+
        
     }
 
-    protected override Task OnInitializedAsync()
+    protected override async Task OnInitializedAsync()
     {
-        userModel = new UserModel();
-        return base.OnInitializedAsync();
+        //userModel = new UserModel();
+        await base.OnInitializedAsync();
 
     }
 

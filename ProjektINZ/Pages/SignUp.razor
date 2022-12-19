@@ -44,10 +44,23 @@
                        @bind-Value="userAddDto.ConfirmPassword" />
                 
               </div>
+               
               @if(ErrorMesage=="error")  
                     {  
-<b>Passwords must be eqal</b>  
-}  
+                        <div class="alert alert-danger" role="alert">    
+                            Password must be eqal!    
+                            </div>     
+
+                    }  
+
+                     @if(ErrorMesage=="errorExist")  
+                    {  
+                       <div class="alert alert-danger" role="alert">    
+                            Login alreay exist!    
+                            </div>   
+
+                    }  
+                      
              
 
               <button class="btn btn-outline-light btn-lg px-5" type="submit">SingUp</button>
@@ -86,9 +99,17 @@
     {
         try
         {
-            //var userDataDto = await UserService.GetUser(userAddDto.UserName);
+            var userDataDto = await UserService.GetUser(userAddDto.UserName);
 
-            if (true)
+        }
+
+
+        catch (Exception ex)
+        {
+
+           ErrorMessage = ex.Message;
+        }
+            if (ErrorMessage!=null)
             {
                 if (userAddDto.UserPassword == userAddDto.ConfirmPassword)
 
@@ -98,41 +119,31 @@
                 }
                 else
                 {
+                    
+                    
                     ErrorMesage = "error";
-                    OnInitializedAsync();
+                    await OnInitializedAsync();
+                   
+                    
 
                 }
-                OnInitializedAsync();
+                await OnInitializedAsync();
 
             }
             else
             {
-                OnInitializedAsync();
+                ErrorMesage = "errorExist";
+                await OnInitializedAsync();
             }
 
-        }
-    
-        catch (Exception ex)
-            {
-
-                ErrorMessage = ex.Message;
-            }
-
-
-         
-       
-
-       
-        //
-        Console.WriteLine("Loged me in");
         
        
     }
 
-    protected override Task OnInitializedAsync()
+    protected override async Task OnInitializedAsync()
     {
-        userAddDto = new UserAddDto();
-        return base.OnInitializedAsync();
+        //userAddDto = new UserAddDto();
+        await base.OnInitializedAsync();
 
     }
 
