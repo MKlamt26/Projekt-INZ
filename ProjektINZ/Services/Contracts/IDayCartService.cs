@@ -1,4 +1,5 @@
-﻿using ShopOnline.Models.Dtos;
+﻿using KlalorieOnline.Models.Dtos;
+using ShopOnline.Models.Dtos;
 
 namespace ProjektINZ.Services.Contracts
 {
@@ -8,5 +9,8 @@ namespace ProjektINZ.Services.Contracts
         Task<CartItemDto> AddItem(CartItemToAddDto cartItemToAddDto);
         Task<CartItemDto> DeleteItem(int id);
         Task<CartItemDto> UpdateQty(CartItemQtyUpdateDto cartItemQtyUpdateDto);
+
+        Task<CartDto> GetCartByUserID(int UserId);
+        Task<CartToAddDto> AddCart(CartToAddDto cartToAddDto);
     }
 }

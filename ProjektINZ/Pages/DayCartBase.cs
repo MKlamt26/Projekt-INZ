@@ -1,4 +1,5 @@
 ﻿using Blazored.LocalStorage;
+using KlalorieOnline.Models.Dtos;
 using Microsoft.AspNetCore.Components;
 using ProjektINZ.Services.Contracts;
 using ShopOnline.Models.Dtos;
@@ -12,17 +13,41 @@ namespace ProjektINZ.Pages
         [Inject]
         public IEnumerable<CartItemDto> DayCartItems { get; set; }
         [Inject]
-        public ISyncLocalStorageService localStorage { get; set; }
+        public ISyncLocalStorageService synclocalStorage { get; set; }
+        [Inject]
+        public ILocalStorageService localStorage { get; set; }
         public string ErrorMessage { get; set; }
         protected string TotalCalories { get; set; }
         protected int TotalQuantity { get; set; }
-        
+        protected CartDto CartDto {get; set;}
+        protected CartToAddDto cartToAddDto { get; set;}
+        public string alertMessage { get; set; }
+
 
         protected override async Task OnInitializedAsync()
         {
             try
             {
-                DayCartItems = await DayCartService.GetItems(@localStorage.GetItem<int>("userID"));
+                CartDto = await DayCartService.GetCartByUserID(@synclocalStorage.GetItem<int>("userID"));
+            }
+            catch (Exception ex)
+            {
+                alertMessage = ex.Message;
+                
+            }
+            if (CartDto == null)
+            {
+                cartToAddDto = new CartToAddDto() { UserId = @synclocalStorage.GetItem<int>("userID") };
+           
+                await DayCartService.AddCart(cartToAddDto);
+            }
+
+
+            try
+            {
+                CartDto = await DayCartService.GetCartByUserID(@synclocalStorage.GetItem<int>("userID"));
+                await localStorage.SetItemAsync<int>("cartID", CartDto.Id);
+                DayCartItems = await DayCartService.GetItems(@synclocalStorage.GetItem<int>("userID"));
                 CalculateCartSummaryTotals();
                 
 

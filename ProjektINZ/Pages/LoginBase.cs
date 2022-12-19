@@ -40,6 +40,7 @@ namespace ProjektINZ.Pages
                     Console.WriteLine("Loged me in");
                     await localStorage.SetItemAsync<string>("username", "michal");
                     await AuthStateProvider.GetAuthenticationStateAsync();
+                    
                     NavigationManager.NavigateTo("/");
                 }
                 else

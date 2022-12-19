@@ -1,4 +1,5 @@
 ﻿
+using KlalorieOnline.Models.Dtos;
 using Newtonsoft.Json;
 using ProjektINZ.Services.Contracts;
 using ShopOnline.Models.Dtos;
@@ -14,6 +15,38 @@ namespace ProjektINZ.Services
         public DayCartService(HttpClient httpClient)
         {
             this.httpClient = httpClient;
+        }
+
+        public async Task<CartToAddDto> AddCart(CartToAddDto cartToAddDto)
+        {
+            try
+            {
+
+
+                var response = await httpClient.PostAsJsonAsync<CartToAddDto>("api/DayCart/postByUserId", cartToAddDto);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.NoContent)
+                    {
+                        return default(CartToAddDto);
+                    }
+
+                    return await response.Content.ReadFromJsonAsync<CartToAddDto>();
+
+                }
+                else
+                {
+                    var message = await response.Content.ReadAsStringAsync();
+                    throw new Exception($"Http status:{response.StatusCode} Message -{message}");
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public async Task<CartItemDto> AddItem(CartItemToAddDto cartItemToAddDto)
@@ -61,6 +94,34 @@ namespace ProjektINZ.Services
             catch (Exception)
             {
                 //Log exception
+                throw;
+            }
+        }
+
+        public async Task<CartDto> GetCartByUserID(int UserId)
+        {
+            try
+            {
+                var response = await httpClient.GetAsync($"api/DayCart/getByUserId{UserId}");
+                if (response.IsSuccessStatusCode)
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.NoContent)
+                    {
+                        return default(CartDto);
+
+                    }
+                    return await response.Content.ReadFromJsonAsync<CartDto>();
+
+                }
+                else
+                {
+                    var message = await response.Content.ReadAsStringAsync();
+                    throw new Exception(message);
+                }
+            }
+            catch (Exception)
+            {
+                //log exception
                 throw;
             }
         }

@@ -65,6 +65,8 @@
             {
                 await localStorage.SetItemAsync<string>("username",userDataDto.UserName);
                 await localStorage.SetItemAsync<int>("userID", userDataDto.Id);
+
+
                 await AuthStateProvider.GetAuthenticationStateAsync();
                 navMenager.NavigateTo("/");
             }

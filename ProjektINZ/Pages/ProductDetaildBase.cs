@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using Blazored.LocalStorage;
+using Microsoft.AspNetCore.Components;
 using ProjektINZ.Services.Contracts;
 using ProjektKalorie.Services.Contracts;
 using ShopOnline.Models.Dtos;
@@ -17,6 +18,8 @@ namespace ProjektINZ.Pages
         public IDayCartService DayCartService { get; set; }
         [Inject]
         public NavigationManager NavigationManager { get; set; }
+        [Inject]
+        public ISyncLocalStorageService synclocalStorage { get; set; }
         public ProductDto Product { get; set; }
         public string ErrorMessage { get; set; }
         protected override async Task OnInitializedAsync() // tu się dzieeje akcja
@@ -36,6 +39,7 @@ namespace ProjektINZ.Pages
         {
             try
             {
+                cartItemToAddDto.CartId = @synclocalStorage.GetItem<int>("cartID");
                 var cartItemDto=await DayCartService.AddItem(cartItemToAddDto);
                 NavigationManager.NavigateTo("/");
             }

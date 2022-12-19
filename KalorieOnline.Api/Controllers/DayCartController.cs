@@ -106,8 +106,8 @@ namespace KalorieOnline.Api.Controllers
 
         }
 
-
-        [HttpGet("/getByUserId{userId:int}")]
+        
+        [HttpGet("getByUserId{userId:int}")]
         public async Task<ActionResult<CartDto>> GetCartByUserId(int userId)
         {
             try
@@ -135,9 +135,8 @@ namespace KalorieOnline.Api.Controllers
 
 
         }
-
-
-        [HttpPost("/postByUserId")]
+        
+        [HttpPost("postByUserId")]
         public async Task<ActionResult<Cart>> PostUserData([FromBody] CartToAddDto cartToAddDto)
         {
             var newCart = await this.dayCartRepository.AddCart(cartToAddDto);
