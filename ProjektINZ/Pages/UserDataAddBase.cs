@@ -83,7 +83,7 @@ namespace ProjektINZ.Pages
         {
             try
             {
-                CalculateCalories = await UserDataService.Calculate(HardCoded.UserDataID);
+                CalculateCalories = await UserDataService.Calculate(@localStorage.GetItem<int>("userID"));
 
             }
             catch (Exception ex)

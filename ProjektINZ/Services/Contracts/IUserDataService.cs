@@ -8,6 +8,6 @@ namespace ProjektINZ.Services.Contracts
         Task<IEnumerable<UserDataDto>> GetUserDatas(int userId);
         Task<UserDataDto> GetUserData(int id);
         Task<UserDataDto> AddUserData(UserDataDto userDataDto);
-        Task<CalculateCalories> Calculate(int id);
+        Task<CalculateCalories> Calculate(int Userid);
     }
 }

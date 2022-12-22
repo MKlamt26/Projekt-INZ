@@ -97,20 +97,21 @@ namespace ProjektINZ.Services
             }
         }
 
-        public async Task<CalculateCalories> Calculate(int id)
+        public async Task<CalculateCalories> Calculate(int userId)
         {
             CalculateCalories calculateCalories = new CalculateCalories();
-            var response = await httpClient.GetAsync($"api/UserData/{id}");
-            if (response.IsSuccessStatusCode)
+            var userDataDtos = await this.httpClient.GetFromJsonAsync<IEnumerable<UserDataDto>>($"api/UserData/datas/{userId}");
+            if (userDataDtos!=null)
             {
               
-             var userDataDto=  await response.Content.ReadFromJsonAsync<UserDataDto>();
+             var userDataDto= userDataDtos.Last();
 
                 switch (userDataDto.Sex)
                 {
                     case "Woman":
                         double kcalDemandWoman = 665 + (9.6 * userDataDto.Weight) + (1.8 * userDataDto.Height) - (4.7 * userDataDto.Age);
-                        calculateCalories.DailyRequirementKcal=Math.Ceiling(KcalPAL(kcalDemandWoman, userDataDto.Activity));
+                        calculateCalories.DailyRequirementKcal = Math.Ceiling(KcalPAL(kcalDemandWoman, userDataDto.Activity));
+                        calculateCalories.DailyRequirementKcal = KcalPALGoal(calculateCalories.DailyRequirementKcal, userDataDto.Goal);
                         calculateCalories.DailyRequirementCarbo = Math.Ceiling((calculateCalories.DailyRequirementKcal * 0.5) / 4);
                         calculateCalories.DailyRequirementProtein = Math.Ceiling((calculateCalories.DailyRequirementKcal * 0.2) / 4);
                         calculateCalories.DailyRequirementFat = Math.Ceiling((calculateCalories.DailyRequirementKcal * 0.3) / 9);
@@ -118,6 +119,7 @@ namespace ProjektINZ.Services
                     case "Man":
                         double kcalDemandMan = 66 + (13.7 * userDataDto.Weight) + (5 * userDataDto.Height) - (6.8 * userDataDto.Age);
                         calculateCalories.DailyRequirementKcal = Math.Ceiling(KcalPAL(kcalDemandMan, userDataDto.Activity));
+                        calculateCalories.DailyRequirementKcal = KcalPALGoal(calculateCalories.DailyRequirementKcal, userDataDto.Goal);
 
                         calculateCalories.DailyRequirementCarbo = Math.Ceiling((calculateCalories.DailyRequirementKcal * 0.5) / 4);
 
@@ -153,6 +155,25 @@ namespace ProjektINZ.Services
             {
                 kcal = kcal * 2.0;
             }
+            return kcal;
+        }
+        private double KcalPALGoal(double kcal, string Goal)
+
+        {
+
+            if (Goal == "GainWeight")
+            {
+                kcal = kcal + 300;
+            }
+            else if (Goal == "KeepWeight")
+            {
+                return kcal;
+            }
+            else if (Goal == "LoseWeight")
+            {
+                kcal = kcal - 300;
+            }
+           
             return kcal;
         }
     }

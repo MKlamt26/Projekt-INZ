@@ -2,6 +2,8 @@
 using KlalorieOnline.Models.Dtos;
 using Microsoft.AspNetCore.Components;
 using ProjektINZ.Services.Contracts;
+using ProjektINZ.ViewModels;
+using ProjektINZ.ViewModels.Calculator;
 using ShopOnline.Models.Dtos;
 
 namespace ProjektINZ.Pages
@@ -16,11 +18,16 @@ namespace ProjektINZ.Pages
         public ISyncLocalStorageService synclocalStorage { get; set; }
         [Inject]
         public ILocalStorageService localStorage { get; set; }
+        [Inject]
+        public IUserDataService UserDataService { get; set; }
         public string ErrorMessage { get; set; }
         protected string TotalCalories { get; set; }
         protected int TotalQuantity { get; set; }
         protected CartDto CartDto {get; set;}
         protected CartToAddDto cartToAddDto { get; set;}
+        protected EatedDaily eatedDaily { get; set; }
+        protected DailyBilans dailyBilans { get; set; }
+        protected CalculateCalories calculateCalories { get; set; }
         public string alertMessage { get; set; }
 
 
@@ -45,11 +52,30 @@ namespace ProjektINZ.Pages
 
             try
             {
+                eatedDaily = new EatedDaily();
+                dailyBilans = new DailyBilans();
                 CartDto = await DayCartService.GetCartByUserID(@synclocalStorage.GetItem<int>("userID"));
                 await localStorage.SetItemAsync<int>("cartID", CartDto.Id);
                 DayCartItems = await DayCartService.GetItems(@synclocalStorage.GetItem<int>("userID"));
-                CalculateCartSummaryTotals();
-                
+                SetDailyEated();
+                await Calculate();
+                SetDailyBilans();
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                ErrorMessage = ex.Message;
+            }
+        }
+
+        protected async Task Calculate()
+        {
+            try
+            {
+                calculateCalories = await UserDataService.Calculate(synclocalStorage.GetItem<int>("userID"));
 
             }
             catch (Exception ex)
@@ -84,13 +110,9 @@ namespace ProjektINZ.Pages
                     await this.DayCartService.UpdateQty(updateItemDto);
 
 
-                    //UpdateItemTotalPrice(returnedUpdateItemDto);
+                   
                     await OnInitializedAsync();
-                    //await UpdateItemTotalPrice(returnedUpdateItemDto);
-
-                    //CartChanged();
-
-                    //await MakeUpdateQtyButtonVisible(id, false);
+                    
 
 
                 }
@@ -115,36 +137,34 @@ namespace ProjektINZ.Pages
 
         }
 
-        //private async Task UpdateItemTotalPrice(CartItemDto cartItemDto)
-        //{
-        //    var item = GetCartItem(cartItemDto.Id);
-
-        //    if (item != null)
-        //    {
-        //        item.TotalCalories = cartItemDto.Calories * cartItemDto.Qty;
-        //    }
-
-           
-
-        //}
+     
         private CartItemDto GetCartItem(int id)
         {
             return DayCartItems.FirstOrDefault(i => i.Id == id);
         }
 
-        private void CalculateCartSummaryTotals()
-        {
-            SetTotalPrice();
-            SetTotalQantity();
-        }
+     
 
-        private void SetTotalPrice()
+        private void SetDailyEated()
         {
 
-            TotalCalories = this.DayCartItems.Sum(p => p.TotalCalories).ToString()+"Kcl";
+            eatedDaily.DailyEatedKcal = this.DayCartItems.Sum(p => p.TotalCalories);
             
 
+
+
         }
+
+        private void SetDailyBilans()
+        {
+
+            
+            dailyBilans.DailyBilansKcal = eatedDaily.DailyEatedKcal - calculateCalories.DailyRequirementKcal;
+
+
+
+        }
+
 
         private void SetTotalQantity()
         {

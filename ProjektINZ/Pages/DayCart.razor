@@ -26,6 +26,58 @@ else{
     </AuthorizeView>
 
      <h3 class="mb-5">Day Cart</h3>
+
+     <div>
+
+     <table class="table">
+  <thead>
+    <tr>
+       <th scope="col">#</th>
+      <th scope="col">Kcal</th>
+      <th scope="col">Carbo</th>
+      <th scope="col">Protein</th>
+      <th scope="col">Fat</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+     
+          <tr> 
+              <th scope="row">Daily Requirement</th>
+              <td>@calculateCalories.DailyRequirementKcal</td>
+              <td>@calculateCalories.DailyRequirementCarbo</td>
+              <td>@calculateCalories.DailyRequirementProtein</td>
+              <td>@calculateCalories.DailyRequirementFat</td>
+              
+          </tr>
+
+           <tr> 
+              <th scope="row">Eated today</th>
+              <td>@eatedDaily.DailyEatedKcal</td>
+              <td>@calculateCalories.DailyRequirementCarbo</td>
+              <td>@calculateCalories.DailyRequirementProtein</td>
+              <td>@calculateCalories.DailyRequirementFat</td>
+              
+          </tr>
+
+            <tr> 
+              <th scope="row">Daily bilans</th>
+              <td>@dailyBilans.DailyBilansKcal</td>
+              <td>@calculateCalories.DailyRequirementCarbo</td>
+              <td>@calculateCalories.DailyRequirementProtein</td>
+              <td>@calculateCalories.DailyRequirementFat</td>
+              
+          </tr>
+      
+   
+    
+   
+  </tbody>
+</table>
+
+ </div>
+
+
     
       <div class = "row mb-5">
         <div class ="col-md-9">
@@ -61,7 +113,7 @@ else{
              <div class="col-md-3">
             <h5>DayCart Summary</h5>
             <div class="mt-2">
-                <div>Total eated: <b>@TotalCalories</b></div>
+                <div>Total eated: <b>@eatedDaily.DailyEatedKcal kcl</b></div>
                 <a href="addToDayCart" class="btn btn-success">
                   Add product
                 </a>
