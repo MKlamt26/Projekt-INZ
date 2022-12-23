@@ -18,6 +18,9 @@ namespace KalorieOnline.Api.Extetnions
                         Description = product.Description,
                         ImageURL = product.ImageURL,
                         Calories = product.Calories,
+                        Protein=product.Protein,
+                        Carbo=product.Carbo,
+                        Fat=product.Fat,
                         CategoryId = product.CategoryId,
                         
                         CategoryName = productCategory.Name
@@ -38,9 +41,15 @@ namespace KalorieOnline.Api.Extetnions
                        ProductDescription = product.Description,
                        ProductImageUrl = product.ImageURL,
                        Calories = product.Calories,
+                       Protein=product.Protein,
+                       Carbohydrates=product.Carbo,
+                       Fat = product.Fat,
                        CartId = cartItem.CartId,
                        Qty = cartItem.Qty,
-                       TotalCalories = product.Calories * cartItem.Qty
+                       TotalCalories = product.Calories * cartItem.Qty,
+                       TotalCarbo =product.Carbo * cartItem.Qty,
+                       TotalProtein=product.Protein * cartItem.Qty,
+                       TotalFat=product.Fat * cartItem.Qty
 
                    }).ToList();
         }
@@ -57,6 +66,12 @@ namespace KalorieOnline.Api.Extetnions
                 ProductDescription = product.Description,
                 ProductImageUrl = product.ImageURL,
                 Calories = product.Calories,
+                Protein=product.Protein,
+                Carbohydrates=product.Carbo,
+                Fat=product.Fat,
+                TotalCarbo=product.Fat*cartItem.Qty,
+                TotalProtein=product.Protein*cartItem.Qty,
+                TotalFat=product.Fat*cartItem.Qty,
                 TotalCalories = product.Calories * cartItem.Qty,
                 CartId = cartItem.CartId,
                 Qty = cartItem.Qty,

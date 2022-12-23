@@ -83,12 +83,18 @@ namespace KalorieOnline.Api.Migrations
                     b.Property<double>("Calories")
                         .HasColumnType("float");
 
+                    b.Property<double>("Carbo")
+                        .HasColumnType("float");
+
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Fat")
+                        .HasColumnType("float");
 
                     b.Property<string>("ImageURL")
                         .IsRequired()
@@ -98,6 +104,9 @@ namespace KalorieOnline.Api.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<double>("Protein")
+                        .HasColumnType("float");
+
                     b.HasKey("Id");
 
                     b.ToTable("Products");
@@ -106,38 +115,50 @@ namespace KalorieOnline.Api.Migrations
                         new
                         {
                             Id = 1,
-                            Calories = 5.7999999999999998,
+                            Calories = 7.3499999999999996,
+                            Carbo = 0.0070000000000000001,
                             CategoryId = 1,
-                            Description = "jest tłuste",
-                            ImageURL = "/Images/WysokoTłuszczowe/masło.jpg",
-                            Name = "Masło"
+                            Description = "Butter has a lot of saturated fat, limit its consumption",
+                            Fat = 0.82499999999999996,
+                            ImageURL = "/Images/HighFat/Butter.jpg",
+                            Name = "Butter",
+                            Protein = 0.0070000000000000001
                         },
                         new
                         {
                             Id = 2,
-                            Calories = 3.2000000000000002,
+                            Calories = 3.5699999999999998,
+                            Carbo = 0.87,
                             CategoryId = 2,
-                            Description = "Ma dużo węglowodanów",
-                            ImageURL = "/Images/WysokoWęglowodanowe/makaronSpaghetti.jpg",
-                            Name = "Biały makaron"
+                            Description = "Pasta contains a lot of carbohydrates",
+                            Fat = 0.021000000000000001,
+                            ImageURL = "/Images/HighCarbohydrates/Pasta.jpg",
+                            Name = "Pasta",
+                            Protein = 0.044999999999999998
                         },
                         new
                         {
                             Id = 3,
-                            Calories = 3.1000000000000001,
+                            Calories = 2.9700000000000002,
+                            Carbo = 0.56699999999999995,
                             CategoryId = 2,
-                            Description = "Ma dużo węglowodanów",
-                            ImageURL = "/Images/WysokoWęglowodanowe/kajzerka.jpg",
-                            Name = "Kajzerka"
+                            Description = "Roll has a lot of carbohydrates",
+                            Fat = 0.035999999999999997,
+                            ImageURL = "/Images/HighCarbohydrates/Roll.jpg",
+                            Name = "Roll",
+                            Protein = 0.091999999999999998
                         },
                         new
                         {
                             Id = 4,
-                            Calories = 1.8,
+                            Calories = 0.97999999999999998,
+                            Carbo = 0.0,
                             CategoryId = 3,
-                            Description = "Ma  dużo białka",
-                            ImageURL = "/Images/WysokoBiałkowe/PierśZkurczaka.jpg",
-                            Name = "Pierś z Kurczaka"
+                            Description = "Chicken breast is high in protein and low in fat",
+                            Fat = 0.012999999999999999,
+                            ImageURL = "/Images/HighProtein/ChickenBreast.jpg",
+                            Name = "Chicken breast",
+                            Protein = 0.215
                         });
                 });
 
@@ -161,22 +182,17 @@ namespace KalorieOnline.Api.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Wysoko_Tłuszczowe"
+                            Name = "High_Fat"
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Wysoko_Węglowodanowe"
+                            Name = "High_Carbo"
                         },
                         new
                         {
                             Id = 3,
-                            Name = "Wysoko_Białkowe"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "Shoes"
+                            Name = "High_protein"
                         });
                 });
 

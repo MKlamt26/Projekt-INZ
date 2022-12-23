@@ -60,6 +60,9 @@ namespace KalorieOnline.Api.Migrations
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ImageURL = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Calories = table.Column<double>(type: "float", nullable: false),
+                    Carbo = table.Column<double>(type: "float", nullable: false),
+                    Protein = table.Column<double>(type: "float", nullable: false),
+                    Fat = table.Column<double>(type: "float", nullable: false),
                     CategoryId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -115,21 +118,20 @@ namespace KalorieOnline.Api.Migrations
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
-                    { 1, "Wysoko_Tłuszczowe" },
-                    { 2, "Wysoko_Węglowodanowe" },
-                    { 3, "Wysoko_Białkowe" },
-                    { 4, "Shoes" }
+                    { 1, "High_Fat" },
+                    { 2, "High_Carbo" },
+                    { 3, "High_protein" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Products",
-                columns: new[] { "Id", "Calories", "CategoryId", "Description", "ImageURL", "Name" },
+                columns: new[] { "Id", "Calories", "Carbo", "CategoryId", "Description", "Fat", "ImageURL", "Name", "Protein" },
                 values: new object[,]
                 {
-                    { 1, 5.7999999999999998, 1, "jest tłuste", "/Images/WysokoTłuszczowe/masło.jpg", "Masło" },
-                    { 2, 3.2000000000000002, 2, "Ma dużo węglowodanów", "/Images/WysokoWęglowodanowe/makaronSpaghetti.jpg", "Biały makaron" },
-                    { 3, 3.1000000000000001, 2, "Ma dużo węglowodanów", "/Images/WysokoWęglowodanowe/kajzerka.jpg", "Kajzerka" },
-                    { 4, 1.8, 3, "Ma  dużo białka", "/Images/WysokoBiałkowe/PierśZkurczaka.jpg", "Pierś z Kurczaka" }
+                    { 1, 7.3499999999999996, 0.0070000000000000001, 1, "Butter has a lot of saturated fat, limit its consumption", 0.82499999999999996, "/Images/HighFat/Butter.jpg", "Butter", 0.0070000000000000001 },
+                    { 2, 3.5699999999999998, 0.87, 2, "Pasta contains a lot of carbohydrates", 0.021000000000000001, "/Images/HighCarbohydrates/Pasta.jpg", "Pasta", 0.044999999999999998 },
+                    { 3, 2.9700000000000002, 0.56699999999999995, 2, "Roll has a lot of carbohydrates", 0.035999999999999997, "/Images/HighCarbohydrates/Roll.jpg", "Roll", 0.091999999999999998 },
+                    { 4, 0.97999999999999998, 0.0, 3, "Chicken breast is high in protein and low in fat", 0.012999999999999999, "/Images/HighProtein/ChickenBreast.jpg", "Chicken breast", 0.215 }
                 });
 
             migrationBuilder.InsertData(

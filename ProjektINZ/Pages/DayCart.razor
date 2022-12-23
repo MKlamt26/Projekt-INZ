@@ -24,6 +24,18 @@ else{
     </Authorized>
 
     </AuthorizeView>
+    @if(calculateCalories.DailyRequirementKcal==0 ||calculateCalories.DailyRequirementKcal==null)
+    {
+        <style>
+  NavLink {
+    color: blue;
+    font-weight: bold;
+  }
+</style>
+        <h3> First add user data: <NavLink href="/AddUserData">Add User Data</NavLink></h3>
+        
+    }
+
 
      <h3 class="mb-5">Day Cart</h3>
 
@@ -53,27 +65,57 @@ else{
 
            <tr> 
               <th scope="row">Eated today</th>
-              <td>@eatedDaily.DailyEatedKcal</td>
-              <td>@calculateCalories.DailyRequirementCarbo</td>
-              <td>@calculateCalories.DailyRequirementProtein</td>
-              <td>@calculateCalories.DailyRequirementFat</td>
+              @if(eatedDaily.DailyEatedKcal>@calculateCalories.DailyRequirementKcal)
+                    {
+                        <td style="color: red;">@eatedDaily.DailyEatedKcal</td>
+                    }
+                    else
+                    {
+                        <td style="color: green ;">@eatedDaily.DailyEatedKcal</td>
+                    }
+              @if(eatedDaily.DailyEatedCarbo>@calculateCalories.DailyRequirementCarbo)
+                    {
+                        <td style="color: red;">@eatedDaily.DailyEatedCarbo</td>
+                    }
+                    else
+                    {
+                        <td style="color: green">@eatedDaily.DailyEatedCarbo</td>
+                    }
+              @if(eatedDaily.DailyEatedProtein>@calculateCalories.DailyRequirementProtein)
+                    {
+                        <td style="color: red;">@eatedDaily.DailyEatedProtein</td>
+                    }
+                    else
+                    {
+                        <td style="color: green">@eatedDaily.DailyEatedProtein</td>
+                    }
+              @if(eatedDaily.DailyEatedFat>@calculateCalories.DailyRequirementFat)
+                    {
+                        <td style="color: red;">@eatedDaily.DailyEatedFat</td>
+                    }
+                    else
+                    {
+                        <td style="color: green">@eatedDaily.DailyEatedFat</td>
+                    }
+
               
           </tr>
 
-            <tr> 
+           @* <tr> 
               <th scope="row">Daily bilans</th>
               <td>@dailyBilans.DailyBilansKcal</td>
               <td>@calculateCalories.DailyRequirementCarbo</td>
               <td>@calculateCalories.DailyRequirementProtein</td>
               <td>@calculateCalories.DailyRequirementFat</td>
               
-          </tr>
+          </tr>*@
       
    
     
    
   </tbody>
 </table>
+
 
  </div>
 
@@ -127,3 +169,4 @@ else{
 
 
 }
+

@@ -34,8 +34,11 @@ namespace ProjektINZ.Pages
                 userdataDto.UserId = @localStorage.GetItem<int>("userID");
 
                 await UserDataService.AddUserData(userdataDto);
-                
-                
+                NavigationManager.NavigateTo("UserDatas");
+
+
+
+
             }
             catch (Exception)
             {

@@ -15,7 +15,13 @@ namespace ShopOnline.Models.Dtos
         public string ProductDescription { get; set; }
         public string ProductImageUrl { get; set; }
         public double Calories { get; set; }
+        public double Carbohydrates { get; set; }
+        public double Protein { get; set; }
+        public double Fat { get; set; }
         public double TotalCalories { get; set; }
+        public double TotalCarbo { get; set; }
+        public double TotalProtein { get; set; }
+        public double TotalFat { get; set; }
         public int Qty { get; set; }
     }
 }

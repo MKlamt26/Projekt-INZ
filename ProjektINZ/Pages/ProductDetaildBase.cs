@@ -41,7 +41,7 @@ namespace ProjektINZ.Pages
             {
                 cartItemToAddDto.CartId = @synclocalStorage.GetItem<int>("cartID");
                 var cartItemDto=await DayCartService.AddItem(cartItemToAddDto);
-                NavigationManager.NavigateTo("/");
+                NavigationManager.NavigateTo("/DayCart");
             }
             catch (Exception)
             {

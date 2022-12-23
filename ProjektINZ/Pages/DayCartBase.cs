@@ -66,6 +66,7 @@ namespace ProjektINZ.Pages
             }
             catch (Exception ex)
             {
+                
 
                 ErrorMessage = ex.Message;
             }
@@ -76,10 +77,16 @@ namespace ProjektINZ.Pages
             try
             {
                 calculateCalories = await UserDataService.Calculate(synclocalStorage.GetItem<int>("userID"));
+                if(calculateCalories==null)
+                {
+                    calculateCalories = new CalculateCalories();
+                    
+                }
 
             }
             catch (Exception ex)
             {
+                calculateCalories = new CalculateCalories();
 
                 ErrorMessage = ex.Message;
             }
@@ -148,7 +155,11 @@ namespace ProjektINZ.Pages
         private void SetDailyEated()
         {
 
-            eatedDaily.DailyEatedKcal = this.DayCartItems.Sum(p => p.TotalCalories);
+            eatedDaily.DailyEatedKcal = Math.Round(this.DayCartItems.Sum(p => p.TotalCalories),1);
+            eatedDaily.DailyEatedCarbo = Math.Round(this.DayCartItems.Sum(s => s.TotalCarbo),1);
+            eatedDaily.DailyEatedProtein= Math.Round(this.DayCartItems.Sum(s=>s.TotalProtein),1);
+            eatedDaily.DailyEatedFat= Math.Round(this.DayCartItems.Sum(s=>s.TotalFat),1);
+            
             
 
 

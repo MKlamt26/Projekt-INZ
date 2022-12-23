@@ -99,39 +99,47 @@ namespace ProjektINZ.Services
 
         public async Task<CalculateCalories> Calculate(int userId)
         {
-            CalculateCalories calculateCalories = new CalculateCalories();
-            var userDataDtos = await this.httpClient.GetFromJsonAsync<IEnumerable<UserDataDto>>($"api/UserData/datas/{userId}");
-            if (userDataDtos!=null)
+            try
             {
-              
-             var userDataDto= userDataDtos.Last();
-
-                switch (userDataDto.Sex)
+                CalculateCalories calculateCalories = new CalculateCalories();
+                var userDataDtos = await this.httpClient.GetFromJsonAsync<IEnumerable<UserDataDto>>($"api/UserData/datas/{userId}");
+                if (userDataDtos != null)
                 {
-                    case "Woman":
-                        double kcalDemandWoman = 665 + (9.6 * userDataDto.Weight) + (1.8 * userDataDto.Height) - (4.7 * userDataDto.Age);
-                        calculateCalories.DailyRequirementKcal = Math.Ceiling(KcalPAL(kcalDemandWoman, userDataDto.Activity));
-                        calculateCalories.DailyRequirementKcal = KcalPALGoal(calculateCalories.DailyRequirementKcal, userDataDto.Goal);
-                        calculateCalories.DailyRequirementCarbo = Math.Ceiling((calculateCalories.DailyRequirementKcal * 0.5) / 4);
-                        calculateCalories.DailyRequirementProtein = Math.Ceiling((calculateCalories.DailyRequirementKcal * 0.2) / 4);
-                        calculateCalories.DailyRequirementFat = Math.Ceiling((calculateCalories.DailyRequirementKcal * 0.3) / 9);
-                        break;
-                    case "Man":
-                        double kcalDemandMan = 66 + (13.7 * userDataDto.Weight) + (5 * userDataDto.Height) - (6.8 * userDataDto.Age);
-                        calculateCalories.DailyRequirementKcal = Math.Ceiling(KcalPAL(kcalDemandMan, userDataDto.Activity));
-                        calculateCalories.DailyRequirementKcal = KcalPALGoal(calculateCalories.DailyRequirementKcal, userDataDto.Goal);
 
-                        calculateCalories.DailyRequirementCarbo = Math.Ceiling((calculateCalories.DailyRequirementKcal * 0.5) / 4);
+                    var userDataDto = userDataDtos.Last();
 
-                        calculateCalories.DailyRequirementProtein = Math.Ceiling((calculateCalories.DailyRequirementKcal * 0.2) / 4);
+                    switch (userDataDto.Sex)
+                    {
+                        case "Woman":
+                            double kcalDemandWoman = 665 + (9.6 * userDataDto.Weight) + (1.8 * userDataDto.Height) - (4.7 * userDataDto.Age);
+                            calculateCalories.DailyRequirementKcal = Math.Round(KcalPAL(kcalDemandWoman, userDataDto.Activity),1);
+                            calculateCalories.DailyRequirementKcal = KcalPALGoal(calculateCalories.DailyRequirementKcal, userDataDto.Goal);
+                            calculateCalories.DailyRequirementCarbo = Math.Round((calculateCalories.DailyRequirementKcal * 0.5) / (4),1 );
+                            calculateCalories.DailyRequirementProtein = Math.Round((calculateCalories.DailyRequirementKcal * 0.2) / (4),1);
+                            calculateCalories.DailyRequirementFat = Math.Round((calculateCalories.DailyRequirementKcal * 0.3) / (9),1);
+                            break;
+                        case "Man":
+                            double kcalDemandMan = 66 + (13.7 * userDataDto.Weight) + (5 * userDataDto.Height) - (6.8 * userDataDto.Age);
+                            calculateCalories.DailyRequirementKcal = Math.Round(KcalPAL(kcalDemandMan, userDataDto.Activity),1);
+                            calculateCalories.DailyRequirementKcal = KcalPALGoal(calculateCalories.DailyRequirementKcal, userDataDto.Goal);
 
-                        calculateCalories.DailyRequirementFat = Math.Ceiling((calculateCalories.DailyRequirementKcal * 0.3) / 9);
-                        break;
+                            calculateCalories.DailyRequirementCarbo = Math.Round((calculateCalories.DailyRequirementKcal * 0.5) / (4),1);
+
+                            calculateCalories.DailyRequirementProtein = Math.Round((calculateCalories.DailyRequirementKcal * 0.2) / (4),1);
+
+                            calculateCalories.DailyRequirementFat = Math.Round((calculateCalories.DailyRequirementKcal * 0.3) / (9),1);
+                            break;
+                    }
+
+
                 }
-
-
+                return calculateCalories;
             }
-            return calculateCalories;
+            catch
+            {
+                return null;
+            }
+           
         }
         private double KcalPAL(double kcal, string PALActivity)
         {

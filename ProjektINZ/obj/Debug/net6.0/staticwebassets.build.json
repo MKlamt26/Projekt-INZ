@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "eDLl2ZT+grXyQYFcPKXRtzQGJPukxt2NJiolckG7JV4=",
+  "Hash": "UYxGfTo7ThPy3b0CJgx6nLbapRtejLeDMeA3Qkpah2M=",
   "Source": "ProjektINZ",
   "BasePath": "/",
   "Mode": "Root",
@@ -7310,12 +7310,12 @@
       "OriginalItemSpec": "wwwroot\\icon-192.png"
     },
     {
-      "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\wwwroot\\Images\\WysokoBiałkowe\\PierśZkurczaka.jpg",
+      "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\wwwroot\\Images\\HighCarbohydrates\\Pasta.jpg",
       "SourceId": "ProjektINZ",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "Images/WysokoBiałkowe/PierśZkurczaka.jpg",
+      "RelativePath": "Images/HighCarbohydrates/Pasta.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -7324,15 +7324,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\WysokoBiałkowe\\PierśZkurczaka.jpg"
+      "OriginalItemSpec": "wwwroot\\Images\\HighCarbohydrates\\Pasta.jpg"
     },
     {
-      "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\wwwroot\\Images\\WysokoTłuszczowe\\masło.jpg",
+      "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\wwwroot\\Images\\HighCarbohydrates\\Roll.jpg",
       "SourceId": "ProjektINZ",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "Images/WysokoTłuszczowe/masło.jpg",
+      "RelativePath": "Images/HighCarbohydrates/Roll.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -7341,15 +7341,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\WysokoTłuszczowe\\masło.jpg"
+      "OriginalItemSpec": "wwwroot\\Images\\HighCarbohydrates\\Roll.jpg"
     },
     {
-      "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\wwwroot\\Images\\WysokoWęglowodanowe\\kajzerka.jpg",
+      "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\wwwroot\\Images\\HighFat\\Butter.jpg",
       "SourceId": "ProjektINZ",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "Images/WysokoWęglowodanowe/kajzerka.jpg",
+      "RelativePath": "Images/HighFat/Butter.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -7358,15 +7358,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\WysokoWęglowodanowe\\kajzerka.jpg"
+      "OriginalItemSpec": "wwwroot\\Images\\HighFat\\Butter.jpg"
     },
     {
-      "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\wwwroot\\Images\\WysokoWęglowodanowe\\makaronSpaghetti.jpg",
+      "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\wwwroot\\Images\\HighProtein\\ChickenBreast.jpg",
       "SourceId": "ProjektINZ",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "Images/WysokoWęglowodanowe/makaronSpaghetti.jpg",
+      "RelativePath": "Images/HighProtein/ChickenBreast.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -7375,7 +7375,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\WysokoWęglowodanowe\\makaronSpaghetti.jpg"
+      "OriginalItemSpec": "wwwroot\\Images\\HighProtein\\ChickenBreast.jpg"
     },
     {
       "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\wwwroot\\index.html",

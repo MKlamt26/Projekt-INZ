@@ -1,115 +1,10 @@
 ﻿@page "/AddUserData"
 @using KlalorieOnline.Models.Dtos
 @using ProjektINZ.Pages
+
 @inherits UserDataAddBase
 
-@*<EditForm Model="userDataDto">
-     <h3>Edit User</h3>
-    <hr />
-    
 
-    <div class="form-group row">
-        <label for="Sex" class="col-sm-2 col-form-label">
-            User Sex
-        </label>
-        <div class="form-select">
-            <InputSelect @bind-Value="userDataDto.Sex">
-                
-                <option value="Man">Man</option>
-                <option value="Woman">Woman</option>
-                
-            </InputSelect>
-        </div>
-
-         
-    </div>
-
-    
-
-
-
-
-                
-           
-    
-    <div class="form-group row">
-        <label for="Age" class="col-sm-2 col-form-label">
-            User Age
-        </label>
-        <div class="col-sm-10">
-            <InputNumber id="age" class="form-control" placeholder="Age"
-                       @bind-Value="userDataDto.Age" />
-        </div>
-
-         
-    </div>
-
-
-    <div class="form-group row">
-        <label for="Height" class="col-sm-2 col-form-label">
-            User Height
-        </label>
-        <div class="col-sm-10">
-            <InputNumber id="height" class="form-control" placeholder="Height"
-                       @bind-Value="userDataDto.Height" />
-        </div>
-
-         
-    </div>
-
-
-    <div class="form-group row">
-        <label for="Weight" class="col-sm-2 col-form-label">
-            User Weight
-        </label>
-        <div class="col-sm-10">
-            <InputNumber id="weight" class="form-control" placeholder="Weight"
-                       @bind-Value="userDataDto.Weight" />
-        </div>
-
-         
-    </div>
-
-    <div class="form-group row">
-        <label for="Activity" class="col-sm-2 col-form-label">
-            User Activity
-        </label>
-        <div class="col-sm-10">
-             <InputSelect @bind-Value="userDataDto.Activity">
-                
-                <option value="Lackofphysicalactivity">Lack of physical activity</option>
-                <option value="Lightactivity">Light activity</option>
-                <option value="Averageactivity">Lacko fphysical activity</option>
-                <option value="Highactivity">High activity</option>
-                <option value="Veryhighphysicalactivity">Very high physical activity</option>
-               
-                
-            </InputSelect>
-        </div>
-
-         
-    </div>
-
-     <div class="form-group row">
-        <label for="Goal" class="col-sm-2 col-form-label">
-            User Goal
-        </label>
-        <div class="col-sm-10">
-            <InputSelect @bind-Value="userDataDto.Goal">
-                
-                <option value="GrowUp">GrowUp</option>
-                <option value="LoseWeight">LoseWeight</option>
-                
-            </InputSelect>
-        </div>
-
-         
-    </div>
-
-
-
-
-    </EditForm>*@
    <EditForm Model="userDataDto">
    <div class="form-group">
     <label for="userSex">User Sex</label>
@@ -179,7 +74,7 @@ CreatedDate=DateTime.Now
  </div>
 
 
- <div class="row">
+@* <div class="row">
  <p class="mb-4">
               <div>
                 <button class="btn btn-success"
@@ -192,11 +87,11 @@ CreatedDate=DateTime.Now
             </div>
             </p>
  </div>
-
+*@
 
 
     
-@if (CalculateCalories != null)
+@*@if (CalculateCalories != null)
 {
     <div class="row">
  <p class="mb-4">
@@ -228,7 +123,7 @@ CreatedDate=DateTime.Now
             </p>
  </div>
 
-}
+}*@
 
 
 

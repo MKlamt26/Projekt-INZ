@@ -1,5 +1,6 @@
 ﻿@inject ILocalStorageService LocalStorage
 @inject AuthenticationStateProvider AuthStateProvider
+@inject NavigationManager navigationManager
 
 <div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
@@ -86,9 +87,11 @@
     {
         await LocalStorage.RemoveItemAsync("userID");
         await LocalStorage.RemoveItemAsync("username");
-        
+        //await LocalStorage.RemoveItemAsync("cartID");
 
         
+
         await AuthStateProvider.GetAuthenticationStateAsync();
+        navigationManager.NavigateTo("/");
     }
 }

@@ -20,10 +20,13 @@ namespace KalorieOnline.Api.Data
 			modelBuilder.Entity<Product>().HasData(new Product
 			{
 				Id = 1,
-				Name = "Masło",
-				Description = "jest tłuste",
-				ImageURL = "/Images/WysokoTłuszczowe/masło.jpg",
-				Calories = 5.8,
+				Name = "Butter",
+				Description = "Butter has a lot of saturated fat, limit its consumption",
+				ImageURL = "/Images/HighFat/Butter.jpg",
+				Calories = 7.35,
+				Carbo=0.007,
+				Protein=0.007,
+				Fat=0.825,
 				CategoryId = 1
 				
 
@@ -31,30 +34,39 @@ namespace KalorieOnline.Api.Data
 			modelBuilder.Entity<Product>().HasData(new Product
 			{
 				Id = 2,
-				Name = "Biały makaron",
-				Description = "Ma dużo węglowodanów",
-				ImageURL = "/Images/WysokoWęglowodanowe/makaronSpaghetti.jpg",
-				Calories = 3.2,
+				Name = "Pasta",
+				Description = "Pasta contains a lot of carbohydrates",
+				ImageURL = "/Images/HighCarbohydrates/Pasta.jpg",
+				Calories = 3.57,
+				Carbo = 0.87,
+				Protein = 0.045,
+				Fat = 0.021,
 				CategoryId = 2
 
 			});
 			modelBuilder.Entity<Product>().HasData(new Product
 			{
 				Id = 3,
-				Name = "Kajzerka",
-				Description = "Ma dużo węglowodanów",
-				ImageURL = "/Images/WysokoWęglowodanowe/kajzerka.jpg",
-				Calories = 3.1,
+				Name = "Roll",
+				Description = "Roll has a lot of carbohydrates",
+				ImageURL = "/Images/HighCarbohydrates/Roll.jpg",
+				Calories = 2.97,
+				Carbo = 0.567,
+				Protein = 0.092,
+				Fat = 0.036,
 				CategoryId = 2
 
 			});
 			modelBuilder.Entity<Product>().HasData(new Product
 			{
 				Id = 4,
-				Name = "Pierś z Kurczaka",
-				Description = "Ma  dużo białka",
-				ImageURL = "/Images/WysokoBiałkowe/PierśZkurczaka.jpg",
-				Calories = 1.8,
+				Name = "Chicken breast",
+				Description = "Chicken breast is high in protein and low in fat",
+				ImageURL = "/Images/HighProtein/ChickenBreast.jpg",
+				Calories = 0.98,
+				Carbo = 0.0,
+				Protein = 0.215,
+				Fat = 0.013,
 				CategoryId = 3
 
 			});
@@ -84,23 +96,19 @@ namespace KalorieOnline.Api.Data
 			modelBuilder.Entity<ProductCategory>().HasData(new ProductCategory
 			{
 				Id = 1,
-				Name = "Wysoko_Tłuszczowe"
+				Name = "High_Fat"
 			});
 			modelBuilder.Entity<ProductCategory>().HasData(new ProductCategory
 			{
 				Id = 2,
-				Name = "Wysoko_Węglowodanowe"
+				Name = "High_Carbo"
 			});
 			modelBuilder.Entity<ProductCategory>().HasData(new ProductCategory
 			{
 				Id = 3,
-				Name = "Wysoko_Białkowe"
+				Name = "High_protein"
 			});
-			modelBuilder.Entity<ProductCategory>().HasData(new ProductCategory
-			{
-				Id = 4,
-				Name = "Shoes"
-			});
+			
 
 
 			// Users Acounts
