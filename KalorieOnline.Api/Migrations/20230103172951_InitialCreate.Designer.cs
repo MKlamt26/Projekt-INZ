@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KalorieOnline.Api.Migrations
 {
     [DbContext(typeof(CaloriesOnlineDbContext))]
-    [Migration("20221230191737_InitialCreate")]
+    [Migration("20230103172951_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -41,20 +41,6 @@ namespace KalorieOnline.Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Carts");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedDate = new DateTime(2022, 12, 30, 20, 17, 37, 220, DateTimeKind.Local).AddTicks(6408),
-                            UserId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CreatedDate = new DateTime(2022, 12, 30, 20, 17, 37, 220, DateTimeKind.Local).AddTicks(6486),
-                            UserId = 2
-                        });
                 });
 
             modelBuilder.Entity("KalorieOnline.Api.Entities.CartItem", b =>

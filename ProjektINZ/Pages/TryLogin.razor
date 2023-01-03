@@ -78,6 +78,7 @@
 
     public string alertMessage { get; set; }
     private UserDto userDto { get; set; }
+   
 
     public NavigationManager NavigationManager { get; set; }
 
@@ -108,6 +109,7 @@
             {
                 await localStorage.SetItemAsync<string>("username",userDto.UserName);
                 await localStorage.SetItemAsync<int>("userID", userDto.Id);
+                
                 
                 await AuthStateProvider.GetAuthenticationStateAsync();
                 navMenager.NavigateTo("/");

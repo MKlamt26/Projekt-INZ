@@ -79,12 +79,12 @@ namespace KalorieOnline.Api.Repositories.Contracts
                           }).SingleOrDefaultAsync();
         }
 
-        public async Task<IEnumerable<CartItem>> GetItems(int userId)
+        public async Task<IEnumerable<CartItem>> GetItems(int cartId)
         {
             return await (from cart in this.caloriesOnlineDbContext.Carts
                            join cartItem in this.caloriesOnlineDbContext.CartItems
                            on cart.Id equals cartItem.CartId
-                           where cart.UserId==userId
+                           where cart.Id== cartId
                           select new CartItem
                           {
                               Id= cartItem.Id,
@@ -112,23 +112,16 @@ namespace KalorieOnline.Api.Repositories.Contracts
 
         public async Task<Cart> AddCart(CartToAddDto cartToAddDto)
         {
-            var item = await(from carts in this.caloriesOnlineDbContext.Carts
-
-
-                             select new Cart
-                             {
-
-                                 UserId= cartToAddDto.UserId,
-                                 CreatedDate= cartToAddDto.CreatedDate,
-                                 
-                                 
-
-
-                             }).FirstOrDefaultAsync();
+            Cart cart = new Cart()
+            {
+                UserId = cartToAddDto.UserId,
+                CreatedDate = cartToAddDto.CreatedDate,
+            };
+           
 
 
 
-            var result = await this.caloriesOnlineDbContext.Carts.AddAsync(item);
+            var result = await this.caloriesOnlineDbContext.Carts.AddAsync(cart);
             await this.caloriesOnlineDbContext.SaveChangesAsync();
             return result.Entity;
         }

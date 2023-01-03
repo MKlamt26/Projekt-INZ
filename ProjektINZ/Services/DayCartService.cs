@@ -126,11 +126,11 @@ namespace ProjektINZ.Services
             }
         }
 
-        public async Task<IEnumerable<CartItemDto>> GetItems(int userId)
+        public async Task<IEnumerable<CartItemDto>> GetItems(int cartId)
         {
             try
             {
-                var response = await httpClient.GetAsync($"api/DayCart/{userId}/GetItems");
+                var response = await httpClient.GetAsync($"api/DayCart/{cartId}/GetItems");
 
                 if (response.IsSuccessStatusCode)
                 {

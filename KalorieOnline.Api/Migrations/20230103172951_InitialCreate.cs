@@ -106,15 +106,6 @@ namespace KalorieOnline.Api.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Carts",
-                columns: new[] { "Id", "CreatedDate", "UserId" },
-                values: new object[,]
-                {
-                    { 1, new DateTime(2022, 12, 30, 20, 17, 37, 220, DateTimeKind.Local).AddTicks(6408), 1 },
-                    { 2, new DateTime(2022, 12, 30, 20, 17, 37, 220, DateTimeKind.Local).AddTicks(6486), 2 }
-                });
-
-            migrationBuilder.InsertData(
                 table: "ProductCategories",
                 columns: new[] { "Id", "Name" },
                 values: new object[,]

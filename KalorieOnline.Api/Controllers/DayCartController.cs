@@ -23,13 +23,13 @@ namespace KalorieOnline.Api.Controllers
         }
 
         [HttpGet]
-        [Route("{userId}/GetItems")]
+        [Route("{cartId}/GetItems")]
 
-        public async Task<ActionResult<IEnumerable<CartItemDto>>> GetItems(int userId)
+        public async Task<ActionResult<IEnumerable<CartItemDto>>> GetItems(int cartId)
         {
             try
             {
-                var cartItems = await this.dayCartRepository.GetItems(userId);
+                var cartItems = await this.dayCartRepository.GetItems(cartId);
                 if (cartItems==null)
                 {
                     return NoContent();

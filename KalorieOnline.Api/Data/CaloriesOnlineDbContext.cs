@@ -80,20 +80,20 @@ namespace KalorieOnline.Api.Data
 
 
 			//Create Day Cart for Users
-			modelBuilder.Entity<Cart>().HasData(new Cart
-			{
-				Id = 1,
-				UserId = 1,
-				CreatedDate=DateTime.Now
+			//modelBuilder.Entity<Cart>().HasData(new Cart
+			//{
+			//	Id = 1,
+			//	UserId = 1,
+			//	CreatedDate=DateTime.Now
 
-			});
-			modelBuilder.Entity<Cart>().HasData(new Cart
-			{
-				Id = 2,
-				UserId = 2,
-				CreatedDate = DateTime.Now
+			//});
+			//modelBuilder.Entity<Cart>().HasData(new Cart
+			//{
+			//	Id = 2,
+			//	UserId = 2,
+			//	CreatedDate = DateTime.Now
 
-			});
+			//});
 			//Add Product Categories
 			modelBuilder.Entity<ProductCategory>().HasData(new ProductCategory
 			{

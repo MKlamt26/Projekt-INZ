@@ -30,40 +30,32 @@ namespace ProjektINZ.Pages
         protected DailyBilans dailyBilans { get; set; }
         protected CalculateCalories calculateCalories { get; set; }
         public string alertMessage { get; set; }
-        protected DateTime SelectedDate { get; set; }
+        
         protected IEnumerable<CartDto> userCartsDtos { get; set; }
-        protected DateTime selectedDate=DateTime.Now;
+        protected DateTime selectedDate { get; set; }
         protected DateTime minDate = new DateTime(2020, 1, 1);
         protected DateTime maxDate = new DateTime(2022, 12, 31);
+        
 
 
 
 
         protected override async Task OnInitializedAsync()
         {
+            
             try
             {
+                
                 userCartsDtos =await DayCartService.GetUserCarts(@synclocalStorage.GetItem<int>("userID"));
-                //CartDto = await DayCartService.GetCartByUserID(@synclocalStorage.GetItem<int>("userID"));
+                selectedDate = @synclocalStorage.GetItem<DateTime>("dataTime");
+                if(selectedDate == DateTime.MinValue )
+                {
+                    selectedDate = DateTime.Now;
+                }
                 eatedDaily = new EatedDaily();
                 dailyBilans = new DailyBilans();
-                CartDto = userCartsDtos.SingleOrDefault(uc => uc.CreatedDate.Date == DateTime.Now.Date);
-                if(CartDto != null)
-                {
-                    await localStorage.SetItemAsync<int>("cartID", CartDto.Id);
-                    DayCartItems = await DayCartService.GetItems(@synclocalStorage.GetItem<int>("userID"));
-                    SetDailyEated();
-                    await Calculate();
-                    SetDailyBilans();
-                }
-                else
-                {
-                    cartToAddDto = new CartToAddDto() { UserId = @synclocalStorage.GetItem<int>("userID"), CreatedDate = DateTime.Now };
-
-
-                    await DayCartService.AddCart(cartToAddDto);
-                    await OnInitializedAsync();
-                }
+                CartDto = userCartsDtos.SingleOrDefault(uc => uc.CreatedDate.Date == selectedDate.Date);
+                
              
             }
             catch (Exception ex)
@@ -71,9 +63,25 @@ namespace ProjektINZ.Pages
                 alertMessage = ex.Message;
                 
             }
+            if (CartDto != null)
+            {
+                await localStorage.SetItemAsync<int>("cartID", CartDto.Id);
+                DayCartItems = await DayCartService.GetItems(@synclocalStorage.GetItem<int>("cartID"));
+                SetDailyEated();
+                await Calculate();
+                SetDailyBilans();
+            }
+            else
+            {
+                cartToAddDto = new CartToAddDto() { UserId = @synclocalStorage.GetItem<int>("userID"), CreatedDate = selectedDate };
+
+
+                await DayCartService.AddCart(cartToAddDto);
+                await OnInitializedAsync();
+            }
             if (userCartsDtos == null)
             {
-                cartToAddDto = new CartToAddDto() { UserId = @synclocalStorage.GetItem<int>("userID"),CreatedDate=DateTime.Now };
+                cartToAddDto = new CartToAddDto() { UserId = @synclocalStorage.GetItem<int>("userID"),CreatedDate= selectedDate };
                 
            
                 await DayCartService.AddCart(cartToAddDto);
@@ -81,26 +89,7 @@ namespace ProjektINZ.Pages
           
 
 
-            //try
-            //{
-            //    eatedDaily = new EatedDaily();
-            //    dailyBilans = new DailyBilans();
-            //    CartDto = await DayCartService.GetCartByUserID(@synclocalStorage.GetItem<int>("userID"));
-            //    await localStorage.SetItemAsync<int>("cartID", CartDto.Id);
-            //    DayCartItems = await DayCartService.GetItems(@synclocalStorage.GetItem<int>("userID"));
-            //    SetDailyEated();
-            //    await Calculate();
-            //    SetDailyBilans();
-
-
-
-            //}
-            //catch (Exception ex)
-            //{
-                
-
-            //    ErrorMessage = ex.Message;
-            //}
+  
         }
 
         protected async Task Calculate()
@@ -175,7 +164,27 @@ namespace ProjektINZ.Pages
 
         }
 
-     
+        protected async Task ShowDayCartClick(DateTime dateTime)
+        {
+            try
+            {
+                //selectedDate = dateTime;
+                await localStorage.SetItemAsync<DateTime>("dataTime", dateTime);
+
+
+                await OnInitializedAsync();
+
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+
         private CartItemDto GetCartItem(int id)
         {
             return DayCartItems.FirstOrDefault(i => i.Id == id);
