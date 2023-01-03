@@ -12,5 +12,6 @@ namespace ProjektINZ.Services.Contracts
 
         Task<CartDto> GetCartByUserID(int UserId);
         Task<CartToAddDto> AddCart(CartToAddDto cartToAddDto);
+        Task<IEnumerable<CartDto>> GetUserCarts(int userId);
     }
 }

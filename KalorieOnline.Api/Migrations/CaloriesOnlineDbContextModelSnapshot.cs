@@ -30,6 +30,9 @@ namespace KalorieOnline.Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
@@ -41,11 +44,13 @@ namespace KalorieOnline.Api.Migrations
                         new
                         {
                             Id = 1,
+                            CreatedDate = new DateTime(2022, 12, 30, 20, 17, 37, 220, DateTimeKind.Local).AddTicks(6408),
                             UserId = 1
                         },
                         new
                         {
                             Id = 2,
+                            CreatedDate = new DateTime(2022, 12, 30, 20, 17, 37, 220, DateTimeKind.Local).AddTicks(6486),
                             UserId = 2
                         });
                 });

@@ -30,7 +30,8 @@ namespace KalorieOnline.Api.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UserId = table.Column<int>(type: "int", nullable: false)
+                    UserId = table.Column<int>(type: "int", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -106,11 +107,11 @@ namespace KalorieOnline.Api.Migrations
 
             migrationBuilder.InsertData(
                 table: "Carts",
-                columns: new[] { "Id", "UserId" },
+                columns: new[] { "Id", "CreatedDate", "UserId" },
                 values: new object[,]
                 {
-                    { 1, 1 },
-                    { 2, 2 }
+                    { 1, new DateTime(2022, 12, 30, 20, 17, 37, 220, DateTimeKind.Local).AddTicks(6408), 1 },
+                    { 2, new DateTime(2022, 12, 30, 20, 17, 37, 220, DateTimeKind.Local).AddTicks(6486), 2 }
                 });
 
             migrationBuilder.InsertData(

@@ -8,11 +8,11 @@ namespace KalorieOnline.Api.Repositories.Contracts
 {
     public class DayCartRepository : IDayCartRepository
     {
-        private readonly CaloriesOnlineDbContext shopOnlineDbContext;
+        private readonly CaloriesOnlineDbContext caloriesOnlineDbContext;
 
-        public DayCartRepository(CaloriesOnlineDbContext shopOnlineDbContext)
+        public DayCartRepository(CaloriesOnlineDbContext caloriesOnlineDbContext)
         {
-            this.shopOnlineDbContext = shopOnlineDbContext;
+            this.caloriesOnlineDbContext = caloriesOnlineDbContext;
         }
 
        
@@ -21,7 +21,7 @@ namespace KalorieOnline.Api.Repositories.Contracts
         {
             return false;
 
-            //return await this.shopOnlineDbContext.CartItems.AnyAsync(c => c.CartId == cartId &&
+            //return await this.caloriesOnlineDbContext.CartItems.AnyAsync(c => c.CartId == cartId &&
             //                                                         c.ProductId == productId);
 
         }
@@ -30,7 +30,7 @@ namespace KalorieOnline.Api.Repositories.Contracts
             if (await CartItemExists(cartItemToAddDto.CartId, cartItemToAddDto.ProductId) == false)
             {
 
-                var item = await (from product in this.shopOnlineDbContext.Products
+                var item = await (from product in this.caloriesOnlineDbContext.Products
                                   where product.Id == cartItemToAddDto.ProductId
                                   select new CartItem
                                   {
@@ -41,8 +41,8 @@ namespace KalorieOnline.Api.Repositories.Contracts
 
                 if (item != null)
                 {
-                    var result = await this.shopOnlineDbContext.CartItems.AddAsync(item);
-                    await this.shopOnlineDbContext.SaveChangesAsync();
+                    var result = await this.caloriesOnlineDbContext.CartItems.AddAsync(item);
+                    await this.caloriesOnlineDbContext.SaveChangesAsync();
                     return result.Entity;
                 }
             }
@@ -53,12 +53,12 @@ namespace KalorieOnline.Api.Repositories.Contracts
 
         public async Task<CartItem> DeleteItem(int id)
         {
-            var item = await this.shopOnlineDbContext.CartItems.FindAsync(id);
+            var item = await this.caloriesOnlineDbContext.CartItems.FindAsync(id);
 
             if (item !=null)
             {
-                this.shopOnlineDbContext.CartItems.Remove(item);
-                await this.shopOnlineDbContext.SaveChangesAsync();
+                this.caloriesOnlineDbContext.CartItems.Remove(item);
+                await this.caloriesOnlineDbContext.SaveChangesAsync();
             }
             return item;
 
@@ -66,8 +66,8 @@ namespace KalorieOnline.Api.Repositories.Contracts
 
         public async Task<CartItem> GetItem(int id)
         {
-            return await (from cart in this.shopOnlineDbContext.Carts
-                          join cartItem in this.shopOnlineDbContext.CartItems
+            return await (from cart in this.caloriesOnlineDbContext.Carts
+                          join cartItem in this.caloriesOnlineDbContext.CartItems
                           on cart.Id equals cartItem.CartId
                           where cartItem.Id == id
                           select new CartItem
@@ -81,8 +81,8 @@ namespace KalorieOnline.Api.Repositories.Contracts
 
         public async Task<IEnumerable<CartItem>> GetItems(int userId)
         {
-            return await (from cart in this.shopOnlineDbContext.Carts
-                           join cartItem in this.shopOnlineDbContext.CartItems
+            return await (from cart in this.caloriesOnlineDbContext.Carts
+                           join cartItem in this.caloriesOnlineDbContext.CartItems
                            on cart.Id equals cartItem.CartId
                            where cart.UserId==userId
                           select new CartItem
@@ -99,12 +99,12 @@ namespace KalorieOnline.Api.Repositories.Contracts
 
         public async Task<CartItem> UpdateQty(int id, CartItemQtyUpdateDto cartItemQtyUpdateDto)
         {
-            var item = await this.shopOnlineDbContext.CartItems.FindAsync(id);
+            var item = await this.caloriesOnlineDbContext.CartItems.FindAsync(id);
 
             if (item !=null)
             {
                 item.Qty = cartItemQtyUpdateDto.Qty;
-                await this.shopOnlineDbContext.SaveChangesAsync();
+                await this.caloriesOnlineDbContext.SaveChangesAsync();
                 return item;
             }
             return null;
@@ -112,13 +112,14 @@ namespace KalorieOnline.Api.Repositories.Contracts
 
         public async Task<Cart> AddCart(CartToAddDto cartToAddDto)
         {
-            var item = await(from carts in this.shopOnlineDbContext.Carts
+            var item = await(from carts in this.caloriesOnlineDbContext.Carts
 
 
                              select new Cart
                              {
 
                                  UserId= cartToAddDto.UserId,
+                                 CreatedDate= cartToAddDto.CreatedDate,
                                  
                                  
 
@@ -127,21 +128,27 @@ namespace KalorieOnline.Api.Repositories.Contracts
 
 
 
-            var result = await this.shopOnlineDbContext.Carts.AddAsync(item);
-            await this.shopOnlineDbContext.SaveChangesAsync();
+            var result = await this.caloriesOnlineDbContext.Carts.AddAsync(item);
+            await this.caloriesOnlineDbContext.SaveChangesAsync();
             return result.Entity;
         }
 
         public async Task<Cart> GetCart(int id)
         {
-            var cart = await shopOnlineDbContext.Carts.Where(c => c.Id == id).FirstOrDefaultAsync();
+            var cart = await caloriesOnlineDbContext.Carts.Where(c => c.Id == id).FirstOrDefaultAsync();
             return cart;
         }
 
         public async Task<Cart> GetCartByUserId(int userId)
         {
-            var cart = await shopOnlineDbContext.Carts.Where(c => c.UserId == userId).FirstOrDefaultAsync();
+            var cart = await caloriesOnlineDbContext.Carts.Where(c => c.UserId == userId).FirstOrDefaultAsync();
             return cart;
+        }
+
+        public async Task<IEnumerable<Cart>> GetUserCarts(int UserId)
+        {
+            var usersDatas = await this.caloriesOnlineDbContext.Carts.Where(ud => ud.UserId == UserId).ToListAsync();
+            return usersDatas;
         }
     }
 }

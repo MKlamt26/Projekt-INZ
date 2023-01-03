@@ -3,6 +3,7 @@
 @inject ISyncLocalStorageService localStorage
 
 
+
 @if (DayCartItems == null && ErrorMessage == null)
 {
     <DisplaySpinner></DisplaySpinner>
@@ -38,8 +39,25 @@ else{
 
 
      <h3 class="mb-5">Day Cart</h3>
+       <EditForm Model="CartDto">
+   <div class="form-group">
+    <label for="userSex">User Sex</label>
+     <div class="col-sm-10">
+    <InputDate @bind-Value="CartDto.CreatedDate" Format="yyyy-MM-dd" Min="@minDate" Max="@maxDate" class="form-control" />
+    </div>
+  </div>
+ 
+ 
+  
+    </EditForm>
+    
 
      <div>
+         
+         
+
+     
+        
 
      <table class="table">
   <thead>

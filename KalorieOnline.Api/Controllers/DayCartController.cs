@@ -51,6 +51,11 @@ namespace KalorieOnline.Api.Controllers
             }
         }
 
+
+
+
+
+
         [HttpGet("{id:int}")]
         public async Task<ActionResult<CartItemDto>> GetItem(int id)
         {
@@ -106,7 +111,37 @@ namespace KalorieOnline.Api.Controllers
 
         }
 
-        
+
+       
+        [HttpGet("getCartsByUserId{userId:int}")]
+        public async Task<ActionResult<IEnumerable<CartDto>>> GetUserCarts(int userId)
+        {
+            try
+            {
+                var userDatas = await this.dayCartRepository.GetUserCarts(userId);
+
+
+                if (userDatas == null)
+
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    var userDatatasDto = userDatas;
+                    return Ok(userDatatasDto);
+                }
+            }
+            catch (Exception)
+            {
+
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error retriving data from the database");
+            }
+
+
+        }
+
+
         [HttpGet("getByUserId{userId:int}")]
         public async Task<ActionResult<CartDto>> GetCartByUserId(int userId)
         {

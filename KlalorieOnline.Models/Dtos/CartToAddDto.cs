@@ -10,5 +10,6 @@ namespace KlalorieOnline.Models.Dtos
     {
 
         public int UserId { get; set; }
+        public DateTime CreatedDate { get; set; }
     }
 }

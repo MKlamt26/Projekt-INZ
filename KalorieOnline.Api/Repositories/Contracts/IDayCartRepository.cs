@@ -14,5 +14,6 @@ namespace KalorieOnline.Api.Repositories.Contracts
         Task<Cart> GetCart(int id);
         Task<Cart> GetCartByUserId(int userId);
         Task<IEnumerable<CartItem>> GetItems(int userId);
+        Task<IEnumerable<Cart>> GetUserCarts(int UserId);
     }
 }

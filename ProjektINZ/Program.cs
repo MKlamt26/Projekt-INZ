@@ -9,6 +9,8 @@ using ProjektINZ.Services.Contracts;
 using ProjektKalorie.Services;
 using ProjektKalorie.Services.Contracts;
 
+
+
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
@@ -22,5 +24,7 @@ builder.Services.AddOptions();
 builder.Services.AddAuthorizationCore();
 builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthStateProvider>();
 builder.Services.AddScoped<IUserService, UserService>();
+
+
 
 await builder.Build().RunAsync();

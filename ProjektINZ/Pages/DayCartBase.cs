@@ -6,6 +6,7 @@ using ProjektINZ.ViewModels;
 using ProjektINZ.ViewModels.Calculator;
 using ShopOnline.Models.Dtos;
 
+
 namespace ProjektINZ.Pages
 {
     public class DayCartBase:ComponentBase
@@ -21,7 +22,7 @@ namespace ProjektINZ.Pages
         [Inject]
         public IUserDataService UserDataService { get; set; }
         public string ErrorMessage { get; set; }
-        protected string TotalCalories { get; set; }
+        protected string TotalCalories { get; set; }   
         protected int TotalQuantity { get; set; }
         protected CartDto CartDto {get; set;}
         protected CartToAddDto cartToAddDto { get; set;}
@@ -29,47 +30,77 @@ namespace ProjektINZ.Pages
         protected DailyBilans dailyBilans { get; set; }
         protected CalculateCalories calculateCalories { get; set; }
         public string alertMessage { get; set; }
+        protected DateTime SelectedDate { get; set; }
+        protected IEnumerable<CartDto> userCartsDtos { get; set; }
+        protected DateTime selectedDate=DateTime.Now;
+        protected DateTime minDate = new DateTime(2020, 1, 1);
+        protected DateTime maxDate = new DateTime(2022, 12, 31);
+
+
 
 
         protected override async Task OnInitializedAsync()
         {
             try
             {
-                CartDto = await DayCartService.GetCartByUserID(@synclocalStorage.GetItem<int>("userID"));
+                userCartsDtos =await DayCartService.GetUserCarts(@synclocalStorage.GetItem<int>("userID"));
+                //CartDto = await DayCartService.GetCartByUserID(@synclocalStorage.GetItem<int>("userID"));
+                eatedDaily = new EatedDaily();
+                dailyBilans = new DailyBilans();
+                CartDto = userCartsDtos.SingleOrDefault(uc => uc.CreatedDate.Date == DateTime.Now.Date);
+                if(CartDto != null)
+                {
+                    await localStorage.SetItemAsync<int>("cartID", CartDto.Id);
+                    DayCartItems = await DayCartService.GetItems(@synclocalStorage.GetItem<int>("userID"));
+                    SetDailyEated();
+                    await Calculate();
+                    SetDailyBilans();
+                }
+                else
+                {
+                    cartToAddDto = new CartToAddDto() { UserId = @synclocalStorage.GetItem<int>("userID"), CreatedDate = DateTime.Now };
+
+
+                    await DayCartService.AddCart(cartToAddDto);
+                    await OnInitializedAsync();
+                }
+             
             }
             catch (Exception ex)
             {
                 alertMessage = ex.Message;
                 
             }
-            if (CartDto == null)
+            if (userCartsDtos == null)
             {
-                cartToAddDto = new CartToAddDto() { UserId = @synclocalStorage.GetItem<int>("userID") };
+                cartToAddDto = new CartToAddDto() { UserId = @synclocalStorage.GetItem<int>("userID"),CreatedDate=DateTime.Now };
+                
            
                 await DayCartService.AddCart(cartToAddDto);
             }
+          
 
 
-            try
-            {
-                eatedDaily = new EatedDaily();
-                dailyBilans = new DailyBilans();
-                CartDto = await DayCartService.GetCartByUserID(@synclocalStorage.GetItem<int>("userID"));
-                await localStorage.SetItemAsync<int>("cartID", CartDto.Id);
-                DayCartItems = await DayCartService.GetItems(@synclocalStorage.GetItem<int>("userID"));
-                SetDailyEated();
-                await Calculate();
-                SetDailyBilans();
+            //try
+            //{
+            //    eatedDaily = new EatedDaily();
+            //    dailyBilans = new DailyBilans();
+            //    CartDto = await DayCartService.GetCartByUserID(@synclocalStorage.GetItem<int>("userID"));
+            //    await localStorage.SetItemAsync<int>("cartID", CartDto.Id);
+            //    DayCartItems = await DayCartService.GetItems(@synclocalStorage.GetItem<int>("userID"));
+            //    SetDailyEated();
+            //    await Calculate();
+            //    SetDailyBilans();
 
 
 
-            }
-            catch (Exception ex)
-            {
+            //}
+            //catch (Exception ex)
+            //{
                 
 
-                ErrorMessage = ex.Message;
-            }
+            //    ErrorMessage = ex.Message;
+            //}
         }
 
         protected async Task Calculate()

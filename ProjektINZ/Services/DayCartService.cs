@@ -154,6 +154,20 @@ namespace ProjektINZ.Services
             }
         }
 
+        public async Task<IEnumerable<CartDto>> GetUserCarts(int UserId)
+        {
+            try
+            {
+                var userDataDtos = await this.httpClient.GetFromJsonAsync<IEnumerable<CartDto>>($"api/DayCart/getCartsByUserId{UserId}");
+                return userDataDtos;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public async Task<CartItemDto> UpdateQty(CartItemQtyUpdateDto cartItemQtyUpdateDto)
         {
             try
