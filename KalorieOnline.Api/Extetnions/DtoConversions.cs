@@ -96,6 +96,7 @@ namespace KalorieOnline.Api.Extetnions
                         Description = exercise.Description,                                               
                         CategoryId = exercise.CategoryId,
                         CategoryName= exercisCategory.Name,
+                        Weight=exercise.Weight,
                         Name=exercise.Name,
                         Sets=exercise.Sets,
                         Repetitions=exercise.Repetitions,
@@ -116,8 +117,9 @@ namespace KalorieOnline.Api.Extetnions
                         ExerciseId= treningCartItem.ExerciseId,
                         Name= exercise.Name,
                         Description= exercise.Description,
-                        Sets= exercise.Sets,
-                        Repetitions= exercise.Repetitions,
+                        Weight= treningCartItem.Weight,
+                        Sets= treningCartItem.Sets,
+                        Repetitions= treningCartItem.Repetitions,
                         CartId= treningCartItem.CartId,
                         
 
@@ -135,9 +137,10 @@ namespace KalorieOnline.Api.Extetnions
                 Id = treningCartItem.Id,
                 ExerciseId = treningCartItem.ExerciseId,
                 Name = exercise.Name,
+                Weight= treningCartItem.Weight,
                 Description = exercise.Description,
-                Sets = exercise.Sets,
-                Repetitions = exercise.Repetitions,
+                Sets = treningCartItem.Sets,
+                Repetitions = treningCartItem.Repetitions,
                 CartId= treningCartItem.CartId
 
             };

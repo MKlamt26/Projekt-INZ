@@ -59,6 +59,7 @@ namespace KalorieOnline.Api.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Weight = table.Column<int>(type: "int", nullable: false),
                     Sets = table.Column<int>(type: "int", nullable: false),
                     Repetitions = table.Column<int>(type: "int", nullable: false),
                     CategoryId = table.Column<int>(type: "int", nullable: false)
@@ -109,6 +110,7 @@ namespace KalorieOnline.Api.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CartId = table.Column<int>(type: "int", nullable: false),
                     ExerciseId = table.Column<int>(type: "int", nullable: false),
+                    Weight = table.Column<int>(type: "int", nullable: false),
                     Sets = table.Column<int>(type: "int", nullable: false),
                     Repetitions = table.Column<int>(type: "int", nullable: false)
                 },
@@ -176,12 +178,13 @@ namespace KalorieOnline.Api.Migrations
 
             migrationBuilder.InsertData(
                 table: "Exercises",
-                columns: new[] { "Id", "CategoryId", "Description", "Name", "Repetitions", "Sets" },
+                columns: new[] { "Id", "CategoryId", "Description", "Name", "Repetitions", "Sets", "Weight" },
                 values: new object[,]
                 {
-                    { 1, 1, "The deadlift is a multi-joint exercise involving multiple muscle groups", "deadlift", 1, 1 },
-                    { 2, 1, "An exercise involving the gluteal muscles as well as the muscles of the thighs and calves", "squats", 1, 1 },
-                    { 3, 2, "Pushups are an exercise in which a person, keeping a prone position, with the hands palms down under the shoulders, the balls of the feet on the ground, and the back straight, pushes the body up and lets it down by an alternate straightening and bending of the arms.", "push-ups", 1, 1 }
+                    { 1, 1, "The deadlift is a multi-joint exercise involving multiple muscle groups", "deadlift", 1, 1, 100 },
+                    { 2, 1, "An exercise involving the gluteal muscles as well as the muscles of the thighs and calves", "squats", 1, 1, 80 },
+                    { 3, 2, "Pushups are an exercise in which a person, keeping a prone position, with the hands palms down under the shoulders, the balls of the feet on the ground, and the back straight, pushes the body up and lets it down by an alternate straightening and bending of the arms.", "push-ups", 1, 1, 0 },
+                    { 4, 2, "Abdominal crunches are designed to tone the core muscles of the body. The exercise aids in strengthening the core muscles, improving the posture, and increasing the mobility and flexibility of the muscles.", "crunches ", 1, 1, 0 }
                 });
 
             migrationBuilder.InsertData(
@@ -208,7 +211,7 @@ namespace KalorieOnline.Api.Migrations
             migrationBuilder.InsertData(
                 table: "TreningCarts",
                 columns: new[] { "Id", "CreatedDate", "UserId" },
-                values: new object[] { 1, new DateTime(2023, 1, 7, 22, 13, 32, 334, DateTimeKind.Local).AddTicks(8073), 1 });
+                values: new object[] { 1, new DateTime(2023, 1, 9, 13, 38, 49, 851, DateTimeKind.Local).AddTicks(3818), 1 });
 
             migrationBuilder.InsertData(
                 table: "Users",

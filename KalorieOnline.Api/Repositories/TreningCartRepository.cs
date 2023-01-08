@@ -77,7 +77,10 @@ namespace KalorieOnline.Api.Repositories
                          {
                              Id = treningCartItem.Id,
                              ExerciseId = treningCartItem.ExerciseId,
-                             CartId = treningCartItem.CartId
+                             CartId = treningCartItem.CartId,
+                             Weight=treningCartItem.Weight,
+                             Sets=treningCartItem.Sets,
+                             Repetitions=treningCartItem.Repetitions
 
 
 
@@ -95,7 +98,10 @@ namespace KalorieOnline.Api.Repositories
                              Id = treningCartItem.Id,
                              ExerciseId = treningCartItem.ExerciseId,
                              CartId = treningCartItem.Id,
-                             
+                             Weight = treningCartItem.Weight,
+                             Sets = treningCartItem.Sets,
+                             Repetitions = treningCartItem.Repetitions
+
                          }).SingleOrDefaultAsync();
         }
 
@@ -117,9 +123,12 @@ namespace KalorieOnline.Api.Repositories
 
             if (exercise != null)
             {
+                
                 exercise.Sets = treningCartUpdateDto.Sets;
                 exercise.Repetitions = treningCartUpdateDto.Repetitions;
-                
+                exercise.Weight = treningCartUpdateDto.Wight;
+
+
                 await this.caloriesOnlineDbContext.SaveChangesAsync();
                 return exercise;
             }

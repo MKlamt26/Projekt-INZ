@@ -126,6 +126,7 @@ namespace KalorieOnline.Api.Data
 				Id=1,
 				Name= "deadlift",
 				Description= "The deadlift is a multi-joint exercise involving multiple muscle groups",
+				Weight=100,
 				Sets=1,
 				Repetitions=1,
 				CategoryId=1
@@ -136,6 +137,7 @@ namespace KalorieOnline.Api.Data
 				Id = 2,
 				Name = "squats",
 				Description = "An exercise involving the gluteal muscles as well as the muscles of the thighs and calves",
+				Weight=80,
 				Sets = 1,
 				Repetitions = 1,
 				CategoryId = 1
@@ -147,10 +149,22 @@ namespace KalorieOnline.Api.Data
 				Name = "push-ups",
 				Description = "Pushups are an exercise in which a person, keeping a prone position, with the hands palms down under the shoulders," +
                 " the balls of the feet on the ground, and the back straight, pushes the body up and lets it down by an alternate straightening and bending of the arms.",
+				Weight=0,
 				Sets = 1,
 				Repetitions = 1,
 				CategoryId=2
 			});
+			modelBuilder.Entity<Exercise>().HasData(new Exercise
+			{
+				Id = 4,
+				Name = "crunches ",
+				Description = "Abdominal crunches are designed to tone the core muscles of the body. The exercise aids in strengthening the core muscles, " +
+                "improving the posture, and increasing the mobility and flexibility of the muscles.",
+				Sets = 1,
+				Repetitions = 1,
+				CategoryId = 2
+			});
+
 
 
 			// Exercise category

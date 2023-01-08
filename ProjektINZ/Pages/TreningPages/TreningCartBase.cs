@@ -18,14 +18,17 @@ namespace ProjektINZ.Pages.TreningPages
         public ILocalStorageService localStorage { get; set; }
         [Inject]
         public IUserDataService userDataService { get; set; }
+        [Inject]
+        public NavigationManager navigationManager { get; set; }
         public string errorMessage { get; set; }
-        
-        
+
+
         protected TreningCartDto treningCartDto { get; set; }
         protected TreningCartToAddDto treningCartToAddDto { get; set; }
-       
-        
+
+        protected TreningCartItemDto selectedExercise { get; set; }
         public string alertMessage { get; set; }
+        public int SelectedexerciseId { get; set; }
 
         protected IEnumerable<TreningCartDto> userTreningCartsDto { get; set; }
         protected DateTime selectedDate { get; set; }
@@ -58,7 +61,7 @@ namespace ProjektINZ.Pages.TreningPages
             {
                 await localStorage.SetItemAsync<int>("cartID", treningCartDto.Id);
                 treningCartItemDtos = await treningCartService.GetExercises(@synclocalStorage.GetItem<int>("cartID"));
-                
+
             }
             else
             {
@@ -103,25 +106,43 @@ namespace ProjektINZ.Pages.TreningPages
             }
         }
 
+        protected async Task EditSelectedExercie_Click(TreningCartItemDto exercise)
+        {
+            selectedExercise= exercise;
+            OnInitializedAsync();
 
 
-        protected async Task UpdateTreningCart_Click(int id, int sets,int repetitions)
+            //navigationManager.NavigateTo("/EditExercise");
+        }
+
+        protected async Task EditExercise_Click(TreningCartItemDto exercise)
+        {
+            selectedExercise = exercise;
+            OnInitializedAsync();
+
+
+           
+        }
+
+
+        protected async Task UpdateTreningCart_Click(int id, int weight, int sets, int repetitions)
         {
             try
             {
-                if (sets > 0 && repetitions>0)
+                if (sets > 0 && repetitions > 0)
                 {
                     var updateItemDto = new TreningCartUpdateDto
                     {
                         TreningCartItemId = id,
-                        Sets= sets,
-                        Repetitions= repetitions
-                        
+                        Wight= weight,
+                        Sets = sets,
+                        Repetitions = repetitions
+
                     };
 
                     await this.treningCartService.UpdateTreningCart(updateItemDto);
 
-
+                    selectedExercise =null;
 
                     await OnInitializedAsync();
 
@@ -136,7 +157,7 @@ namespace ProjektINZ.Pages.TreningPages
                     {
                         item.Sets = 1;
                         item.Repetitions = 1;
-                        
+
                     }
 
                 }
@@ -164,3 +185,4 @@ namespace ProjektINZ.Pages.TreningPages
 
     }
 }
+

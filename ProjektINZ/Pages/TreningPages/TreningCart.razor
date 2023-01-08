@@ -13,6 +13,49 @@ else if (errorMessage != null)
 {
     <DisplayError ErrorMessage ="@errorMessage"></DisplayError>
 }
+else if(selectedExercise!=null)
+{
+
+     <div class ="col-md-3 mb-2">
+                        
+
+                           
+                             <EditForm Model="selectedExercise">
+   <p>Exercise name: @selectedExercise.Name </p>
+  <div class="form-group">
+    <label for="exerciseWeight">Exercise weight</label>
+    <input type="number" class="form-control" id="userAge" name="exerciseWeight in Kg" @bind=selectedExercise.Weight />
+  </div>
+  <div class="form-group">
+    <label for="numberOfSets">Number od sets</label>
+    <input type="number" class="form-control" id="userHeight" name="numberOfSets" @bind=selectedExercise.Sets />
+  </div>
+  <div class="form-group">
+    <label for="numberOfReps">Number od repetions</label>
+    <input type="number" class="form-control" id="userWeight" name="numberOfReps" @bind=selectedExercise.Repetitions />
+  </div>
+ 
+  
+    </EditForm>
+                            
+                               
+
+                           
+                        
+                        </div>
+
+
+                         <div class="row">
+ <p class="mb-4">
+              <div>
+                <button class="btn btn-success"
+                @onclick ="() => (UpdateTreningCart_Click(selectedExercise.Id,selectedExercise.Weight,selectedExercise.Sets,selectedExercise.Repetitions))"
+                ><b>Edit exercise</b></button>
+            </div>
+            </p>
+ </div>
+    
+}
 
 else{
     <AuthorizeView>
@@ -63,13 +106,15 @@ else{
     <div class="card mb-3">
         <div class="card-body">
             <h5 class="card-title">@exercise.Name</h5>
-            <h6 class="card-subtitle mb-2 text-muted">@exercise.CategoryName</h6>
+            <h6 class="card-subtitle mb-2 text-muted">@exercise.Name</h6>
             <p class="card-text">@exercise.Description</p>
+            <p>Weight: @exercise.Weight</p>
             <p>Number of sets: @exercise.Sets</p>
             <p>Number of repetitions: @exercise.Repetitions</p>
+            <p>Number of repetitions: @exercise.Repetitions</p>
             <button class="btn btn-info btn-sm"
-                                @onclick="(() => UpdateTreningCart_Click(exercise.Id, exercise.Sets,exercise.Repetitions))"
-                            >Update Exercise</button>
+                                @onclick="(() => EditExercise_Click(exercise))"
+                            >Edit Exercise</button>
         </div>
     </div>
 }
@@ -88,7 +133,9 @@ else{
         </div>
 
 
+        
 
+        
 
 
 

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KalorieOnline.Api.Migrations
 {
     [DbContext(typeof(CaloriesOnlineDbContext))]
-    [Migration("20230106211332_InitialCreate")]
+    [Migration("20230108123850_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -90,6 +90,9 @@ namespace KalorieOnline.Api.Migrations
                     b.Property<int>("Sets")
                         .HasColumnType("int");
 
+                    b.Property<int>("Weight")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.ToTable("Exercises");
@@ -102,7 +105,8 @@ namespace KalorieOnline.Api.Migrations
                             Description = "The deadlift is a multi-joint exercise involving multiple muscle groups",
                             Name = "deadlift",
                             Repetitions = 1,
-                            Sets = 1
+                            Sets = 1,
+                            Weight = 100
                         },
                         new
                         {
@@ -111,7 +115,8 @@ namespace KalorieOnline.Api.Migrations
                             Description = "An exercise involving the gluteal muscles as well as the muscles of the thighs and calves",
                             Name = "squats",
                             Repetitions = 1,
-                            Sets = 1
+                            Sets = 1,
+                            Weight = 80
                         },
                         new
                         {
@@ -120,7 +125,18 @@ namespace KalorieOnline.Api.Migrations
                             Description = "Pushups are an exercise in which a person, keeping a prone position, with the hands palms down under the shoulders, the balls of the feet on the ground, and the back straight, pushes the body up and lets it down by an alternate straightening and bending of the arms.",
                             Name = "push-ups",
                             Repetitions = 1,
-                            Sets = 1
+                            Sets = 1,
+                            Weight = 0
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CategoryId = 2,
+                            Description = "Abdominal crunches are designed to tone the core muscles of the body. The exercise aids in strengthening the core muscles, improving the posture, and increasing the mobility and flexibility of the muscles.",
+                            Name = "crunches ",
+                            Repetitions = 1,
+                            Sets = 1,
+                            Weight = 0
                         });
                 });
 
@@ -299,7 +315,7 @@ namespace KalorieOnline.Api.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 1, 7, 22, 13, 32, 334, DateTimeKind.Local).AddTicks(8073),
+                            CreatedDate = new DateTime(2023, 1, 9, 13, 38, 49, 851, DateTimeKind.Local).AddTicks(3818),
                             UserId = 1
                         });
                 });
@@ -322,6 +338,9 @@ namespace KalorieOnline.Api.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("Sets")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Weight")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
