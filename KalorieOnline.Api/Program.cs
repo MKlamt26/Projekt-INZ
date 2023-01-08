@@ -20,6 +20,8 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>(); // addScope
 builder.Services.AddScoped<IDayCartRepository, DayCartRepository>();
 builder.Services.AddScoped<IUserDataRepository, UserDataRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IExerciseRepository, ExerciseRepository>();
+builder.Services.AddScoped<ITreningCartRepository, TreningCartRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

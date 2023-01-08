@@ -63,6 +63,94 @@ namespace KalorieOnline.Api.Migrations
                     b.ToTable("CartItems");
                 });
 
+            modelBuilder.Entity("KalorieOnline.Api.Entities.Exercise", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Repetitions")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Sets")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Exercises");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CategoryId = 1,
+                            Description = "The deadlift is a multi-joint exercise involving multiple muscle groups",
+                            Name = "deadlift",
+                            Repetitions = 1,
+                            Sets = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CategoryId = 1,
+                            Description = "An exercise involving the gluteal muscles as well as the muscles of the thighs and calves",
+                            Name = "squats",
+                            Repetitions = 1,
+                            Sets = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CategoryId = 2,
+                            Description = "Pushups are an exercise in which a person, keeping a prone position, with the hands palms down under the shoulders, the balls of the feet on the ground, and the back straight, pushes the body up and lets it down by an alternate straightening and bending of the arms.",
+                            Name = "push-ups",
+                            Repetitions = 1,
+                            Sets = 1
+                        });
+                });
+
+            modelBuilder.Entity("KalorieOnline.Api.Entities.ExerciseCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ExerciseCategory");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Weight training"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Own bodyweight training"
+                        });
+                });
+
             modelBuilder.Entity("KalorieOnline.Api.Entities.Product", b =>
                 {
                     b.Property<int>("Id")
@@ -185,6 +273,58 @@ namespace KalorieOnline.Api.Migrations
                             Id = 3,
                             Name = "High_protein"
                         });
+                });
+
+            modelBuilder.Entity("KalorieOnline.Api.Entities.TreningCart", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TreningCarts");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedDate = new DateTime(2023, 1, 7, 22, 13, 32, 334, DateTimeKind.Local).AddTicks(8073),
+                            UserId = 1
+                        });
+                });
+
+            modelBuilder.Entity("KalorieOnline.Api.Entities.TreningCartItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("CartId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ExerciseId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Repetitions")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Sets")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TreningCartItems");
                 });
 
             modelBuilder.Entity("KalorieOnline.Api.Entities.User", b =>

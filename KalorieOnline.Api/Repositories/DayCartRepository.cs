@@ -103,6 +103,7 @@ namespace KalorieOnline.Api.Repositories.Contracts
 
             if (item !=null)
             {
+
                 item.Qty = cartItemQtyUpdateDto.Qty;
                 await this.caloriesOnlineDbContext.SaveChangesAsync();
                 return item;

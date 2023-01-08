@@ -210,15 +210,15 @@
       "mscorlib.dll": "sha256-Q4A\/043fz702a7DDbm+JAtMHV3jKAZ9k8khztTMKp2M=",
       "netstandard.dll": "sha256-W9cwgVmBZsddVw3WVFMC5Gya92UufvbVTNR4+u7pnR0=",
       "System.Private.CoreLib.dll": "sha256-KVnZkFos\/ML\/3S2isVijfmFZXO4zEQeCga6BZvGdTbY=",
-      "KlalorieOnline.Models.dll": "sha256-vI8\/Ibsw6c4VbMh5XYDGJonfDFIbtBXNcKsUOhlayDQ=",
-      "ProjektINZ.dll": "sha256-IAvOaDE9ypjvtUJ5G4KW+P\/NIiQeSn4JwTWeFhmUFoY="
+      "KlalorieOnline.Models.dll": "sha256-Pg60eOCuZbDdgtzXblmGKyTtbvWkvWX28AVWPFm3fwE=",
+      "ProjektINZ.dll": "sha256-W5La7orGiz0Fm2LbF4uqGjrRtVMqbyC7Vz7ksIzMxqk="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "KlalorieOnline.Models.pdb": "sha256-mhXtnE8+kaNe3lEAO4hjrosFvtmN5cYhfgvjl+RIMHM=",
-      "ProjektINZ.pdb": "sha256-NQpV9A\/DygKorE9MkD5rv8ho0WIzas+NjpPENEb3\/3o="
+      "KlalorieOnline.Models.pdb": "sha256-Y3DlfbyE\/ifA6InYwfngb5CpY9kyA5qQAPY1LtQbAfE=",
+      "ProjektINZ.pdb": "sha256-+h7GBdogE4TNXDUBz+sKc\/\/zdIi6HlRE1uFwNtaCPOY="
     },
     "runtime": {
       "dotnet.6.0.4.nm888b1oec.js": "sha256-WYno\/cK5MDsl5yi4T\/\/QgUskbBfhLL77i+c0uKzO9+c=",

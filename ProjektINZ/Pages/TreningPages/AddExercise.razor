@@ -1,0 +1,38 @@
+﻿@page "/AddExercise"
+@using KlalorieOnline.Models.Dtos.TreningDtos
+@using ProjektINZ.Pages.TreningPages
+@using ShopOnline.Models.Dtos
+@inject ILocalStorageService localStorage
+
+@inherits AddExerciseBase
+
+@if(exerciseSDtos==null && ErrorMessage==null)
+{
+    <DisplaySpinner></DisplaySpinner>
+}
+else if(ErrorMessage!=null)
+{
+    <h3 class="text-danger">@ErrorMessage</h3>
+}
+else
+{
+   @foreach (var exercise in exerciseSDtos)
+{
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">@exercise.Name</h5>
+            <h6 class="card-subtitle mb-2 text-muted">@exercise.CategoryName</h6>
+            <p class="card-text">@exercise.Description</p>
+            
+            <button class="btn btn-success"
+                @onclick ="() => (AddToTreningCart_Click(new TreningCartItemToAddDto{
+                    
+                   ExerciseId=exercise.Id,
+                   
+                }))"
+                ><b>Add to Trening Cart</b></button>
+        </div>
+    </div>
+}
+   
+}

@@ -8,11 +8,11 @@ namespace KalorieOnline.Api.Repositories.Contracts
 {
     public class UserDataRepository : IUserDataRepository
     {
-        private readonly CaloriesOnlineDbContext shopOnlineDbContext;
+        private readonly CaloriesOnlineDbContext caloriesOnlineDbContext;
 
-        public UserDataRepository(CaloriesOnlineDbContext shopOnlineDbContext)
+        public UserDataRepository(CaloriesOnlineDbContext caloriesOnlineDbContext)
         {
-            this.shopOnlineDbContext = shopOnlineDbContext;
+            this.caloriesOnlineDbContext = caloriesOnlineDbContext;
         }
 
        
@@ -44,8 +44,8 @@ namespace KalorieOnline.Api.Repositories.Contracts
             };
 
             // dodaj obiekt UserData do bazy danych
-            shopOnlineDbContext.userDatas.Add(userData);
-            await shopOnlineDbContext.SaveChangesAsync();
+            caloriesOnlineDbContext.userDatas.Add(userData);
+            await caloriesOnlineDbContext.SaveChangesAsync();
 
             return userData;
 
@@ -54,13 +54,13 @@ namespace KalorieOnline.Api.Repositories.Contracts
 
         public async Task<IEnumerable<UserData>> GetUserDatas(int Userid)
         {
-            var usersDatas = await this.shopOnlineDbContext.userDatas.Where(ud => ud.UserId == Userid).ToListAsync();
+            var usersDatas = await this.caloriesOnlineDbContext.userDatas.Where(ud => ud.UserId == Userid).ToListAsync();
             return usersDatas;
         }
 
         public async Task<UserData> GetUserData(int Userid)
         {
-            var usersData = await shopOnlineDbContext.userDatas.FirstOrDefaultAsync(ud => ud.UserId == Userid);
+            var usersData = await caloriesOnlineDbContext.userDatas.FirstOrDefaultAsync(ud => ud.UserId == Userid);
 
             return usersData;
         }

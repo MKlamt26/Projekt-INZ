@@ -7,39 +7,39 @@ namespace KalorieOnline.Api.Repositories
 {
     public class ProductRepository : IProductRepository
     {
-        private readonly CaloriesOnlineDbContext shopOnlineDbContext;
+        private readonly CaloriesOnlineDbContext caloriesOnlineDbContext;
 
-        public ProductRepository(CaloriesOnlineDbContext shopOnlineDbContext)
+        public ProductRepository(CaloriesOnlineDbContext caloriesOnlineDbContext)
         {
-            this.shopOnlineDbContext = shopOnlineDbContext;
+            this.caloriesOnlineDbContext = caloriesOnlineDbContext;
         }
         public async Task<IEnumerable<ProductCategory>> GetCategories()
         {
-            var categories = await this.shopOnlineDbContext.ProductCategories.ToListAsync();
+            var categories = await this.caloriesOnlineDbContext.ProductCategories.ToListAsync();
             return categories;
         }
 
         public async Task<ProductCategory> GetCategory(int id)
         {
-            var category = await shopOnlineDbContext.ProductCategories.SingleOrDefaultAsync(c => c.Id == id);
+            var category = await caloriesOnlineDbContext.ProductCategories.SingleOrDefaultAsync(c => c.Id == id);
             return category;
         }
 
         public async Task<Product> GetItem(int id)
         {
-            var product =await shopOnlineDbContext.Products.FindAsync(id);
+            var product =await caloriesOnlineDbContext.Products.FindAsync(id);
             return product;
         }
 
         public async Task<IEnumerable<Product>> GetItems()
         {
-            var products = await this.shopOnlineDbContext.Products.ToListAsync();
+            var products = await this.caloriesOnlineDbContext.Products.ToListAsync();
             return products;
         }
 
         public async Task<IEnumerable<Product>> SearchProducts(string SearchTerm)
         {
-            var products = await this.shopOnlineDbContext.Products.Where(pr => pr.Name.ToLower().Contains(SearchTerm.ToLower())).ToListAsync();
+            var products = await this.caloriesOnlineDbContext.Products.Where(pr => pr.Name.ToLower().Contains(SearchTerm.ToLower())).ToListAsync();
             return products;
         }
 

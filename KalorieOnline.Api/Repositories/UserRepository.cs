@@ -9,11 +9,11 @@ namespace KalorieOnline.Api.Repositories
     public class UserRepository : IUserRepository
     {
 
-        private readonly CaloriesOnlineDbContext shopOnlineDbContext;
+        private readonly CaloriesOnlineDbContext caloriesOnlineDbContext;
 
-        public UserRepository(CaloriesOnlineDbContext shopOnlineDbContext)
+        public UserRepository(CaloriesOnlineDbContext caloriesOnlineDbContext)
         {
-            this.shopOnlineDbContext = shopOnlineDbContext;
+            this.caloriesOnlineDbContext = caloriesOnlineDbContext;
         }
 
         public async Task<User> AddUser(UserAddDto userToAddDto)
@@ -27,8 +27,8 @@ namespace KalorieOnline.Api.Repositories
             };
 
             // dodaj obiekt UserData do bazy danych
-            shopOnlineDbContext.Users.Add(user);
-            await shopOnlineDbContext.SaveChangesAsync();
+            caloriesOnlineDbContext.Users.Add(user);
+            await caloriesOnlineDbContext.SaveChangesAsync();
 
             return user;
         }
@@ -36,13 +36,13 @@ namespace KalorieOnline.Api.Repositories
         public async Task<User> GetUser(string userName)
         {
             
-            var user = await shopOnlineDbContext.Users.Where(u => u.UserName == userName).FirstOrDefaultAsync();
+            var user = await caloriesOnlineDbContext.Users.Where(u => u.UserName == userName).FirstOrDefaultAsync();
             return user;
         }
 
         public async Task<IEnumerable<User>> GetUsers()
         {
-            var users = await this.shopOnlineDbContext.Users.ToListAsync();
+            var users = await this.caloriesOnlineDbContext.Users.ToListAsync();
             return users;
         }
 

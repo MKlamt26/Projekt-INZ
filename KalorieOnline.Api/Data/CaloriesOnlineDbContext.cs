@@ -110,8 +110,64 @@ namespace KalorieOnline.Api.Data
 				Id = 3,
 				Name = "High_protein"
 			});
-			
 
+
+			//Trening carts
+			modelBuilder.Entity<TreningCart>().HasData(new TreningCart
+			{
+				Id = 1,
+				UserId=1,
+				CreatedDate=DateTime.Now.AddDays(1),
+			});
+
+			//Exercises
+			modelBuilder.Entity<Exercise>().HasData(new Exercise
+			{
+				Id=1,
+				Name= "deadlift",
+				Description= "The deadlift is a multi-joint exercise involving multiple muscle groups",
+				Sets=1,
+				Repetitions=1,
+				CategoryId=1
+			});
+
+			modelBuilder.Entity<Exercise>().HasData(new Exercise
+			{
+				Id = 2,
+				Name = "squats",
+				Description = "An exercise involving the gluteal muscles as well as the muscles of the thighs and calves",
+				Sets = 1,
+				Repetitions = 1,
+				CategoryId = 1
+			});
+
+			modelBuilder.Entity<Exercise>().HasData(new Exercise
+			{
+				Id = 3,
+				Name = "push-ups",
+				Description = "Pushups are an exercise in which a person, keeping a prone position, with the hands palms down under the shoulders," +
+                " the balls of the feet on the ground, and the back straight, pushes the body up and lets it down by an alternate straightening and bending of the arms.",
+				Sets = 1,
+				Repetitions = 1,
+				CategoryId=2
+			});
+
+
+			// Exercise category
+			modelBuilder.Entity<ExerciseCategory>().HasData(new ExerciseCategory
+			{
+				Id = 1,
+				Name = "Weight training",
+				
+			});
+
+
+			modelBuilder.Entity<ExerciseCategory>().HasData(new ExerciseCategory
+			{
+				Id = 2,
+				Name = "Own bodyweight training",
+
+			});
 
 			// Users Acounts
 
@@ -141,7 +197,11 @@ namespace KalorieOnline.Api.Data
 		public DbSet<ProductCategory> ProductCategories { get; set; }
 		public DbSet<User> Users { get; set; }
 		public DbSet<UserData> userDatas { get; set; }
-		
+		public DbSet<TreningCartItem> TreningCartItems { get; set; }
+		public DbSet<TreningCart> TreningCarts { get; set; }
+        public DbSet<Exercise> Exercises { get; set; }
+		public DbSet<ExerciseCategory> ExerciseCategory { get; set; }
+
 
 	}
 }

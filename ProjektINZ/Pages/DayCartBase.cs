@@ -35,7 +35,7 @@ namespace ProjektINZ.Pages
         protected DateTime selectedDate { get; set; }
         protected DateTime minDate = new DateTime(2020, 1, 1);
         protected DateTime maxDate = new DateTime(2022, 12, 31);
-        
+
 
 
 

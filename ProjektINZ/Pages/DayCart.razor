@@ -25,7 +25,7 @@ else{
     </Authorized>
 
     </AuthorizeView>
-    @if(calculateCalories.DailyRequirementKcal==0 ||calculateCalories.DailyRequirementKcal==null)
+    @if(calculateCalories.DailyRequirementKcal==0 ||calculateCalories.DailyRequirementKcal==0)
     {
         <style>
   NavLink {
@@ -161,10 +161,16 @@ else{
                         <h5>@item.ProductName</h5>
                         <div class="mb-4">@item.ProductDescription</div>
                         <span> Calories: <b>@(item.Calories*100)  Kcl/100g</b>
+                            <div class="row mb-4">
+                         <span> Carbohydrates: <b>@Math.Round((item.Carbohydrates*100),1)  g/100g</b> </span>
+                         <span> Protein: <b>@Math.Round((item.Protein*100),1)  g/100g</b> </span>
+                          <span> Fat: <b>@Math.Round((item.Fat*100),1)  g/100g</b> </span>
+                    </div>
+                   
                         <input type="number" @bind="@item.Qty"></input>
                         <button class="btn btn-info btn-sm"
                                 @onclick="(() => UpdateQtyCartItem_Click(item.Id, item.Qty))"
-                            >Update Qty</button>
+                            >Update Eated grams</button>
                         </span>
                         <div>
                         <button  @onclick="(()=>DeleteCartItem_Click(item.Id))"

@@ -39,6 +39,36 @@ namespace KalorieOnline.Api.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ExerciseCategory",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ExerciseCategory", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Exercises",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Sets = table.Column<int>(type: "int", nullable: false),
+                    Repetitions = table.Column<int>(type: "int", nullable: false),
+                    CategoryId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Exercises", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ProductCategories",
                 columns: table => new
                 {
@@ -69,6 +99,36 @@ namespace KalorieOnline.Api.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Products", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "TreningCartItems",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CartId = table.Column<int>(type: "int", nullable: false),
+                    ExerciseId = table.Column<int>(type: "int", nullable: false),
+                    Sets = table.Column<int>(type: "int", nullable: false),
+                    Repetitions = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TreningCartItems", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "TreningCarts",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<int>(type: "int", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TreningCarts", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -106,6 +166,25 @@ namespace KalorieOnline.Api.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "ExerciseCategory",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Weight training" },
+                    { 2, "Own bodyweight training" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Exercises",
+                columns: new[] { "Id", "CategoryId", "Description", "Name", "Repetitions", "Sets" },
+                values: new object[,]
+                {
+                    { 1, 1, "The deadlift is a multi-joint exercise involving multiple muscle groups", "deadlift", 1, 1 },
+                    { 2, 1, "An exercise involving the gluteal muscles as well as the muscles of the thighs and calves", "squats", 1, 1 },
+                    { 3, 2, "Pushups are an exercise in which a person, keeping a prone position, with the hands palms down under the shoulders, the balls of the feet on the ground, and the back straight, pushes the body up and lets it down by an alternate straightening and bending of the arms.", "push-ups", 1, 1 }
+                });
+
+            migrationBuilder.InsertData(
                 table: "ProductCategories",
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
@@ -127,6 +206,11 @@ namespace KalorieOnline.Api.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "TreningCarts",
+                columns: new[] { "Id", "CreatedDate", "UserId" },
+                values: new object[] { 1, new DateTime(2023, 1, 7, 22, 13, 32, 334, DateTimeKind.Local).AddTicks(8073), 1 });
+
+            migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "UserName", "UserPassword" },
                 values: new object[,]
@@ -145,10 +229,22 @@ namespace KalorieOnline.Api.Migrations
                 name: "Carts");
 
             migrationBuilder.DropTable(
+                name: "ExerciseCategory");
+
+            migrationBuilder.DropTable(
+                name: "Exercises");
+
+            migrationBuilder.DropTable(
                 name: "ProductCategories");
 
             migrationBuilder.DropTable(
                 name: "Products");
+
+            migrationBuilder.DropTable(
+                name: "TreningCartItems");
+
+            migrationBuilder.DropTable(
+                name: "TreningCarts");
 
             migrationBuilder.DropTable(
                 name: "userDatas");

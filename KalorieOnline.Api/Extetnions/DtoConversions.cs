@@ -1,4 +1,5 @@
 ﻿using KalorieOnline.Api.Entities;
+using KlalorieOnline.Models.Dtos;
 using ShopOnline.Models.Dtos;
 
 namespace KalorieOnline.Api.Extetnions
@@ -75,6 +76,69 @@ namespace KalorieOnline.Api.Extetnions
                 TotalCalories = product.Calories * cartItem.Qty,
                 CartId = cartItem.CartId,
                 Qty = cartItem.Qty,
+
+            };
+        }
+
+
+
+
+
+        public static IEnumerable<ExerciseDto> ConvertToDto(this IEnumerable<Exercise> exercises,
+                                                               IEnumerable<ExerciseCategory> exerciseCategories)
+        {
+            return (from exercise in exercises
+                    join exercisCategory in exerciseCategories
+                    on exercise.CategoryId equals exercisCategory.Id
+                    select new ExerciseDto
+                    {
+                        Id = exercise.Id,                       
+                        Description = exercise.Description,                                               
+                        CategoryId = exercise.CategoryId,
+                        CategoryName= exercisCategory.Name,
+                        Name=exercise.Name,
+                        Sets=exercise.Sets,
+                        Repetitions=exercise.Repetitions,
+                        
+                    }).ToList();
+
+        }
+
+        public static IEnumerable<TreningCartItemDto> ConvertToDto(this IEnumerable<TreningCartItem> treningCartItems,
+                                                                  IEnumerable<Exercise> exercises)
+        {
+            return (from treningCartItem in treningCartItems
+                    join exercise in exercises
+                    on treningCartItem.ExerciseId equals exercise.Id
+                    select new TreningCartItemDto
+                    {
+                        Id = treningCartItem.Id,
+                        ExerciseId= treningCartItem.ExerciseId,
+                        Name= exercise.Name,
+                        Description= exercise.Description,
+                        Sets= exercise.Sets,
+                        Repetitions= exercise.Repetitions,
+                        CartId= treningCartItem.CartId,
+                        
+
+                    }).ToList();
+        }
+
+
+
+
+        public static TreningCartItemDto ConvertToDto(this TreningCartItem treningCartItem,
+                                                                   Exercise exercise)
+        {
+            return new TreningCartItemDto
+            {
+                Id = treningCartItem.Id,
+                ExerciseId = treningCartItem.ExerciseId,
+                Name = exercise.Name,
+                Description = exercise.Description,
+                Sets = exercise.Sets,
+                Repetitions = exercise.Repetitions,
+                CartId= treningCartItem.CartId
 
             };
         }
