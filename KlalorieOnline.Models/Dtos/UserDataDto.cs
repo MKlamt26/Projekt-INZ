@@ -19,4 +19,6 @@ namespace KlalorieOnline.Models.Dtos
         public string Goal { get; set; }
 
     }
+
+ 
 }

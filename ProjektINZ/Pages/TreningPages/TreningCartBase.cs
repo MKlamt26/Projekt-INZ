@@ -171,7 +171,7 @@ namespace ProjektINZ.Pages.TreningPages
 
         }
 
-        protected async Task DeleteTreningCartItem_Click(int id)
+        protected async Task DeleteExercise_Click(int id)
         {
             var cartItemDto = await treningCartService.DeleteItem(id);
 

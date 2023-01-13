@@ -6,11 +6,33 @@
 
 <AuthorizeView>
         <NotAuthorized>
-        <h1> Welcome Diet Aplication, please logg in</h1>
+        <h1> Welcome to Diet Aplication, please logg in</h1>
 
         </NotAuthorized>
     <Authorized>
         <h1> Welcome back, @localStorage.GetItemAsString("username") to Diet Aplication</h1>
+
+<div class="container">
+    
+    <p>Welcome to  Diet Aplication, a powerful tool for tracking your daily meals and workouts! Take a look at all the available functionalities listed below </p>
+
+    <h4>Day Cart</h4>
+    <p>The Day Cart allows you to keep track of the meals you have eaten each day. Simply add items to the cart and they will be saved for future reference.</p>
+    
+
+    <h4>Training Cart</h4>
+    <p>The Training Cart allows you to record the exercises you have completed during your workouts. Add exercises to the cart and they will be saved for future reference.</p>
+    <ul>
+       
+    </ul>
+
+    <h4>User Data</h4>
+    <p>The User Data section allows you to keep track of your weight over time. Simply enter your data, based on them in the day card it will be possible to calculate your caloric needs for each day .</p>
+    
+</div>
+
+
+
     </Authorized>
 
     </AuthorizeView>

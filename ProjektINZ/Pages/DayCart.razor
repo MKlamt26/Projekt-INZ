@@ -2,205 +2,207 @@
 @inherits DayCartBase
 @inject ISyncLocalStorageService localStorage
 
-
-
-@if (DayCartItems == null && ErrorMessage == null)
+@if (calculateCalories != null)
 {
-    <DisplaySpinner></DisplaySpinner>
-}
 
-else if (ErrorMessage != null)
-{
-    <DisplayError ErrorMessage ="@ErrorMessage"></DisplayError>
-}
-
-else{
-    <AuthorizeView>
-        <NotAuthorized>
-        <h1> Welcome to DayCart</h1>
-
-        </NotAuthorized>
-    <Authorized>
-        <h1> Welcome back, @localStorage.GetItemAsString("username") to DayCart</h1>
-    </Authorized>
-
-    </AuthorizeView>
-    @if(calculateCalories.DailyRequirementKcal==0 ||calculateCalories.DailyRequirementKcal==0)
+    @if (DayCartItems == null && ErrorMessage == null)
     {
-        <style>
-  NavLink {
-    color: blue;
-    font-weight: bold;
-  }
-</style>
-        <h3> First add user data: <NavLink href="/AddUserData">Add User Data</NavLink></h3>
-        
+        <DisplaySpinner></DisplaySpinner>
     }
 
+    else if (ErrorMessage != null)
+    {
+        <DisplayError ErrorMessage ="@ErrorMessage"></DisplayError>
+    }
 
-     <h3 class="mb-5">Day Cart</h3>
-       <EditForm Model="CartDto">
-   <div class="form-group">
-    <label for="userSex">User Sex</label>
-     <div class="col-sm-10">
-    <InputDate @bind-Value="CartDto.CreatedDate" Format="yyyy-MM-dd" Min="@minDate" Max="@maxDate" class="form-control" />
-    </div>
-  </div>
- 
- 
-  
-    </EditForm>
+    else
+    {
+        <AuthorizeView>
+            <NotAuthorized>
+                <h1> Welcome to DayCart</h1>
+
+            </NotAuthorized>
+            <Authorized>
+                <h1> Welcome back, @localStorage.GetItemAsString("username") to DayCart</h1>
+            </Authorized>
+
+
+        </AuthorizeView>
+
+
+        @if (calculateCalories.DailyRequirementKcal == 0)
+        {
+            <style>
+                NavLink {
+                color: blue;
+                font-weight: bold;
+                }
+            </style>        <h3> First add user data: <NavLink href="/AddUserData">Add User Data</NavLink></h3>
+
+        }
+
+
+
+
+
+
+
+        <h3 class="mb-5">Day Cart</h3>
+        <EditForm Model="CartDto">
+            <div class="form-group">
+                <label for="createdDate">View cart by data</label>
+                <div class="col-sm-10">
+                    <InputDate @bind-Value="CartDto.CreatedDate" Format="yyyy-MM-dd" Min="@minDate" Max="@maxDate" class="form-control" lang="en-us" />
+                </div>
+            </div>
+
+
+
+        </EditForm>
 
         <div class="row">
- <p class="mb-4">
-              <div>
-                <button class="btn btn-success"
+            <p class="mb-4">
+                <div>
+                    <button class="btn btn-success"
                 @onclick ="() => (ShowDayCartClick(CartDto.CreatedDate))"
                 ><b>Show Day cart</b></button>
-            </div>
+                </div>
             </p>
- </div>
-    
-
-     <div>
-         
-         
-
-     
-        
-
-     <table class="table">
-  <thead>
-    <tr>
-       <th scope="col">#</th>
-      <th scope="col">Kcal</th>
-      <th scope="col">Carbo</th>
-      <th scope="col">Protein</th>
-      <th scope="col">Fat</th>
-      
-    </tr>
-  </thead>
-  <tbody>
-     
-          <tr> 
-              <th scope="row">Daily Requirement</th>
-              <td>@calculateCalories.DailyRequirementKcal</td>
-              <td>@calculateCalories.DailyRequirementCarbo</td>
-              <td>@calculateCalories.DailyRequirementProtein</td>
-              <td>@calculateCalories.DailyRequirementFat</td>
-              
-          </tr>
-
-           <tr> 
-              <th scope="row">Eated today</th>
-              @if(eatedDaily.DailyEatedKcal>@calculateCalories.DailyRequirementKcal)
-                    {
-                        <td style="color: red;">@eatedDaily.DailyEatedKcal</td>
-                    }
-                    else
-                    {
-                        <td style="color: green ;">@eatedDaily.DailyEatedKcal</td>
-                    }
-              @if(eatedDaily.DailyEatedCarbo>@calculateCalories.DailyRequirementCarbo)
-                    {
-                        <td style="color: red;">@eatedDaily.DailyEatedCarbo</td>
-                    }
-                    else
-                    {
-                        <td style="color: green">@eatedDaily.DailyEatedCarbo</td>
-                    }
-              @if(eatedDaily.DailyEatedProtein>@calculateCalories.DailyRequirementProtein)
-                    {
-                        <td style="color: red;">@eatedDaily.DailyEatedProtein</td>
-                    }
-                    else
-                    {
-                        <td style="color: green">@eatedDaily.DailyEatedProtein</td>
-                    }
-              @if(eatedDaily.DailyEatedFat>@calculateCalories.DailyRequirementFat)
-                    {
-                        <td style="color: red;">@eatedDaily.DailyEatedFat</td>
-                    }
-                    else
-                    {
-                        <td style="color: green">@eatedDaily.DailyEatedFat</td>
-                    }
-
-              
-          </tr>
-
-           @* <tr> 
-              <th scope="row">Daily bilans</th>
-              <td>@dailyBilans.DailyBilansKcal</td>
-              <td>@calculateCalories.DailyRequirementCarbo</td>
-              <td>@calculateCalories.DailyRequirementProtein</td>
-              <td>@calculateCalories.DailyRequirementFat</td>
-              
-          </tr>*@
-      
-   
-    
-   
-  </tbody>
-</table>
+        </div>
 
 
- </div>
+        <div>
 
 
-    
-      <div class = "row mb-5">
-        <div class ="col-md-9">
-            @foreach(var item in DayCartItems)
-            {
-                <div class="row mb-4">
-                    <div class="col-md-4">
-                        <img src="@item.ProductImageUrl" width="300" class="img-thumbnail">
-                    </div>
-                    <div class = "col-md-8">
-                        <h5>@item.ProductName</h5>
-                        <div class="mb-4">@item.ProductDescription</div>
-                        <span> Calories: <b>@(item.Calories*100)  Kcl/100g</b>
-                            <div class="row mb-4">
-                         <span> Carbohydrates: <b>@Math.Round((item.Carbohydrates*100),1)  g/100g</b> </span>
-                         <span> Protein: <b>@Math.Round((item.Protein*100),1)  g/100g</b> </span>
-                          <span> Fat: <b>@Math.Round((item.Fat*100),1)  g/100g</b> </span>
-                    </div>
-                   
-                        <input type="number" @bind="@item.Qty"></input>
-                        <button class="btn btn-info btn-sm"
+
+
+
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Kcal</th>
+                        <th scope="col">Carbo</th>
+                        <th scope="col">Protein</th>
+                        <th scope="col">Fat</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr> 
+                        <th scope="row">Daily Requirement</th>
+
+                        <td>@calculateCalories.DailyRequirementKcal</td>
+                        <td>@calculateCalories.DailyRequirementCarbo</td>
+                        <td>@calculateCalories.DailyRequirementProtein</td>
+                        <td>@calculateCalories.DailyRequirementFat</td>
+
+
+
+
+                    </tr>
+
+                    <tr> 
+                        <th scope="row">Eated today</th>
+                        @if (eatedDaily.DailyEatedKcal > @calculateCalories.DailyRequirementKcal)
+                        {
+                            <td style="color: red;">@eatedDaily.DailyEatedKcal</td>
+                        }
+                        else
+                        {
+                            <td style="color: green ;">@eatedDaily.DailyEatedKcal</td>
+                        }
+                        @if (eatedDaily.DailyEatedCarbo > @calculateCalories.DailyRequirementCarbo)
+                        {
+                            <td style="color: red;">@eatedDaily.DailyEatedCarbo</td>
+                        }
+                        else
+                        {
+                            <td style="color: green">@eatedDaily.DailyEatedCarbo</td>
+                        }
+                        @if (eatedDaily.DailyEatedProtein > @calculateCalories.DailyRequirementProtein)
+                        {
+                            <td style="color: red;">@eatedDaily.DailyEatedProtein</td>
+                        }
+                        else
+                        {
+                            <td style="color: green">@eatedDaily.DailyEatedProtein</td>
+                        }
+                        @if (eatedDaily.DailyEatedFat > @calculateCalories.DailyRequirementFat)
+                        {
+                            <td style="color: red;">@eatedDaily.DailyEatedFat</td>
+                        }
+                        else
+                        {
+                            <td style="color: green">@eatedDaily.DailyEatedFat</td>
+                        }
+
+
+                    </tr>
+
+
+
+
+
+
+                </tbody>
+            </table>
+
+
+        </div>
+
+
+
+        <div class = "row mb-5">
+            <div class ="col-md-9">
+                @foreach (var item in DayCartItems)
+                {
+                    <div class="row mb-4">
+                        <div class="col-md-4">
+                            <img src="@item.ProductImageUrl" width="300" class="img-thumbnail">
+                        </div>
+                        <div class = "col-md-8">
+                            <h5>@item.ProductName</h5>
+                            <div class="mb-4">@item.ProductDescription</div>
+                            <span> Calories: <b>@(item.Calories*100)  Kcl/100g</b>
+                                <div class="row mb-4">
+                                    <span> Carbohydrates: <b>@Math.Round((item.Carbohydrates*100),1)  g/100g</b> </span>
+                                    <span> Protein: <b>@Math.Round((item.Protein*100),1)  g/100g</b> </span>
+                                    <span> Fat: <b>@Math.Round((item.Fat*100),1)  g/100g</b> </span>
+                                </div>
+
+                                <input type="number" @bind="@item.Qty"></input>
+                                <button class="btn btn-info btn-sm"
                                 @onclick="(() => UpdateQtyCartItem_Click(item.Id, item.Qty))"
                             >Update Eated grams</button>
-                        </span>
-                        <div>
-                        <button  @onclick="(()=>DeleteCartItem_Click(item.Id))"
+                            </span>
+                            <div>
+                                <button  @onclick="(()=>DeleteCartItem_Click(item.Id))"
                             class="btn btn-danger sm">Remove </button>
+                            </div>
+
+
+
                         </div>
-                            
-                           
-                       
+
                     </div>
+                }
+            </div>
 
+
+            <div class="col-md-3">
+                <h5>Add product to day cart</h5>
+                <div class="mt-2">
+
+                    <a href="addToDayCart" class="btn btn-success">
+                        Add product
+                    </a>
                 </div>
-            }
-             </div>
-              
-
-             <div class="col-md-3">
-            <h5>DayCart Summary</h5>
-            <div class="mt-2">
-                <div>Total eated: <b>@eatedDaily.DailyEatedKcal kcl</b></div>
-                <a href="addToDayCart" class="btn btn-success">
-                  Add product
-                </a>
             </div>
         </div>
-        </div>
-
-
-
-
-
+    }
 
 }
 

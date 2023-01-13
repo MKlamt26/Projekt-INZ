@@ -11,7 +11,7 @@
      <table class="table">
   <thead>
     <tr>
-      <th scope="col">Name</th>
+      
       <th scope="col">Date</th>
       <th scope="col">Weight</th>
       <th scope="col">Goal</th>
@@ -22,10 +22,11 @@
       @foreach (var item in userDataDtos)
       {
           <tr>
-              <td>@localStorage.GetItemAsString("username")</td>
+              
               <td>@item.CreatedDate.Date.ToString("dd-MM-yyyy")</td>
               <td>@item.Weight</td>
               <td>@item.Goal</td>
+              
               
           </tr>
       }
@@ -46,7 +47,7 @@
 
 
                 
-                ><b>Dodaj nowe dane</b></button>
+                ><b>Add new data</b></button>
             </div>
             </p>
  </div>

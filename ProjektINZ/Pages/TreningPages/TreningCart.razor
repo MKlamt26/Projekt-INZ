@@ -106,15 +106,43 @@ else{
     <div class="card mb-3">
         <div class="card-body">
             <h5 class="card-title">@exercise.Name</h5>
-            <h6 class="card-subtitle mb-2 text-muted">@exercise.Name</h6>
+            
             <p class="card-text">@exercise.Description</p>
-            <p>Weight: @exercise.Weight</p>
-            <p>Number of sets: @exercise.Sets</p>
-            <p>Number of repetitions: @exercise.Repetitions</p>
-            <p>Number of repetitions: @exercise.Repetitions</p>
-            <button class="btn btn-info btn-sm"
+           
+
+                 <span> Weight: <b>@exercise.Weight</b>
+                            <div class="row mb-4">
+                         <span> Number of sets: <b> @exercise.Sets</b> </span>
+                         <span> Number of repetitions: <b>@exercise.Repetitions</b> 
+                          
+                    
+                   
+                       
+                       <button class="btn btn-info btn-sm"
                                 @onclick="(() => EditExercise_Click(exercise))"
                             >Edit Exercise</button>
+                            </span>
+                            </div>
+                        </span>
+
+
+                       
+                            <div>
+                        <button  @onclick="(()=>DeleteExercise_Click(exercise.Id))"
+                            class="btn btn-danger sm">Remove Exercise </button>
+                        </div>
+                        
+
+
+
+
+             
+                           
+
+            
+            
+
+                         
         </div>
     </div>
 }

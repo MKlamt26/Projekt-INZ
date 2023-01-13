@@ -61,6 +61,16 @@ namespace ProjektINZ.Pages.TreningPages
             }
         }
 
+        protected async Task DeleteCartItem_Click(int id)
+        {
+            var cartItemDto = await treningCartService.DeleteItem(id);
+
+            await OnInitializedAsync();
+
+
+
+        }
+
 
 
     }

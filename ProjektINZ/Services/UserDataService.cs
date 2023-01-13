@@ -171,7 +171,7 @@ namespace ProjektINZ.Services
 
             if (Goal == "GainWeight")
             {
-                kcal = kcal + 300;
+                kcal += kcal *= 0.15;
             }
             else if (Goal == "KeepWeight")
             {
@@ -179,7 +179,7 @@ namespace ProjektINZ.Services
             }
             else if (Goal == "LoseWeight")
             {
-                kcal = kcal - 300;
+                kcal = kcal - 500;
             }
            
             return kcal;
