@@ -10,6 +10,8 @@
 @page "/trysignup"
 
 <EditForm Model="userAddDto" OnSubmit="HandleSingUp">
+    <DataAnnotationsValidator />
+    
 <section class="vh-100 gradient-custom">
     <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -27,6 +29,7 @@
                 <InputText id="UserName" class="form-control" placeholder="UserName"
                        @bind-Value="userAddDto.UserName" />
                        <ValidationMessage For="@(() => userAddDto.UserName)" />
+                          
                 
               </div>
 
@@ -34,14 +37,16 @@
                   <label class="form-label" for="typePasswordX">Password</label>
                  <InputText id="UserPassword"  type="password"  class="form-control" placeholder="UserPassword"
                        @bind-Value="userAddDto.UserPassword" />
+                       <ValidationMessage For="@(() => userAddDto.UserPassword)" />
                 
               </div>
 
 
                <div class="form-outline form-white mb-4">
                   <label class="form-label" for="typePasswordX">ConfirmPassword</label>
-                 <InputText id="UserPassword"  type="password"  class="form-control" placeholder="ConfirmUserPassword"
+                 <InputText id="ConfirmPassword"  type="password"  class="form-control" placeholder="ConfirmUserPassword"
                        @bind-Value="userAddDto.ConfirmPassword" />
+                       
                 
               </div>
                
@@ -63,7 +68,7 @@
                       
              
 
-              <button class="btn btn-outline-light btn-lg px-5" type="submit">SingUp</button>
+              <button class="btn btn-outline-light btn-lg px-5" type="submit">SignUp</button>
 
               <div class="d-flex justify-content-center text-center mt-4 pt-1">
                 <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "xp8ktcYbzRRjm4tC00SWNq7i3abWxFlS3hblkQgDpiQ=",
+  "Hash": "s6evzbulTmCQtiVv2RO210nyPfVVpipFR+9l6aQs22U=",
   "Source": "ProjektINZ",
   "BasePath": "/",
   "Mode": "Root",
@@ -680,6 +680,40 @@
       "OriginalItemSpec": "C:\\Users\\Michał\\.nuget\\packages\\blazored.typeahead\\4.7.0\\lib\\net6.0\\Blazored.Typeahead.dll"
     },
     {
+      "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\CaloriesOnline.Models.dll",
+      "SourceId": "ProjektINZ",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/CaloriesOnline.Models.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\KlalorieOnline.Models\\bin\\Debug\\net6.0\\CaloriesOnline.Models.dll"
+    },
+    {
+      "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\CaloriesOnline.Models.pdb",
+      "SourceId": "ProjektINZ",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/CaloriesOnline.Models.pdb",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "symbol",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\KlalorieOnline.Models\\bin\\Debug\\net6.0\\CaloriesOnline.Models.pdb"
+    },
+    {
       "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\dotnet.6.0.4.nm888b1oec.js",
       "SourceId": "ProjektINZ",
       "SourceType": "Computed",
@@ -797,40 +831,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Michał\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.4\\runtimes\\browser-wasm\\native\\icudt_no_CJK.dat"
-    },
-    {
-      "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\KlalorieOnline.Models.dll",
-      "SourceId": "ProjektINZ",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/KlalorieOnline.Models.dll",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "BlazorWebAssemblyResource",
-      "AssetTraitValue": "runtime",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\KlalorieOnline.Models\\bin\\Debug\\net6.0\\KlalorieOnline.Models.dll"
-    },
-    {
-      "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\KlalorieOnline.Models.pdb",
-      "SourceId": "ProjektINZ",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/KlalorieOnline.Models.pdb",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "BlazorWebAssemblyResource",
-      "AssetTraitValue": "symbol",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\KlalorieOnline.Models\\bin\\Debug\\net6.0\\KlalorieOnline.Models.pdb"
     },
     {
       "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Authorization.dll",
@@ -4658,21 +4658,21 @@
       "OriginalItemSpec": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Formats.Asn1.dll"
     },
     {
-      "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\obj\\Debug\\net6.0\\build-gz\\4bYc0+Sr.gz",
+      "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\obj\\Debug\\net6.0\\build-gz\\4cbmvo8x.gz",
       "SourceId": "ProjektINZ",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "_framework/KlalorieOnline.Models.dll.gz",
+      "RelativePath": "_framework/CaloriesOnline.Models.dll.gz",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
-      "RelatedAsset": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\KlalorieOnline.Models.dll",
+      "RelatedAsset": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\CaloriesOnline.Models.dll",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\KlalorieOnline.Models.dll"
+      "OriginalItemSpec": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\CaloriesOnline.Models.dll"
     },
     {
       "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\obj\\Debug\\net6.0\\build-gz\\4J+goyWT.gz",
@@ -5372,6 +5372,23 @@
       "OriginalItemSpec": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\WindowsBase.dll"
     },
     {
+      "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\obj\\Debug\\net6.0\\build-gz\\Dw6Z84cc.gz",
+      "SourceId": "ProjektINZ",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/CaloriesOnline.Models.pdb.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\CaloriesOnline.Models.pdb",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\CaloriesOnline.Models.pdb"
+    },
+    {
       "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\obj\\Debug\\net6.0\\build-gz\\EaGOwyGB.gz",
       "SourceId": "ProjektINZ",
       "SourceType": "Computed",
@@ -5387,23 +5404,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Reflection.Primitives.dll"
-    },
-    {
-      "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\obj\\Debug\\net6.0\\build-gz\\EE2GOnkJ.gz",
-      "SourceId": "ProjektINZ",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/KlalorieOnline.Models.pdb.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\KlalorieOnline.Models.pdb",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\bin\\Debug\\net6.0\\wwwroot\\_framework\\KlalorieOnline.Models.pdb"
     },
     {
       "Identity": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\ProjektINZ\\obj\\Debug\\net6.0\\build-gz\\EekZ8uN+.gz",

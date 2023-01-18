@@ -144,7 +144,7 @@ namespace KalorieOnline.Api.Controllers
 
 
         [HttpPost("postByUserId")]
-        public async Task<ActionResult<TreningCart>> PostUserData([FromBody] TreningCartToAddDto treningCartToAddDto)
+        public async Task<ActionResult<TreningCart>> PostTreningCart([FromBody] TreningCartToAddDto treningCartToAddDto)
         {
             var newCart = await this.treningCartRepository.AddTreningCart(treningCartToAddDto);
 

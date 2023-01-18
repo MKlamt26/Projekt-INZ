@@ -172,7 +172,7 @@ namespace KalorieOnline.Api.Controllers
         }
         
         [HttpPost("postByUserId")]
-        public async Task<ActionResult<Cart>> PostUserData([FromBody] CartToAddDto cartToAddDto)
+        public async Task<ActionResult<Cart>> PostCart([FromBody] CartToAddDto cartToAddDto)
         {
             var newCart = await this.dayCartRepository.AddCart(cartToAddDto);
 

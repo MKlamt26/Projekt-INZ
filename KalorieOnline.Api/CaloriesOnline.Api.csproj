@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\KlalorieOnline.Models\KlalorieOnline.Models.csproj" />
+    <ProjectReference Include="..\KlalorieOnline.Models\CaloriesOnline.Models.csproj" />
   </ItemGroup>
 
 </Project>

@@ -211,7 +211,7 @@ namespace KalorieOnline.Api.Migrations
             migrationBuilder.InsertData(
                 table: "TreningCarts",
                 columns: new[] { "Id", "CreatedDate", "UserId" },
-                values: new object[] { 1, new DateTime(2023, 1, 9, 13, 38, 49, 851, DateTimeKind.Local).AddTicks(3818), 1 });
+                values: new object[] { 1, new DateTime(2023, 1, 14, 23, 51, 50, 996, DateTimeKind.Local).AddTicks(7696), 1 });
 
             migrationBuilder.InsertData(
                 table: "Users",

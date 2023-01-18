@@ -806,14 +806,6 @@ C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\obj\Debug\net6.0\Pr
 C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\obj\Debug\net6.0\refint\ProjektINZ.dll
 C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\obj\Debug\net6.0\ProjektINZ.pdb
 C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\obj\Debug\net6.0\ref\ProjektINZ.dll
-C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\bin\Debug\net6.0\wwwroot\_framework\KlalorieOnline.Models.dll
-C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\bin\Debug\net6.0\wwwroot\_framework\KlalorieOnline.Models.pdb
-C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\bin\Debug\net6.0\wwwroot\_framework\KlalorieOnline.Models.dll.gz
-C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\bin\Debug\net6.0\wwwroot\_framework\KlalorieOnline.Models.pdb.gz
-C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\bin\Debug\net6.0\KlalorieOnline.Models.dll
-C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\bin\Debug\net6.0\KlalorieOnline.Models.pdb
-C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\obj\Debug\net6.0\build-gz\4bYc0+Sr.gz
-C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\obj\Debug\net6.0\build-gz\EE2GOnkJ.gz
 C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\bin\Debug\net6.0\wwwroot\_framework\Blazored.Typeahead.dll
 C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\bin\Debug\net6.0\wwwroot\_framework\Blazored.Typeahead.dll.gz
 C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\bin\Debug\net6.0\Blazored.Typeahead.dll
@@ -1718,3 +1710,11 @@ C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\obj\Debug\net6.0\bu
 C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\obj\Debug\net6.0\build-gz\dp1L+bg4.gz
 C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\obj\Debug\net6.0\build-gz\7naM+blD.gz
 C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\obj\Debug\net6.0\build-gz\0Ctt0jaE.gz
+C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\bin\Debug\net6.0\wwwroot\_framework\CaloriesOnline.Models.dll
+C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\bin\Debug\net6.0\wwwroot\_framework\CaloriesOnline.Models.pdb
+C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\bin\Debug\net6.0\wwwroot\_framework\CaloriesOnline.Models.dll.gz
+C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\bin\Debug\net6.0\wwwroot\_framework\CaloriesOnline.Models.pdb.gz
+C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\bin\Debug\net6.0\CaloriesOnline.Models.dll
+C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\bin\Debug\net6.0\CaloriesOnline.Models.pdb
+C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\obj\Debug\net6.0\build-gz\4cbmvo8x.gz
+C:\Users\Michał\Desktop\InżynierkaMK\ProjektINZ\ProjektINZ\obj\Debug\net6.0\build-gz\Dw6Z84cc.gz

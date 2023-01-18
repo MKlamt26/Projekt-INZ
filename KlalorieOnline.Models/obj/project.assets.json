@@ -567,9 +567,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\KlalorieOnline.Models\\KlalorieOnline.Models.csproj",
-      "projectName": "KlalorieOnline.Models",
-      "projectPath": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\KlalorieOnline.Models\\KlalorieOnline.Models.csproj",
+      "projectUniqueName": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\KlalorieOnline.Models\\CaloriesOnline.Models.csproj",
+      "projectName": "CaloriesOnline.Models",
+      "projectPath": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\KlalorieOnline.Models\\CaloriesOnline.Models.csproj",
       "packagesPath": "C:\\Users\\Michał\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\KlalorieOnline.Models\\obj\\",
       "projectStyle": "PackageReference",

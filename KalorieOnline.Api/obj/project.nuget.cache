@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GcK6w7Ngn+f4Q5pI8GLaAt8pcHWlmybnIRIfNJLvhCtuByVPvi7G+Ur2YqMaZc8Kmlh9oHrwnI1F1wDqsJrhfw==",
+  "dgSpecHash": "j5WyP29iuonSIH1iMVKWNfYspSfJpR7mODHWyYeaebwL1jU//vyZRhSNQhAHd8v8ZirybXKAO36CSofqnr8fhg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\KalorieOnline.Api\\KalorieOnline.Api.csproj",
+  "projectFilePath": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\KalorieOnline.Api\\CaloriesOnline.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Michał\\.nuget\\packages\\blazored.localstorage\\4.3.0\\blazored.localstorage.4.3.0.nupkg.sha512",
     "C:\\Users\\Michał\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

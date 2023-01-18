@@ -630,7 +630,7 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "KlalorieOnline.Models/1.0.0": {
+      "CaloriesOnline.Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
@@ -638,10 +638,10 @@
           "Newtonsoft.Json": "13.0.2"
         },
         "compile": {
-          "bin/placeholder/KlalorieOnline.Models.dll": {}
+          "bin/placeholder/CaloriesOnline.Models.dll": {}
         },
         "runtime": {
-          "bin/placeholder/KlalorieOnline.Models.dll": {}
+          "bin/placeholder/CaloriesOnline.Models.dll": {}
         }
       }
     },
@@ -1268,7 +1268,7 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "KlalorieOnline.Models/1.0.0": {
+      "CaloriesOnline.Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
@@ -1276,10 +1276,10 @@
           "Newtonsoft.Json": "13.0.2"
         },
         "compile": {
-          "bin/placeholder/KlalorieOnline.Models.dll": {}
+          "bin/placeholder/CaloriesOnline.Models.dll": {}
         },
         "runtime": {
-          "bin/placeholder/KlalorieOnline.Models.dll": {}
+          "bin/placeholder/CaloriesOnline.Models.dll": {}
         }
       }
     }
@@ -2386,17 +2386,17 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "KlalorieOnline.Models/1.0.0": {
+    "CaloriesOnline.Models/1.0.0": {
       "type": "project",
-      "path": "../KlalorieOnline.Models/KlalorieOnline.Models.csproj",
-      "msbuildProject": "../KlalorieOnline.Models/KlalorieOnline.Models.csproj"
+      "path": "../KlalorieOnline.Models/CaloriesOnline.Models.csproj",
+      "msbuildProject": "../KlalorieOnline.Models/CaloriesOnline.Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "Blazored.LocalStorage >= 4.3.0",
       "Blazored.Typeahead >= 4.7.0",
-      "KlalorieOnline.Models >= 1.0.0",
+      "CaloriesOnline.Models >= 1.0.0",
       "Microsoft.AspNetCore.Components.Authorization >= 5.0.17",
       "Microsoft.AspNetCore.Components.WebAssembly >= 6.0.4",
       "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 6.0.4",
@@ -2436,8 +2436,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\KlalorieOnline.Models\\KlalorieOnline.Models.csproj": {
-              "projectPath": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\KlalorieOnline.Models\\KlalorieOnline.Models.csproj"
+            "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\KlalorieOnline.Models\\CaloriesOnline.Models.csproj": {
+              "projectPath": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\KlalorieOnline.Models\\CaloriesOnline.Models.csproj"
             }
           }
         }

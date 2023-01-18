@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QdOJgh48CWtlAbuYeSOMnEjvwGVy43JjMTNurtFUKgy38jLy8Ww7xoIt5vNuU6B1Wf5Cz9l4+uQN8iz0tf1taw==",
+  "dgSpecHash": "6rVydIJ+tOemIurXuz6/SzYszz7iUHP9ja0Uhxs79aj/UNFW5qH+JJxVsMfMVXjrGU3wTqEs+wGwmPnVUVp5Gw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\KlalorieOnline.Models\\KlalorieOnline.Models.csproj",
+  "projectFilePath": "C:\\Users\\Michał\\Desktop\\InżynierkaMK\\ProjektINZ\\KlalorieOnline.Models\\CaloriesOnline.Models.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Michał\\.nuget\\packages\\blazored.localstorage\\4.3.0\\blazored.localstorage.4.3.0.nupkg.sha512",
     "C:\\Users\\Michał\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.0\\microsoft.aspnetcore.authorization.6.0.0.nupkg.sha512",

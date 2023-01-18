@@ -1,10 +1,11 @@
-﻿@page "/UserDatas"
+﻿@page "/UserData"
 @using KlalorieOnline.Models.Dtos
 @using ProjektINZ.Pages
 @inherits UserDataAddBase
 
 
-
+@if (userDataDtos != null)
+{
 
 <div>
 
@@ -51,3 +52,4 @@
             </div>
             </p>
  </div>
+}

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KalorieOnline.Api.Migrations
 {
     [DbContext(typeof(CaloriesOnlineDbContext))]
-    [Migration("20230108123850_InitialCreate")]
+    [Migration("20230113225151_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -315,7 +315,7 @@ namespace KalorieOnline.Api.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 1, 9, 13, 38, 49, 851, DateTimeKind.Local).AddTicks(3818),
+                            CreatedDate = new DateTime(2023, 1, 14, 23, 51, 50, 996, DateTimeKind.Local).AddTicks(7696),
                             UserId = 1
                         });
                 });

@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "R6zyGczfkcnHOB0bvzlAksktihuDERWRZwUSnyIDqts=",
-  "Source": "KalorieOnline.Api",
-  "BasePath": "_content/KalorieOnline.Api",
+  "Hash": "hwRaKZpSw0GicBfgwugFaB2tfUqr1ESXYZIObtQgqoI=",
+  "Source": "CaloriesOnline.Api",
+  "BasePath": "_content/CaloriesOnline.Api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
