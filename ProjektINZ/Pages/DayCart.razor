@@ -23,7 +23,7 @@
 
             </NotAuthorized>
             <Authorized>
-                <h1> Welcome back, @localStorage.GetItemAsString("username") to DayCart</h1>
+                <h1> Welcome back @localStorage.GetItemAsString("username") to Day Cart</h1>
             </Authorized>
 
 
@@ -52,7 +52,7 @@
             <div class="form-group">
                 <label for="createdDate">View cart by data</label>
                 <div class="col-sm-10">
-                    <InputDate @bind-Value="CartDto.CreatedDate" Format="yyyy-MM-dd" Min="@minDate" Max="@maxDate" class="form-control" lang="en-Us" />
+                    <InputDate @bind-Value="CartDto.CreatedDate" Format="dd-MM-yyyy" Min="@minDate" Max="@maxDate" class="form-control" />
                 </div>
             </div>
 

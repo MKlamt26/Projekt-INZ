@@ -9,8 +9,9 @@
 @using ProjektINZ.ViewModels
 @page "/trysignup"
 
-<EditForm Model="userAddDto" OnSubmit="HandleSingUp">
+<EditForm Model="userAddDto"  OnValidSubmit="HandleSingUp">
     <DataAnnotationsValidator />
+    
     
 <section class="vh-100 gradient-custom">
     <div class="container py-5 h-100">
@@ -65,6 +66,7 @@
                             </div>   
 
                     }  
+                  
                       
              
 
@@ -102,9 +104,11 @@
 
     private async void HandleSingUp()
     {
+       
         try
         {
             var userDataDto = await UserService.GetUser(userAddDto.UserName);
+             
 
         }
 
@@ -112,43 +116,52 @@
         catch (Exception ex)
         {
 
-           ErrorMessage = ex.Message;
+            ErrorMessage = ex.Message;
+            await OnInitializedAsync();
         }
-            if (ErrorMessage!=null)
+        if (ErrorMessage!=null)
+        {
+                
+
+
+            if (userAddDto.UserPassword == userAddDto.ConfirmPassword)
+
             {
-                if (userAddDto.UserPassword == userAddDto.ConfirmPassword)
+                await UserService.AddUser(userAddDto);
+                navMenager.NavigateTo("/trylogin");
+            }
+         
+            else
+            {
 
-                {
-                    await UserService.AddUser(userAddDto);
-                    navMenager.NavigateTo("/trylogin");
-                }
-                else
-                {
-                    
-                    
-                    ErrorMesage = "error";
-                    await OnInitializedAsync();
-                   
-                    
 
-                }
+                ErrorMesage = "error";
                 await OnInitializedAsync();
 
+
+
             }
+            await OnInitializedAsync();
+
+        }
+       
+
             else
             {
                 ErrorMesage = "errorExist";
-                await OnInitializedAsync();
+                
+               
+               
             }
 
-        
+       
        
     }
 
     protected override async Task OnInitializedAsync()
     {
-        //userAddDto = new UserAddDto();
-        await base.OnInitializedAsync();
+        
+       
 
     }
 

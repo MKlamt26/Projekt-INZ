@@ -129,7 +129,7 @@ namespace ProjektINZ.Pages.TreningPages
         {
             try
             {
-                if (sets > 0 && repetitions > 0)
+                if (sets > 0 && repetitions > 0 && weight >0)
                 {
                     var updateItemDto = new TreningCartUpdateDto
                     {
@@ -155,10 +155,16 @@ namespace ProjektINZ.Pages.TreningPages
 
                     if (item != null)
                     {
+
+                        item.Weight = 1;
                         item.Sets = 1;
                         item.Repetitions = 1;
 
                     }
+                    
+
+                    selectedExercise = null;
+                    await OnInitializedAsync();
 
                 }
 

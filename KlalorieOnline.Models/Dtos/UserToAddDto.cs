@@ -9,14 +9,15 @@ namespace KlalorieOnline.Models.Dtos
 {
     public class UserAddDto
     {
-       
-        [StringLength(10, MinimumLength = 3)]
-        [Required(ErrorMessage = "Login must be at least 3 characters in length")]
-      
-        public string UserName { get; set; }
-        [StringLength(20, MinimumLength = 5)]
+
         [Required]
-        public string UserPassword { get; set; }
+        [StringLength(10, MinimumLength = 3, ErrorMessage = "Login must be between 3 and 10 characters")]
+
+        public string? UserName { get; set; }
+
+        [Required]
+        [StringLength(10, MinimumLength = 3, ErrorMessage = "Password must be between 3 and 10 characters")]
+        public string? UserPassword { get; set; }
         public string ConfirmPassword { get; set; }
     }
 }

@@ -1,1 +1,0 @@
-W wyświetlaniu korzystamy z razor components a także dodajemy Bazową klasę(komponent)
